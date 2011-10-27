@@ -1,0 +1,126 @@
+\hypertarget{classhdnum_1_1DIRK}{
+\section{hdnum::DIRK$<$ M, S $>$ Class Template Reference}
+\label{classhdnum_1_1DIRK}\index{hdnum::DIRK@{hdnum::DIRK}}
+}
+
+
+Implementation of a general Diagonal Implicit Runge-\/Kutta method.  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries NonlinearProblem}
+\begin{DoxyCompactList}\small\item\em class providing nonlinear problem to be solved \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1DIRK_a80ab2ad1360bc6061cea64d7a5ca9d12}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1DIRK_a80ab2ad1360bc6061cea64d7a5ca9d12}{size\_\-type}}
+\label{classhdnum_1_1DIRK_a80ab2ad1360bc6061cea64d7a5ca9d12}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{time\_\-type}}
+\label{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}{number\_\-type}}
+\label{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_ac086e9474953dd982e3192f892039d67}{
+typedef \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ \hyperlink{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}{number\_\-type} $>$ \hyperlink{classhdnum_1_1DIRK_ac086e9474953dd982e3192f892039d67}{ButcherTableau}}
+\label{classhdnum_1_1DIRK_ac086e9474953dd982e3192f892039d67}
+
+\begin{DoxyCompactList}\small\item\em the type of a Butcher tableau \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhdnum_1_1DIRK_a4c6a823702e9e8b885cd4b81be861d51}{DIRK} (const M \&model\_\-, const S \&newton\_\-, const \hyperlink{classhdnum_1_1Matrix}{ButcherTableau} \&butcher\_\-, const int order\_\-)
+\item 
+\hyperlink{classhdnum_1_1DIRK_ab914c53100346697592513bdae05c668}{DIRK} (const M \&model\_\-, const S \&newton\_\-, const std::string method)
+\item 
+\hypertarget{classhdnum_1_1DIRK_a425388f8d85dac93e59155ff6e4b8578}{
+void \hyperlink{classhdnum_1_1DIRK_a425388f8d85dac93e59155ff6e4b8578}{set\_\-dt} (\hyperlink{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1DIRK_a425388f8d85dac93e59155ff6e4b8578}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_ab32055e261f7b4dd49b5458d33e7abe5}{
+void \hyperlink{classhdnum_1_1DIRK_ab32055e261f7b4dd49b5458d33e7abe5}{set\_\-verbosity} (\hyperlink{classhdnum_1_1DIRK_a80ab2ad1360bc6061cea64d7a5ca9d12}{size\_\-type} verbosity\_\-)}
+\label{classhdnum_1_1DIRK_ab32055e261f7b4dd49b5458d33e7abe5}
+
+\begin{DoxyCompactList}\small\item\em set verbosity level \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a374aa0f371c2fc1d0b0dd64610629c08}{
+void \hyperlink{classhdnum_1_1DIRK_a374aa0f371c2fc1d0b0dd64610629c08}{step} ()}
+\label{classhdnum_1_1DIRK_a374aa0f371c2fc1d0b0dd64610629c08}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_aa4b8eff08392d8860fc21a0d4128214e}{
+bool \hyperlink{classhdnum_1_1DIRK_aa4b8eff08392d8860fc21a0d4128214e}{get\_\-error} () const }
+\label{classhdnum_1_1DIRK_aa4b8eff08392d8860fc21a0d4128214e}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a669ef1d303de0ca56bf76f5a19d56547}{
+void \hyperlink{classhdnum_1_1DIRK_a669ef1d303de0ca56bf76f5a19d56547}{set\_\-state} (\hyperlink{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1DIRK_a669ef1d303de0ca56bf76f5a19d56547}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a80c4b9b62cde9e0aeed6cc483d2f697f}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1DIRK_a287d241d2d7cc622d8688bd062b73183}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1DIRK_a80c4b9b62cde9e0aeed6cc483d2f697f}{get\_\-state} () const }
+\label{classhdnum_1_1DIRK_a80c4b9b62cde9e0aeed6cc483d2f697f}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_a2291c2a6d41a17beca34aa2015d27047}{
+\hyperlink{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{time\_\-type} \hyperlink{classhdnum_1_1DIRK_a2291c2a6d41a17beca34aa2015d27047}{get\_\-time} () const }
+\label{classhdnum_1_1DIRK_a2291c2a6d41a17beca34aa2015d27047}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_aa5e8c88d9d8643d1d69597ec6acc9a86}{
+\hyperlink{classhdnum_1_1DIRK_a91204fa2e007b5eed35034bfe409037b}{time\_\-type} \hyperlink{classhdnum_1_1DIRK_aa5e8c88d9d8643d1d69597ec6acc9a86}{get\_\-dt} () const }
+\label{classhdnum_1_1DIRK_aa5e8c88d9d8643d1d69597ec6acc9a86}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_aac3e58f4d2aba39e126fc26b4bc209c4}{
+\hyperlink{classhdnum_1_1DIRK_a80ab2ad1360bc6061cea64d7a5ca9d12}{size\_\-type} \hyperlink{classhdnum_1_1DIRK_aac3e58f4d2aba39e126fc26b4bc209c4}{get\_\-order} () const }
+\label{classhdnum_1_1DIRK_aac3e58f4d2aba39e126fc26b4bc209c4}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DIRK_acea50784ed18f24bce76ad0c9a48a4d6}{
+void \hyperlink{classhdnum_1_1DIRK_acea50784ed18f24bce76ad0c9a48a4d6}{get\_\-info} () const }
+\label{classhdnum_1_1DIRK_acea50784ed18f24bce76ad0c9a48a4d6}
+
+\begin{DoxyCompactList}\small\item\em print some information \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M, class S$>$ class hdnum::DIRK$<$ M, S $>$}
+
+Implementation of a general Diagonal Implicit Runge-\/Kutta method. The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \item[{\em S}]nonlinear solver \end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classhdnum_1_1DIRK_a4c6a823702e9e8b885cd4b81be861d51}{
+\index{hdnum::DIRK@{hdnum::DIRK}!DIRK@{DIRK}}
+\index{DIRK@{DIRK}!hdnum::DIRK@{hdnum::DIRK}}
+\subsubsection[{DIRK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class S $>$ {\bf hdnum::DIRK}$<$ M, S $>$::{\bf DIRK} (const M \& {\em model\_\-}, \/  const S \& {\em newton\_\-}, \/  const {\bf ButcherTableau} \& {\em butcher\_\-}, \/  const int {\em order\_\-})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DIRK_a4c6a823702e9e8b885cd4b81be861d51}
+constructor stores reference to the model and requires a butcher tableau \hypertarget{classhdnum_1_1DIRK_ab914c53100346697592513bdae05c668}{
+\index{hdnum::DIRK@{hdnum::DIRK}!DIRK@{DIRK}}
+\index{DIRK@{DIRK}!hdnum::DIRK@{hdnum::DIRK}}
+\subsubsection[{DIRK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class M , class S $>$ {\bf hdnum::DIRK}$<$ M, S $>$::{\bf DIRK} (const M \& {\em model\_\-}, \/  const S \& {\em newton\_\-}, \/  const std::string {\em method})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DIRK_ab914c53100346697592513bdae05c668}
+constructor stores reference to the model and sets the default butcher tableau corresponding to the given order 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

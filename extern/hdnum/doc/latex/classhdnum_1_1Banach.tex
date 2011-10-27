@@ -1,0 +1,71 @@
+\hypertarget{classhdnum_1_1Banach}{
+\section{hdnum::Banach Class Reference}
+\label{classhdnum_1_1Banach}\index{hdnum::Banach@{hdnum::Banach}}
+}
+
+
+Solve nonlinear problem using a fixed point iteration.  
+
+
+
+
+{\ttfamily \#include $<$newton.hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Banach_adf23579a36e22dfd389717f5a285d302}{
+\hyperlink{classhdnum_1_1Banach_adf23579a36e22dfd389717f5a285d302}{Banach} ()}
+\label{classhdnum_1_1Banach_adf23579a36e22dfd389717f5a285d302}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_aaf1b52f0b43c1cc11baeaef4791df405}{
+void \hyperlink{classhdnum_1_1Banach_aaf1b52f0b43c1cc11baeaef4791df405}{set\_\-maxit} (size\_\-type n)}
+\label{classhdnum_1_1Banach_aaf1b52f0b43c1cc11baeaef4791df405}
+
+\begin{DoxyCompactList}\small\item\em maximum number of iterations before giving up \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_a8d484eb07503b30a841633fe79e1606d}{
+void \hyperlink{classhdnum_1_1Banach_a8d484eb07503b30a841633fe79e1606d}{set\_\-sigma} (double sigma\_\-)}
+\label{classhdnum_1_1Banach_a8d484eb07503b30a841633fe79e1606d}
+
+\begin{DoxyCompactList}\small\item\em damping parameter \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_a2f49ae28bb889fb7ccab6ebb61944567}{
+void \hyperlink{classhdnum_1_1Banach_a2f49ae28bb889fb7ccab6ebb61944567}{set\_\-linesearchsteps} (size\_\-type n)}
+\label{classhdnum_1_1Banach_a2f49ae28bb889fb7ccab6ebb61944567}
+
+\begin{DoxyCompactList}\small\item\em maximum number of steps in linesearch before giving up \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_a69eff1faff663dbc479155bc56836545}{
+void \hyperlink{classhdnum_1_1Banach_a69eff1faff663dbc479155bc56836545}{set\_\-verbosity} (size\_\-type n)}
+\label{classhdnum_1_1Banach_a69eff1faff663dbc479155bc56836545}
+
+\begin{DoxyCompactList}\small\item\em control output given 0=nothing, 1=summary, 2=every step, 3=include line search \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_a5d84204834e3d65b7976bcc21d0a7009}{
+void \hyperlink{classhdnum_1_1Banach_a5d84204834e3d65b7976bcc21d0a7009}{set\_\-abslimit} (double l)}
+\label{classhdnum_1_1Banach_a5d84204834e3d65b7976bcc21d0a7009}
+
+\begin{DoxyCompactList}\small\item\em basolute limit for defect \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_adc7268cb87533d95f8947ab32d195fc3}{
+void \hyperlink{classhdnum_1_1Banach_adc7268cb87533d95f8947ab32d195fc3}{set\_\-reduction} (double l)}
+\label{classhdnum_1_1Banach_adc7268cb87533d95f8947ab32d195fc3}
+
+\begin{DoxyCompactList}\small\item\em reduction factor \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_af3cf8e128e03a82fd5a178abb6dfda6e}{
+{\footnotesize template$<$class M $>$ }\\void \hyperlink{classhdnum_1_1Banach_af3cf8e128e03a82fd5a178abb6dfda6e}{solve} (const M \&model, \hyperlink{classhdnum_1_1Vector}{Vector}$<$ typename M::number\_\-type $>$ x) const }
+\label{classhdnum_1_1Banach_af3cf8e128e03a82fd5a178abb6dfda6e}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Banach_aef74a54b1d47ff520a9a68757e3a9f4b}{
+bool {\bfseries has\_\-converged} () const }
+\label{classhdnum_1_1Banach_aef74a54b1d47ff520a9a68757e3a9f4b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solve nonlinear problem using a fixed point iteration. solve F(x) = 0.
+
+x = x -\/ $\ast$F(x) 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{newton_8hh}{newton.hh}\end{DoxyCompactItemize}

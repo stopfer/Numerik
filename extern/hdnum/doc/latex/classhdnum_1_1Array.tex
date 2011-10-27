@@ -1,0 +1,115 @@
+\hypertarget{classhdnum_1_1Array}{
+\section{hdnum::Array$<$ T $>$ Class Template Reference}
+\label{classhdnum_1_1Array}\index{hdnum::Array@{hdnum::Array}}
+}
+
+
+A basic dynamic array class.  
+
+
+
+
+{\ttfamily \#include $<$array.hh$>$}
+
+Inheritance diagram for hdnum::Array$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhdnum_1_1Array}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Array_ae77aae65dae609c72534babc774dd152}{
+typedef T \hyperlink{classhdnum_1_1Array_ae77aae65dae609c72534babc774dd152}{value\_\-type}}
+\label{classhdnum_1_1Array_ae77aae65dae609c72534babc774dd152}
+
+\begin{DoxyCompactList}\small\item\em Remember the storage type. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a5c1db6b52b2f88c3618040f856bdcdbe}{
+typedef \hyperlink{classhdnum_1_1Array_ae77aae65dae609c72534babc774dd152}{value\_\-type} \& \hyperlink{classhdnum_1_1Array_a5c1db6b52b2f88c3618040f856bdcdbe}{reference}}
+\label{classhdnum_1_1Array_a5c1db6b52b2f88c3618040f856bdcdbe}
+
+\begin{DoxyCompactList}\small\item\em Reference to an object. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_ad696c724bcda975ea63492d0786a1509}{
+typedef const \hyperlink{classhdnum_1_1Array_ae77aae65dae609c72534babc774dd152}{value\_\-type} \& \hyperlink{classhdnum_1_1Array_ad696c724bcda975ea63492d0786a1509}{const\_\-reference}}
+\label{classhdnum_1_1Array_ad696c724bcda975ea63492d0786a1509}
+
+\begin{DoxyCompactList}\small\item\em Const reference to an object. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type}}
+\label{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}
+
+\begin{DoxyCompactList}\small\item\em Type used for array indices. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_abb53f0f2fda2009c75602e374de9c0d7}{
+typedef std::ptrdiff\_\-t \hyperlink{classhdnum_1_1Array_abb53f0f2fda2009c75602e374de9c0d7}{difference\_\-type}}
+\label{classhdnum_1_1Array_abb53f0f2fda2009c75602e374de9c0d7}
+
+\begin{DoxyCompactList}\small\item\em Difference type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Array_a8ffcdc4e69b3ddc00d1ec97189436a57}{
+\hyperlink{classhdnum_1_1Array_a8ffcdc4e69b3ddc00d1ec97189436a57}{Array} ()}
+\label{classhdnum_1_1Array_a8ffcdc4e69b3ddc00d1ec97189436a57}
+
+\begin{DoxyCompactList}\small\item\em make empty array \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_afa6e185e6b30e1ba0aeecfd86b5997f1}{
+\hyperlink{classhdnum_1_1Array_afa6e185e6b30e1ba0aeecfd86b5997f1}{Array} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} \_\-n)}
+\label{classhdnum_1_1Array_afa6e185e6b30e1ba0aeecfd86b5997f1}
+
+\begin{DoxyCompactList}\small\item\em make array with \_\-n uninitialized components \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_ad7c595fddcdf74a8c768fdb3b63b6365}{
+\hyperlink{classhdnum_1_1Array_ad7c595fddcdf74a8c768fdb3b63b6365}{Array} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} \_\-n, const T \&\_\-t)}
+\label{classhdnum_1_1Array_ad7c595fddcdf74a8c768fdb3b63b6365}
+
+\begin{DoxyCompactList}\small\item\em make array with \_\-n initialized components \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a2f537b09e173003db9ef8ab0aa7d465c}{
+\hyperlink{classhdnum_1_1Array_a2f537b09e173003db9ef8ab0aa7d465c}{Array} (const \hyperlink{classhdnum_1_1Array}{Array} \&a)}
+\label{classhdnum_1_1Array_a2f537b09e173003db9ef8ab0aa7d465c}
+
+\begin{DoxyCompactList}\small\item\em copy constructor \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_aafee3af74a03d909efa743e39360404c}{
+\hyperlink{classhdnum_1_1Array_aafee3af74a03d909efa743e39360404c}{$\sim$Array} ()}
+\label{classhdnum_1_1Array_aafee3af74a03d909efa743e39360404c}
+
+\begin{DoxyCompactList}\small\item\em destructor, free dynamic memory \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a679e7d3d3c66cc782c4df0ddfc296d4b}{
+void \hyperlink{classhdnum_1_1Array_a679e7d3d3c66cc782c4df0ddfc296d4b}{resize} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} \_\-n)}
+\label{classhdnum_1_1Array_a679e7d3d3c66cc782c4df0ddfc296d4b}
+
+\begin{DoxyCompactList}\small\item\em reallocate array to given size, any data is lost \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_ab4b22e49884d00f15dde1a23df4e49a5}{
+void \hyperlink{classhdnum_1_1Array_ab4b22e49884d00f15dde1a23df4e49a5}{resize} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} \_\-n, const T \&\_\-t)}
+\label{classhdnum_1_1Array_ab4b22e49884d00f15dde1a23df4e49a5}
+
+\begin{DoxyCompactList}\small\item\em reallocate array to given size, any data is lost \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a589a19fffbd07a8df9cc0b2cfe93a02a}{
+\hyperlink{classhdnum_1_1Array}{Array} \& \hyperlink{classhdnum_1_1Array_a589a19fffbd07a8df9cc0b2cfe93a02a}{operator=} (const \hyperlink{classhdnum_1_1Array}{Array} \&a)}
+\label{classhdnum_1_1Array_a589a19fffbd07a8df9cc0b2cfe93a02a}
+
+\begin{DoxyCompactList}\small\item\em assignment \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a7992391716779fd343977f6921df9e87}{
+\hyperlink{classhdnum_1_1Array_a5c1db6b52b2f88c3618040f856bdcdbe}{reference} \hyperlink{classhdnum_1_1Array_a7992391716779fd343977f6921df9e87}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} i)}
+\label{classhdnum_1_1Array_a7992391716779fd343977f6921df9e87}
+
+\begin{DoxyCompactList}\small\item\em Component access. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a3101409df7b6f3970e3da5a2e57e297d}{
+\hyperlink{classhdnum_1_1Array_ad696c724bcda975ea63492d0786a1509}{const\_\-reference} \hyperlink{classhdnum_1_1Array_a3101409df7b6f3970e3da5a2e57e297d}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} i) const }
+\label{classhdnum_1_1Array_a3101409df7b6f3970e3da5a2e57e297d}
+
+\begin{DoxyCompactList}\small\item\em Const component access. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Array_a2362d0867e391b80f0f81c1754b0c81e}{
+\hyperlink{classhdnum_1_1Array_a52bad04c045624e4240073f8efb2e8e1}{size\_\-type} \hyperlink{classhdnum_1_1Array_a2362d0867e391b80f0f81c1754b0c81e}{size} () const }
+\label{classhdnum_1_1Array_a2362d0867e391b80f0f81c1754b0c81e}
+
+\begin{DoxyCompactList}\small\item\em get array size \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class hdnum::Array$<$ T $>$}
+
+A basic dynamic array class. Provides a dyamically allocated array with access operator, resizing and size method. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{array_8hh}{array.hh}\end{DoxyCompactItemize}

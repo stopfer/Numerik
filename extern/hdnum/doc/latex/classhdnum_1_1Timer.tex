@@ -1,0 +1,43 @@
+\hypertarget{classhdnum_1_1Timer}{
+\section{hdnum::Timer Class Reference}
+\label{classhdnum_1_1Timer}\index{hdnum::Timer@{hdnum::Timer}}
+}
+
+
+A simple stop watch.  
+
+
+
+
+{\ttfamily \#include $<$timer.hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Timer_aa21efdb01cfd44867a39d6321764f368}{
+\hyperlink{classhdnum_1_1Timer_aa21efdb01cfd44867a39d6321764f368}{Timer} ()  throw (TimerError)}
+\label{classhdnum_1_1Timer_aa21efdb01cfd44867a39d6321764f368}
+
+\begin{DoxyCompactList}\small\item\em A new timer, start immediately. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Timer_ad9169c761853bd68249ce1a5d4af1511}{
+void \hyperlink{classhdnum_1_1Timer_ad9169c761853bd68249ce1a5d4af1511}{reset} ()  throw (TimerError)}
+\label{classhdnum_1_1Timer_ad9169c761853bd68249ce1a5d4af1511}
+
+\begin{DoxyCompactList}\small\item\em Reset timer. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Timer_adc1329694ff6a7bea6e05929ca9e3736}{
+double \hyperlink{classhdnum_1_1Timer_adc1329694ff6a7bea6e05929ca9e3736}{elapsed} () const   throw (TimerError)}
+\label{classhdnum_1_1Timer_adc1329694ff6a7bea6e05929ca9e3736}
+
+\begin{DoxyCompactList}\small\item\em Get elapsed user-\/time in seconds. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple stop watch. This class reports the elapsed user-\/time, i.e. time spent computing, after the last call to \hyperlink{classhdnum_1_1Timer_ad9169c761853bd68249ce1a5d4af1511}{Timer::reset()}. The results are seconds and fractional seconds. Note that the resolution of the timing depends on your OS kernel which should be somewhere in the milisecond range.
+
+The class is basically a wrapper for the libc-\/function getrusage()
+
+Taken from the DUNE project www.dune-\/project.org 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{timer_8hh}{timer.hh}\end{DoxyCompactItemize}

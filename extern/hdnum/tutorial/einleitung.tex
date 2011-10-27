@@ -1,0 +1,83 @@
+\section{Einführung}
+
+\mode<presentation>{
+  \begin{frame}<presentation> \frametitle{Inhalt}
+    \tableofcontents[currentsection,sectionstyle=show/hide,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\begin{frame}
+\frametitle{Was ist HDNUM}
+\begin{itemize}
+\item HDNUM ist eine kleine Sammlung von C++ Klassen, die die
+  Implementierung numerischer Algorithmen aus der Vorlesung
+  erleichtern soll.
+
+\item Die aktuelle Version gibt es unter 
+\end{itemize}
+
+\begin{center}
+  {\small\url{http://conan.iwr.uni-heidelberg.de/teaching/numerik1_ws2011/}}
+\end{center}
+
+\begin{itemize}
+\item Einige Ziele bei der Entwicklung von HDNUM waren:
+\begin{itemize}
+\item Einfache Installation: Es mur nur eine Header-Datei eingebunden werden.
+\item Einfache Benutzung der Klassen: Z.B. keine dynamische
+  Speicherverwaltung.
+\item Möglichkeit der Rechnung mit verschiedenen Zahl-Datentypen.
+\item Effiziente Realisierung der Verfahren möglich:
+  Z.B. Block-Algorithmen in der linearen Algebra.
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Installation}
+\begin{itemize}
+\item Datei \lstinline{hdnum-x.yy.tgz} (komprimiertes tar archive)
+  herunterladen.
+\item Archiv mit \lstinline{tar zxf hdnum-x.yy.tgz} entpacken.
+\item Das Verzeichnis enthält unter anderem:
+\begin{itemize}
+\item Das Verzeichnis \lstinline{src} mit dem Quellcode der Klassen
+  (muss Sie nicht interessieren).
+\item Das Verzeichnis \lstinline{examples} mit den Beispielanwendungen
+  (die sollten Sie sich ansehen).
+\item Das Verzeichnis \lstinline{tutorial}: Quelle für dieses Dokument.
+\item Die Datei \lstinline{hdnum.hh}, die zentrale Header-Datei, die
+  in alle Anwendungen eingebunden werden muss.
+\end{itemize}
+\item Das Verzeichnis \lstinline{hdnum/examples} enthält ein simples
+  Makefile zum Übersetzen der Programme.
+\item Die Beispiele erfordern die Installation der GNU
+  multiprecision library \url{http://gmplib.org/}. Ist diese nicht
+  vorhanden müssen Makefiles entsprechend angepasst werden.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Typisches HDNUM Programm}
+
+\lstinputlisting[basicstyle=\ttfamily\scriptsize,numbers=left, 
+numberstyle=\tiny, numbersep=5pt]{../examples/hallohdnum.cc}
+
+\begin{itemize}
+\item Übersetzen im Verzeichnis \lstinline{examples} mit GMP installiert:
+
+{\footnotesize\lstinline{g++ -I.. -o hallohdnum hallohdnum.cc -lm -lgmpxx -lgmp}}
+\item und ohne GMP:
+
+{\footnotesize\lstinline{g++ -I.. -o hallohdnum hallohdnum.cc -lm}}
+\item oder einfach
+
+{\footnotesize\lstinline{make}}
+\item oder falls kein GMP installiert ist
+
+{\footnotesize\lstinline{make nogmp}}
+\end{itemize}
+\end{frame}
+

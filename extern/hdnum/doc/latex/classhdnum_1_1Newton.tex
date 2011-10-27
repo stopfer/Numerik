@@ -1,0 +1,64 @@
+\hypertarget{classhdnum_1_1Newton}{
+\section{hdnum::Newton Class Reference}
+\label{classhdnum_1_1Newton}\index{hdnum::Newton@{hdnum::Newton}}
+}
+
+
+Solve nonlinear problem using a damped \hyperlink{classhdnum_1_1Newton}{Newton} method.  
+
+
+
+
+{\ttfamily \#include $<$newton.hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Newton_aee062778e7fed23339a63ca5695e5a45}{
+\hyperlink{classhdnum_1_1Newton_aee062778e7fed23339a63ca5695e5a45}{Newton} ()}
+\label{classhdnum_1_1Newton_aee062778e7fed23339a63ca5695e5a45}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_a98bf335f10122b8199cd84c2d00b463e}{
+void \hyperlink{classhdnum_1_1Newton_a98bf335f10122b8199cd84c2d00b463e}{set\_\-maxit} (size\_\-type n)}
+\label{classhdnum_1_1Newton_a98bf335f10122b8199cd84c2d00b463e}
+
+\begin{DoxyCompactList}\small\item\em maximum number of iterations before giving up \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_a5f68ee3f5e2143b0c4f645ee9e42cdc3}{
+void \hyperlink{classhdnum_1_1Newton_a5f68ee3f5e2143b0c4f645ee9e42cdc3}{set\_\-linesearchsteps} (size\_\-type n)}
+\label{classhdnum_1_1Newton_a5f68ee3f5e2143b0c4f645ee9e42cdc3}
+
+\begin{DoxyCompactList}\small\item\em maximum number of steps in linesearch before giving up \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_a5d2e9decea2d4e71dc2d0a266c2e0010}{
+void \hyperlink{classhdnum_1_1Newton_a5d2e9decea2d4e71dc2d0a266c2e0010}{set\_\-verbosity} (size\_\-type n)}
+\label{classhdnum_1_1Newton_a5d2e9decea2d4e71dc2d0a266c2e0010}
+
+\begin{DoxyCompactList}\small\item\em control output given 0=nothing, 1=summary, 2=every step, 3=include line search \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_a4da35666f8794067a3ca84f1fea895f0}{
+void \hyperlink{classhdnum_1_1Newton_a4da35666f8794067a3ca84f1fea895f0}{set\_\-abslimit} (double l)}
+\label{classhdnum_1_1Newton_a4da35666f8794067a3ca84f1fea895f0}
+
+\begin{DoxyCompactList}\small\item\em basolute limit for defect \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_ac28cbdace309a823ddc62b6ed929dadc}{
+void \hyperlink{classhdnum_1_1Newton_ac28cbdace309a823ddc62b6ed929dadc}{set\_\-reduction} (double l)}
+\label{classhdnum_1_1Newton_ac28cbdace309a823ddc62b6ed929dadc}
+
+\begin{DoxyCompactList}\small\item\em reduction factor \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_ab4f4df87fbf938cf186530408bfab2b3}{
+{\footnotesize template$<$class M $>$ }\\void \hyperlink{classhdnum_1_1Newton_ab4f4df87fbf938cf186530408bfab2b3}{solve} (const M \&model, \hyperlink{classhdnum_1_1Vector}{Vector}$<$ typename M::number\_\-type $>$ \&x) const }
+\label{classhdnum_1_1Newton_ab4f4df87fbf938cf186530408bfab2b3}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Newton_a2f133f417aa9b71ad92d72d6935401fa}{
+bool {\bfseries has\_\-converged} () const }
+\label{classhdnum_1_1Newton_a2f133f417aa9b71ad92d72d6935401fa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Solve nonlinear problem using a damped \hyperlink{classhdnum_1_1Newton}{Newton} method. The \hyperlink{classhdnum_1_1Newton}{Newton} solver is parametrized by a model. The model also exports all relevant types for types. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{newton_8hh}{newton.hh}\end{DoxyCompactItemize}

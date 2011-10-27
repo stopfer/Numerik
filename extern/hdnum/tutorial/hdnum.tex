@@ -1,0 +1,288 @@
+\subsection{Vektoren}
+
+\begin{frame}[fragile]
+\frametitle{\lstinline{Vector<T>}}
+\begin{itemize}
+\item \lstinline{Vector<T>} ist ein Klassen-Template.
+\item Es macht aus einem beliebigen (Zahl-)Datentypen \lstinline{T}
+  einen Vektor. 
+\item Auch komplexe und hochgenaue Zahlen sind möglich.  
+\item Vektoren verhalten sich so wie man es aus der Mathematik kennt:
+\begin{itemize}
+\item Bestehen aus $n$ Komponenten.
+\item Diese sind von $0$ bis $n-1$ (!) durchnummeriert.
+\item Addition und Multiplikation mit Skalar.
+\item Skalarprodukt und Norm (noch nicht implementiert).
+\item Matrix-Vektor-Multiplikation
+\end{itemize}
+\item Die folgenden Beispiele findet man in \lstinline{vektoren.cc}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Konstruktion und Zugriff}
+\begin{itemize}
+\item Konstruktion mit und ohne Initialisierung\\
+{\footnotesize{\begin{lstlisting}{}
+Vector<float> x(10);        // Vektor mit 10 Elementen
+Vector<double> y(10,3.14);  // 10 Elemente initialisiert
+Vector<float> a;            // ein leerer Vektor
+\end{lstlisting}}}
+\item Speziellere Vektoren\\
+{\footnotesize{\begin{lstlisting}{}
+Vector<std::complex<double> > 
+  cx(7,std::complex<double>(1.0,3.0));
+mpf_set_default_prec(1024); // Setze Genauigkeit für mpf_class
+Vector<mpf_class> mx(7,mpf_class("4.44"));
+\end{lstlisting}}}
+\item Zugriff auf Element\\
+{\footnotesize{\begin{lstlisting}{}
+for (std::size_t i=0; i<x.size(); i=i+1)
+  x[i] = i;                 // Zugriff auf Elemente 
+\end{lstlisting}}}
+\item Vektorobjekt wird am Ende des umgebenden Blockes gelöscht.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Kopie und Zuweisung}
+\begin{itemize}
+\item Copy-Konstruktor und Zuweisung haben \textbf{Referenzsemantik}!
+{\footnotesize{\begin{lstlisting}{}
+Vector<float> z(x); // Kopie ist eine Referenz auf gleiche Daten
+z[2] = 1.24;        // hat den gleichen Effekt wie x[2] = 1.24 !
+
+a = z;              // a referenziert die Daten von z
+a[2] = -0.33;       // ändert auch z[2] und x[2];
+a = 5.4;            // Zuweisung an alle Elemente
+\end{lstlisting}}}
+\item Erstellen einer echten Kopie\\
+{\footnotesize{\begin{lstlisting}{}
+Vector<float> b(copy(a)); // b ist echte Kopie von a,x,z
+a = copy(x);              // a hält echte Kopie der Daten von x
+\end{lstlisting}}}
+\item Ausschnitte von Vektoren\\
+{\footnotesize{\begin{lstlisting}{}
+Vector<float> w(x.sub(7,3));// w referenziert x[7],...,x[9] 
+z = x.sub(3,4);             // z referenziert x[3],...,x[6]
+\end{lstlisting}}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Rechnen und Ausgabe}
+\begin{itemize}
+\item Vektorraumoperationen und Skalarprodukt\\
+{\footnotesize{\begin{lstlisting}{}
+w += z;            // w = w+z
+w -= z;            // w = w-z
+w *= 1.23;         // skalare Multiplikation
+w /= 1.23;         // skalare Division
+w.update(1.23,z);  // w = w + a*z
+float s;
+s = w*z;           // Skalarprodukt
+\end{lstlisting}}}
+\item Ausgabe auf die Konsole\\
+{\footnotesize{\begin{lstlisting}{}
+std::cout << w << std::endl;// schöne Ausgabe
+w.iwidth(2);                // Stellen in Indexausgabe
+w.width(20);                // Anzahl Stellen gesamt
+w.precision(16);            // Anzahl Nachkommastellen
+std::cout << w << std::endl;// nun mit mehr Stellen
+std::cout <<cx << std::endl;// geht auch für complex
+std::cout <<mx << std::endl;// geht auch für mpf_class
+\end{lstlisting}}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beispielausgabe}
+{\footnotesize{\begin{lstlisting}{}
+[   0]    1.204200e+01
+[   1]    1.204200e+01
+[   2]    1.204200e+01
+[   3]    1.204200e+01
+
+[ 0] 1.2042000770568848e+01
+[ 1] 1.2042000770568848e+01
+[ 2] 1.2042000770568848e+01
+[ 3] 1.2042000770568848e+01
+\end{lstlisting}}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Hilfsfunktionen}
+{\footnotesize{\begin{lstlisting}{}
+zero(w);                    // das selbe wie w=0.0
+fill(w,(float)1.0);         // das selbe wie w=1.0
+fill(w,(float)0.0,(float)0.1); // w[0]=0, w[1]=0.1, w[2]=0.2, ...
+unitvector(w,2);            // kartesischer Einheitsvektor
+gnuplot("test.dat",w);      // gnuplot Ausgabe: i w[i]
+gnuplot("test2.dat",w,z);   // gnuplot Ausgabe: w[i] z[i]
+\end{lstlisting}}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funktionen}
+\begin{itemize}
+\item Beispiel: Summe aller Komponenten\\
+{\footnotesize{\begin{lstlisting}{}
+double sum (Vector<double> x) {
+  double s(0.0);
+  for (std::size_t i=0; i<x.size(); i=i+1)
+    s = s + x[i];
+  return s;
+}
+\end{lstlisting}}}
+\item Mit \textbf{Funktionentemplate}:\\
+{\footnotesize{\begin{lstlisting}{}
+template<class T>
+T sum (Vector<T> x) {
+  T s(0.0);
+  for (std::size_t i=0; i<x.size(); i=i+1)
+    s = s + x[i];
+  return s;
+}
+\end{lstlisting}}}
+\item \textbf{Vorsicht}: Call-by-value erzeugt \textbf{keine} Kopie!
+\end{itemize}
+\end{frame}
+
+\subsection{Matrizen}
+
+\begin{frame}[fragile]
+\frametitle{\lstinline{Matrix<T>}}
+\begin{itemize}
+\item \lstinline{Matrix<T>} ist ein Klassen-Template.
+\item Es macht aus einem beliebigen (Zahl-)Datentypen \lstinline{T}
+  eine Matrix. 
+\item Auch komplexe und hochgenaue Zahlen sind möglich.  
+\item Matrizen verhalten sich so wie man es aus der Mathematik kennt:
+\begin{itemize}
+\item Bestehen aus $m\times n$ Komponenten.
+\item Diese sind von $0$ bis $m-1$ bzw. $n-1$ (!) durchnummeriert.
+\item $m\times n$-Matrizen bilden einen Vektorraum.
+\item Matrix-Vektor und Matrizenmultiplikation.
+\end{itemize}
+\item Die folgenden Beispiele findet man in \lstinline{matrizen.cc}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Konstruktion und Zugriff}
+\begin{itemize}
+\item Konstruktion mit und ohne Initialisierung\\
+{\footnotesize{\begin{lstlisting}{}
+Matrix<float> A;            // leere Matrix mit Größe 0x0
+Matrix<float> B(10,10);     // 10x10 Matrix uninitialisiert
+Matrix<float> C(10,10,0.0); // 10x10 Matrix initialisiert
+\end{lstlisting}}}
+\item Zugriff auf Elemente\\
+{\footnotesize{\begin{lstlisting}{}
+for (int i=0; i<B.rowsize(); ++i)
+  for (int j=0; j<B.colsize(); ++j)
+    B[i][j] = 0.0;          // jetzt ist B initialisiert
+\end{lstlisting}}}
+\item Matrixobjekt wird am Ende des umgebenden Blockes gelöscht.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Kopie und Zuweisung}
+\begin{itemize}
+\item Copy-Konstruktor und Zuweisung haben \textbf{Referenzsemantik}!
+{\footnotesize{\begin{lstlisting}{}
+Matrix<float> D(B); // D identisch mit B! Keine Kopie
+A = D;              // A ist nun identisch mit D!
+A[0][0] = 3.14;     // ändert auch B[0][0], D[0][0]
+\end{lstlisting}}}
+\item Erstellen einer echten Kopie\\
+{\footnotesize{\begin{lstlisting}{}
+Matrix<float> E(copy(B)); // E ist echte Kopie
+A = copy(B);              // und auch A
+\end{lstlisting}}}
+\item Ausschnitte von Matrizen (Untermatrizen)\\
+{\footnotesize{\begin{lstlisting}{}
+Matrix<float> F(A.sub(1,2,3,4));// 3x4 Mat ab (1,2)
+\end{lstlisting}}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Rechnen mit Matrizen}
+\begin{itemize}
+\item Vektorraumoperationen\\
+{\footnotesize{\begin{lstlisting}{}
+A += B;           // A = A+B
+A -= B;           // A = A-B
+A *= 1.23;        // Multiplikation mit Skalar
+A /= 1.23;        // Division durch Skalar
+A.update(1.23,B); // A = A + s*B
+\end{lstlisting}}}
+\item Matrix-Vektor und Matrizenmultiplikation\\
+{\footnotesize{\begin{lstlisting}{}
+Vector<float> x(10,1.0); // make two vectors
+Vector<float> y(10,2.0);
+A.mv(y,x);               // y = A*x
+A.umv(y,x);              // y = y + A*x
+A.umv(y,(float)-1.0,x);  // y = y + s*A*x
+C.mm(A,B);               // C = A*B
+C.umm(A,B);              // C = C + A*B
+\end{lstlisting}}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Ausgabe und Hilfsfunktionen}
+\begin{itemize}
+\item Ausgabe von Matrizen\\
+{\footnotesize{\begin{lstlisting}{}
+std::cout << A.sub(0,0,3,3) << std::endl;// schöne Ausgabe
+A.iwidth(2);                // Stellen in Indexausgabe
+A.width(10);                // Anzahl Stellen gesamt
+A.precision(4);             // Anzahl Nachkommastellen
+std::cout << A << std::endl;// nun mit mehr Stellen
+\end{lstlisting}}}
+\item einige Hilfsfunktionen
+{\footnotesize{\begin{lstlisting}{}
+identity(A);
+spd(A);
+fill(x,(float)1,(float)1);
+vandermonde(A,x);
+\end{lstlisting}}}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beispielausgabe}
+{\footnotesize{\begin{lstlisting}{}
+               0           1           2           3 
+  0   4.0000e+00 -1.0000e+00 -2.5000e-01 -1.1111e-01 
+  1  -1.0000e+00  4.0000e+00 -1.0000e+00 -2.5000e-01 
+  2  -2.5000e-01 -1.0000e+00  4.0000e+00 -1.0000e+00 
+  3  -1.1111e-01 -2.5000e-01 -1.0000e+00  4.0000e+00 
+\end{lstlisting}}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Funktion mit Matrixargument}
+Beispiel einer Funktion, die eine Matrix $A$ und einen Vektor $b$
+initialisiert. 
+
+{\footnotesize{\begin{lstlisting}{}
+template<class T>
+void initialize (Matrix<T> A, Vector<T> b)
+{
+  if (A.rowsize()!=A.colsize() || A.rowsize()==0) 
+    HDNUM_ERROR("need square and nonempty matrix");
+  if (A.rowsize()!=b.size())
+    HDNUM_ERROR("b must have same size as A");
+  for (int i=0; i<A.rowsize(); ++i)
+    {
+      b[i] = 1.0;
+      for (int j=0; j<A.colsize(); ++j)
+        if (j<=i) A[i][j]=1.0; else A[i][j]=0.0;
+    }
+}
+\end{lstlisting}}}
+\end{frame}

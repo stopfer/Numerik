@@ -1,0 +1,182 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[10pt,oneside,a4paper]{scrartcl}
+
+%Einstellungen der Seitenränder
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}
+
+%neue Rechtschreibung
+\usepackage{ngerman}
+
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%ermöglicht Text ein- / auszublenden
+\usepackage{comment}
+
+%\includecomment{Vortrag}
+\excludecomment{Vortrag}
+
+%to do
+\usepackage{todonotes}
+
+%Mathesachen
+\usepackage{amsmath}
+
+%Zeichnen
+\usepackage{tikz}
+
+%ermöglicht, Abbildung nicht zu benennen
+\usepackage{caption}
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+
+\begin{document}
+	%\title{Strukturen großer Netzwerke}
+	%\author{Kathrin Ronellenfitsch}
+	%\maketitle
+
+	\begin{center}
+		\huge % Schriftgröße einstellen
+		\bfseries % Fettdruck einschalten
+		\sffamily % Serifenlose Schrift
+		Numerik Blatt 1\\[1em]
+	\end{center}
+
+	
+	\section*{Aufgabe 1}
+
+	\subsection*{1.2}
+
+	\begin{equation*}
+		\alpha = \frac{1}{\log(2)}\log \left( \left|\frac{a(h)-a}{a(h/2)-a}\right| \right)\\
+	\end{equation*}
+
+	\begin{align*}
+		\text {Für die Funktion } a(h) \text { ist } \alpha &= 0,97945814541457965476281482566687 \text { für } h = 2^{-1} \\
+		\alpha &= 0,99650129714686439500725871826916 \text { für } h = 2^{-2}\\
+		\alpha &=1,0122954612465577835350916427437 \text { für } h = 2^{-3}\\
+		\alpha &=1,0349719537012195623351823080027 \text { für } h = 2^{-4}\\
+		\alpha &=1,0778395991421372118765685735054 \text { für } h = 2^{-5}
+	\end{align*}
+
+	\begin{align*}
+ 		\text{ Für die Funktion } b(h) \text { ist } \alpha &= 1,9276661079397713256862345483521 \text { für } h = 2^{-1} \\
+		\alpha &=1,9859616431746979817126184821811 \text { für } h = 2^{-2} \\
+		\alpha &=2,0000427011314665582530341699186 \text { für } h = 2^{-3} \\
+		\alpha &=2,0153154176936988493579676056588 \text { für } h = 2^{-4} \\
+		\alpha &=2,071233030595396752950228994114 \text { für } h = 2^{-5}
+ 	\end{align*}
+
+
+
+
+
+	\section*{Aufgabe 2}
+
+	\subsection*{2.1}
+
+	\begin{equation*}	
+		p(t_{0}) =\frac {ap_0} {bp_0+ (a-bp_0)e^{-a(t_{0}-t_0)} } = 
+				\frac {ap_0} {bp_0+ (a-bp_0)e^0 } = 
+				\frac {ap_0} {bp_0+ a-bp_0} =
+				\frac {ap_0} {a } = p_0 
+	\end{equation*}
+
+	\begin{equation*}
+		p(t)  =\frac {ap_0} {bp_0+ (a-bp_0)e^{-a(t-t_0)} } =
+			 ap_{0} (bp_0+ (a-bp_0)e^{-a(t + t_0) })^{-1} 
+	\end{equation*}
+
+	\begin{align*}
+		\frac{d}{dt}p(t) & =
+			 ap_{0}(-1) (bp_0+( a -bp_0)e^{-a(t + t_0) })^{-2}
+			 (- a)(a-bp_0)e^{-a(t + t_0) }\\
+			 & =\frac {a^{2}p_0(a-bp_0)e^{-a(t + t_0)}} {(bp_0+( a -bp_0)e^{a(t 				- at_0) })^{2}}
+			 =\frac {a^{2}p_0bp_0 + a^{2}p_0(a-bp_0)e^{-a(t + t_0)} - 		 			a^{2}p_0bp_0} {(bp_0+( a -bp_0)e^{a(t- t_0) })^{2}}\\
+			& = \frac {a^{2}p_0(bp_0 + (a-bp_0)e^{-a(t + t_0)}}
+			 {(bp_0+( a -bp_0)e^{a(t- t_0) })^{2}} - 
+				\frac {ba^{2}p_{0}^2} {(bp_0+( a -bp_0)e^{a(t- t_0) })^{2}}\\
+			& =a \frac {ap_0} {(bp_0+( a -bp_0)e^{a(t- t_0) })} - 
+				b\left(\frac {ap_{0}} {(bp_0+( a -bp_0)e^{a(t- t_0) })}\right)^2\\
+			& = ap(t)-bp(t)^2
+	\end{align*}
+
+	\subsection*{2.2}
+
+	\begin{equation*}
+		\frac{d}{dt}p(t) = bp(t)^2- ap(t)
+	\end{equation*}
+
+	$ \frac{d}{dt}p(t) $ beschreibt den Anstieg bzw. den Abfall der Anzahl der Bevölkerung.\\
+	Die Spezies ist gefährdet, wenn die Anzahl der Population ab einem bestimmten Zeitpunkt $ t_0 $ dauerhaft fallend ist, wenn also gilt,\\
+	dass $ p(t) $ streng monoton fallend ist, d.h.
+		\begin{equation*}
+			\frac{d}{dt}p(t) < 0 \text{ für alle } t>t_0\Leftrightarrow
+		\end{equation*}
+
+		\begin{equation*}
+			bp(t)^2- ap(t) < 0 \Leftrightarrow bp(t)^2 <  ap(t) \Leftrightarrow bp(t) < a \Leftrightarrow p(t) < \frac{a}{b}
+		\end{equation*}
+	(man kann davon ausgehen, dass $p(t) > 0$ ist und man somit durch $p(t)$ teilen kann, denn ansonsten wäre die Population ja schon ausgestorben)
+		
+
+	\section*{Aufgabe 3}
+
+	\subsection*{3.1}
+
+	\begin{align*}
+		u(t) & = \sum\limits_{i=1}^{n} \zeta_{i}e^{\alpha_{i}t} \quad  \Rightarrow \\
+		u'(t) & =  \sum\limits_{i=1}^{n} \alpha_{i}\zeta_{i}e^{\alpha_{i}t}
+	\end{align*}
+
+
+	\subsection*{3.2}
+
+	\begin{equation*}
+		x'(t) = \begin{pmatrix}
+				5 & -2 \\
+				-2 & 5 
+			\end{pmatrix} x(t), \qquad x(0) = \begin{pmatrix}
+										1 \\
+										3 
+									\end{pmatrix} 
+	\end{equation*}
+
+	\begin{equation*}
+		\text {Nach Aufgabe 3.1 ist}\ x(t)\  \text {von der Form}  \sum\limits_{i=1}^{n} \zeta_{i}e^{\alpha_{i}t}.\\
+		\text {Da}\ x(0)  =\begin{pmatrix}
+						1 \\
+						3 
+					\end{pmatrix} \text {ist, gilt} 
+					\begin{pmatrix}
+						1 \\
+						3 
+					\end{pmatrix} =  \sum\limits_{i=1}^{2} \zeta_{i}e^{\alpha_{i}\cdot0} = \zeta_1 + \zeta_2 \quad \text{und es gilt}
+	\end{equation*}
+
+	\begin{equation*}
+		 x'(0) = \begin{pmatrix}
+				5 & -2 \\
+				-2 & 5 
+				\end{pmatrix}\begin{pmatrix}
+							1 \\
+							3 
+						\end{pmatrix} = \begin{pmatrix}
+									-1 \\
+									13 
+								\end{pmatrix} = 
+		 \sum\limits_{i=1}^{2} \alpha_{i}\zeta_{i}e^{\alpha_{i}\cdot0} = 
+		\alpha_1\zeta_1 +\alpha_2 \zeta_2
+	\end{equation*}
+	
+
+\end{document}

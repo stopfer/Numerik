@@ -1,0 +1,27 @@
+\hypertarget{countingptr_8hh}{
+\section{src/countingptr.hh File Reference}
+\label{countingptr_8hh}\index{src/countingptr.hh@{src/countingptr.hh}}
+}
+
+
+This file implements a counting pointer with configurable memory management policy Adapted from dune-\/pdelab.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhdnum_1_1NondeletingMemoryManagementPolicy}{hdnum::NondeletingMemoryManagementPolicy}
+\begin{DoxyCompactList}\small\item\em Don't delete target if reference count reaches zero. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1DeletingMemoryManagementPolicy}{hdnum::DeletingMemoryManagementPolicy}
+\begin{DoxyCompactList}\small\item\em Delete target if reference count reaches zero. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1CP}{hdnum::CP$<$ T, P $>$}
+\begin{DoxyCompactList}\small\item\em Pointer with a reference count in the pointed-\/to object. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1CountableException}{hdnum::CountableException}
+\item 
+class \hyperlink{classhdnum_1_1Countable}{hdnum::Countable}
+\begin{DoxyCompactList}\small\item\em Base class for object pointed to by \hyperlink{classhdnum_1_1CP}{CP}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements a counting pointer with configurable memory management policy Adapted from dune-\/pdelab. 

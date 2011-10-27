@@ -1,0 +1,75 @@
+\hypertarget{lr_8hh}{
+\section{src/lr.hh File Reference}
+\label{lr_8hh}\index{src/lr.hh@{src/lr.hh}}
+}
+
+
+This file implements a generic and dynamic vector class.  
+
+
+{\ttfamily \#include \char`\"{}vector.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}matrix.hh\char`\"{}}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$iomanip$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include \char`\"{}countingptr.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}array.hh\char`\"{}}\par
+{\ttfamily \#include $<$sstream$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacehdnum_aa6579c01f220999e670f956774bd85c7}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_aa6579c01f220999e670f956774bd85c7}{hdnum::lr} (Matrix$<$ T $>$ \&A, Array$<$ std::size\_\-t $>$ \&p)}
+\label{namespacehdnum_aa6579c01f220999e670f956774bd85c7}
+
+\begin{DoxyCompactList}\small\item\em compute lr decomposition of A with first nonzero pivoting \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a9ab161adff3c1341fcf1cffb6b503a3a}{
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{namespacehdnum_a9ab161adff3c1341fcf1cffb6b503a3a}{hdnum::abs} (const T \&t)}
+\label{namespacehdnum_a9ab161adff3c1341fcf1cffb6b503a3a}
+
+\begin{DoxyCompactList}\small\item\em our own abs class that works also for multiprecision types \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a1ddad586daab7c3757cb7049a9330f30}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a1ddad586daab7c3757cb7049a9330f30}{hdnum::lr\_\-partialpivot} (Matrix$<$ T $>$ \&A, Array$<$ std::size\_\-t $>$ \&p)}
+\label{namespacehdnum_a1ddad586daab7c3757cb7049a9330f30}
+
+\begin{DoxyCompactList}\small\item\em lr decomposition of A with column pivoting \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a18307e1ea7ffb87dff8628ccbf723545}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a18307e1ea7ffb87dff8628ccbf723545}{hdnum::lr\_\-fullpivot} (Matrix$<$ T $>$ \&A, Array$<$ std::size\_\-t $>$ \&p, Array$<$ std::size\_\-t $>$ \&q)}
+\label{namespacehdnum_a18307e1ea7ffb87dff8628ccbf723545}
+
+\begin{DoxyCompactList}\small\item\em lr decomposition of A with full pivoting \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_afebc7f6525181712ff86cf82b21200e3}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_afebc7f6525181712ff86cf82b21200e3}{hdnum::permute\_\-forward} (const Array$<$ std::size\_\-t $>$ \&p, Vector$<$ T $>$ \&b)}
+\label{namespacehdnum_afebc7f6525181712ff86cf82b21200e3}
+
+\begin{DoxyCompactList}\small\item\em apply permutations to a right hand side vector \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_ad7a4d91e943ea48de3d44d83649b118a}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_ad7a4d91e943ea48de3d44d83649b118a}{hdnum::permute\_\-backward} (const Array$<$ std::size\_\-t $>$ \&q, Vector$<$ T $>$ \&z)}
+\label{namespacehdnum_ad7a4d91e943ea48de3d44d83649b118a}
+
+\begin{DoxyCompactList}\small\item\em apply permutations to a solution vector \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a8c1b2c65058180de1615d4c1ed0d2477}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a8c1b2c65058180de1615d4c1ed0d2477}{hdnum::row\_\-equilibrate} (Matrix$<$ T $>$ \&A, Vector$<$ T $>$ \&s)}
+\label{namespacehdnum_a8c1b2c65058180de1615d4c1ed0d2477}
+
+\begin{DoxyCompactList}\small\item\em perform a row equilibration of a matrix; return scaling for later use \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a2ad73407e4bc97cb60118019e4af7c24}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a2ad73407e4bc97cb60118019e4af7c24}{hdnum::apply\_\-equilibrate} (Vector$<$ T $>$ \&s, Vector$<$ T $>$ \&b)}
+\label{namespacehdnum_a2ad73407e4bc97cb60118019e4af7c24}
+
+\begin{DoxyCompactList}\small\item\em apply row equilibration to right hand side vector \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_aa42c82a5eef72648e2efc763d0fffdf7}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_aa42c82a5eef72648e2efc763d0fffdf7}{hdnum::solveL} (const Matrix$<$ T $>$ \&A, Vector$<$ T $>$ \&x, const Vector$<$ T $>$ \&b)}
+\label{namespacehdnum_aa42c82a5eef72648e2efc763d0fffdf7}
+
+\begin{DoxyCompactList}\small\item\em Assume L = lower triangle of A with l\_\-ii=1, solve L x = b. \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_af2ae9ec295b3fbb3b0ac694e21ab2863}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_af2ae9ec295b3fbb3b0ac694e21ab2863}{hdnum::solveR} (const Matrix$<$ T $>$ \&A, Vector$<$ T $>$ \&x, const Vector$<$ T $>$ \&b)}
+\label{namespacehdnum_af2ae9ec295b3fbb3b0ac694e21ab2863}
+
+\begin{DoxyCompactList}\small\item\em Assume R = upper triangle of A and solve R x = b. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements a generic and dynamic vector class. 

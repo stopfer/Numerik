@@ -1,0 +1,81 @@
+\hypertarget{classhdnum_1_1CP}{
+\section{hdnum::CP$<$ T, P $>$ Class Template Reference}
+\label{classhdnum_1_1CP}\index{hdnum::CP@{hdnum::CP}}
+}
+
+
+Pointer with a reference count in the pointed-\/to object.  
+
+
+
+
+{\ttfamily \#include $<$countingptr.hh$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1CP_a44d2479eb8eaa687b88dfc8cb7910cf2}{
+\hyperlink{classhdnum_1_1CP_a44d2479eb8eaa687b88dfc8cb7910cf2}{CP} ()}
+\label{classhdnum_1_1CP_a44d2479eb8eaa687b88dfc8cb7910cf2}
+
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classhdnum_1_1CP}{CP} object which points to 0. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a12f46cf7a0c9e58b2ac7d2e33687e5af}{
+\hyperlink{classhdnum_1_1CP_a12f46cf7a0c9e58b2ac7d2e33687e5af}{CP} (T $\ast$p\_\-)}
+\label{classhdnum_1_1CP_a12f46cf7a0c9e58b2ac7d2e33687e5af}
+
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{classhdnum_1_1CP}{CP} object which points to p\_\- (which may be 0). \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a61b2d8e087ef4075862c638d1c2794d5}{
+\hyperlink{classhdnum_1_1CP_a61b2d8e087ef4075862c638d1c2794d5}{CP} (const \hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \&cp)}
+\label{classhdnum_1_1CP_a61b2d8e087ef4075862c638d1c2794d5}
+
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a9054453462ece1b56e0c9c94335f0aff}{
+\hyperlink{classhdnum_1_1CP_a9054453462ece1b56e0c9c94335f0aff}{$\sim$CP} ()}
+\label{classhdnum_1_1CP_a9054453462ece1b56e0c9c94335f0aff}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_acadabf2279d172f35acb2a7d2f708776}{
+\hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \& \hyperlink{classhdnum_1_1CP_acadabf2279d172f35acb2a7d2f708776}{operator=} (T $\ast$p\_\-)}
+\label{classhdnum_1_1CP_acadabf2279d172f35acb2a7d2f708776}
+
+\begin{DoxyCompactList}\small\item\em assignment from a C pointer \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_ae98fff24e4e6e981f86f04aa2241324a}{
+\hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \& \hyperlink{classhdnum_1_1CP_ae98fff24e4e6e981f86f04aa2241324a}{operator=} (const \hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \&cp)}
+\label{classhdnum_1_1CP_ae98fff24e4e6e981f86f04aa2241324a}
+
+\begin{DoxyCompactList}\small\item\em copy operator \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a2b24f8dfb8382e01a16a17ae4d65c68f}{
+T $\ast$ \hyperlink{classhdnum_1_1CP_a2b24f8dfb8382e01a16a17ae4d65c68f}{operator-\/$>$} () const }
+\label{classhdnum_1_1CP_a2b24f8dfb8382e01a16a17ae4d65c68f}
+
+\begin{DoxyCompactList}\small\item\em target element access \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a923fbd611e128b2c45edd3f6d2ff9326}{
+T \& \hyperlink{classhdnum_1_1CP_a923fbd611e128b2c45edd3f6d2ff9326}{operator$\ast$} () const }
+\label{classhdnum_1_1CP_a923fbd611e128b2c45edd3f6d2ff9326}
+
+\begin{DoxyCompactList}\small\item\em dereference operator \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_a9d8b201344b1cf82d1e9b1012efdff8f}{
+bool \hyperlink{classhdnum_1_1CP_a9d8b201344b1cf82d1e9b1012efdff8f}{operator==} (const \hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \&cp) const }
+\label{classhdnum_1_1CP_a9d8b201344b1cf82d1e9b1012efdff8f}
+
+\begin{DoxyCompactList}\small\item\em check whether both point to same target \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1CP_ac27eb29e95f1008def9303b31a2e0822}{
+bool \hyperlink{classhdnum_1_1CP_ac27eb29e95f1008def9303b31a2e0822}{operator!=} (const \hyperlink{classhdnum_1_1CP}{CP}$<$ T $>$ \&cp) const }
+\label{classhdnum_1_1CP_ac27eb29e95f1008def9303b31a2e0822}
+
+\begin{DoxyCompactList}\small\item\em check whether target have different adress \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, typename P = DeletingMemoryManagementPolicy$>$ class hdnum::CP$<$ T, P $>$}
+
+Pointer with a reference count in the pointed-\/to object. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em T}]The type of the pointed-\/to object. Must be derived from \hyperlink{classhdnum_1_1Countable}{Countable}. \item[{\em P}]What to do when the reference count reaches 0. Two predefined policy classes are available: \hyperlink{classhdnum_1_1NondeletingMemoryManagementPolicy}{NondeletingMemoryManagementPolicy} and \hyperlink{classhdnum_1_1DeletingMemoryManagementPolicy}{DeletingMemoryManagementPolicy} (the default).\end{DoxyTemplParams}
+An object cp of class \hyperlink{classhdnum_1_1CP}{CP} points to another object of a class derived from \hyperlink{classhdnum_1_1Countable}{Countable}, or to 0. If it does not point to 0, it will keep track of how many \hyperlink{classhdnum_1_1CP}{CP} objects point to the same object. If cp stops pointing to the target object, it will decrement its reference count, and if the reference count reaches zero may or may not delete the target object, depending on what the memory managment policy dictates.
+
+cp may be set via assingment from an apropriate C pointer or another \hyperlink{classhdnum_1_1CP}{CP} of the same type. To access the pointed to object, the expressions $\ast$cp and cp-\/$>$member may be used, where member is a member of the pointed to object. Finally, \hyperlink{classhdnum_1_1CP}{CP} objects may be compared using == and != to find out whether they point to the same object. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{countingptr_8hh}{countingptr.hh}\end{DoxyCompactItemize}

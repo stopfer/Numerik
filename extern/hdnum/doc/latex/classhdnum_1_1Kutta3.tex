@@ -1,0 +1,89 @@
+\hypertarget{classhdnum_1_1Kutta3}{
+\section{hdnum::Kutta3$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1Kutta3}\index{hdnum::Kutta3@{hdnum::Kutta3}}
+}
+
+
+Kutta method (order 3 with 3 stages).  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Kutta3_aa219675a459b3d48c8ac301a1f6d712b}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1Kutta3_aa219675a459b3d48c8ac301a1f6d712b}{size\_\-type}}
+\label{classhdnum_1_1Kutta3_aa219675a459b3d48c8ac301a1f6d712b}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{time\_\-type}}
+\label{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a06dc1fee934f3a4cbb530f4bc4704b99}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1Kutta3_a06dc1fee934f3a4cbb530f4bc4704b99}{number\_\-type}}
+\label{classhdnum_1_1Kutta3_a06dc1fee934f3a4cbb530f4bc4704b99}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Kutta3_af743deba93833d61ae035a5c3eb5b563}{
+\hyperlink{classhdnum_1_1Kutta3_af743deba93833d61ae035a5c3eb5b563}{Kutta3} (const M \&model\_\-)}
+\label{classhdnum_1_1Kutta3_af743deba93833d61ae035a5c3eb5b563}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_ac5b0e2c4ae00e3d3faf7d83351f76866}{
+void \hyperlink{classhdnum_1_1Kutta3_ac5b0e2c4ae00e3d3faf7d83351f76866}{set\_\-dt} (\hyperlink{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1Kutta3_ac5b0e2c4ae00e3d3faf7d83351f76866}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a5c97bd9408b64f29052781b8a62180b4}{
+void \hyperlink{classhdnum_1_1Kutta3_a5c97bd9408b64f29052781b8a62180b4}{step} ()}
+\label{classhdnum_1_1Kutta3_a5c97bd9408b64f29052781b8a62180b4}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a474ab02413887a0c1fadb81a7e4fb851}{
+void \hyperlink{classhdnum_1_1Kutta3_a474ab02413887a0c1fadb81a7e4fb851}{set\_\-state} (\hyperlink{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1Kutta3_a06dc1fee934f3a4cbb530f4bc4704b99}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1Kutta3_a474ab02413887a0c1fadb81a7e4fb851}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_add2141212e9549fd50e15deedf892b3e}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1Kutta3_a06dc1fee934f3a4cbb530f4bc4704b99}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1Kutta3_add2141212e9549fd50e15deedf892b3e}{get\_\-state} () const }
+\label{classhdnum_1_1Kutta3_add2141212e9549fd50e15deedf892b3e}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a11598389a3a0bd0403b2906c147640e2}{
+\hyperlink{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{time\_\-type} \hyperlink{classhdnum_1_1Kutta3_a11598389a3a0bd0403b2906c147640e2}{get\_\-time} () const }
+\label{classhdnum_1_1Kutta3_a11598389a3a0bd0403b2906c147640e2}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a365f2f78d21f7db184a88665ac1f9b58}{
+\hyperlink{classhdnum_1_1Kutta3_a0055d10b545c5cf60a16fd3a88a6042e}{time\_\-type} \hyperlink{classhdnum_1_1Kutta3_a365f2f78d21f7db184a88665ac1f9b58}{get\_\-dt} () const }
+\label{classhdnum_1_1Kutta3_a365f2f78d21f7db184a88665ac1f9b58}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Kutta3_a47f10303531b80d34d84cbae496b0543}{
+\hyperlink{classhdnum_1_1Kutta3_aa219675a459b3d48c8ac301a1f6d712b}{size\_\-type} \hyperlink{classhdnum_1_1Kutta3_a47f10303531b80d34d84cbae496b0543}{get\_\-order} () const }
+\label{classhdnum_1_1Kutta3_a47f10303531b80d34d84cbae496b0543}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::Kutta3$<$ M $>$}
+
+Kutta method (order 3 with 3 stages). The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

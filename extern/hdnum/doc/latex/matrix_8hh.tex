@@ -1,0 +1,68 @@
+\hypertarget{matrix_8hh}{
+\section{src/matrix.hh File Reference}
+\label{matrix_8hh}\index{src/matrix.hh@{src/matrix.hh}}
+}
+
+
+This file implements a generic and dynamic matrix class.  
+
+
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$iomanip$>$}\par
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include \char`\"{}countablearray.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}exceptions.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}vector.hh\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhdnum_1_1Matrix}{hdnum::Matrix$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em A flexible matrix class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacehdnum_a15b5d1eb1cda976e18e24c398cd92ffa}{
+{\footnotesize template$<$class T $>$ }\\std::ostream \& \hyperlink{namespacehdnum_a15b5d1eb1cda976e18e24c398cd92ffa}{hdnum::operator$<$$<$} (std::ostream \&s, const Matrix$<$ T $>$ \&A)}
+\label{namespacehdnum_a15b5d1eb1cda976e18e24c398cd92ffa}
+
+\begin{DoxyCompactList}\small\item\em Output operator for \hyperlink{classhdnum_1_1Matrix}{Matrix}. \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a9810527efdf8a8ed0c55079c564c8d33}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a9810527efdf8a8ed0c55079c564c8d33}{hdnum::fill} (Matrix$<$ T $>$ A, const T \&t)}
+\label{namespacehdnum_a9810527efdf8a8ed0c55079c564c8d33}
+
+\begin{DoxyCompactList}\small\item\em make a symmetric and positive definite matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_ac390c852887cfb333968821bae81c1e5}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_ac390c852887cfb333968821bae81c1e5}{hdnum::zero} (Matrix$<$ T $>$ A)}
+\label{namespacehdnum_ac390c852887cfb333968821bae81c1e5}
+
+\begin{DoxyCompactList}\small\item\em make a symmetric and positive definite matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_af7a9168872df38eb909d28a441a1d423}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_af7a9168872df38eb909d28a441a1d423}{hdnum::identity} (Matrix$<$ T $>$ A)}
+\label{namespacehdnum_af7a9168872df38eb909d28a441a1d423}
+
+\begin{DoxyCompactList}\small\item\em make identity matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_af256a37b2e460e8dc1e0e8b0f107ce93}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_af256a37b2e460e8dc1e0e8b0f107ce93}{hdnum::spd} (Matrix$<$ T $>$ A)}
+\label{namespacehdnum_af256a37b2e460e8dc1e0e8b0f107ce93}
+
+\begin{DoxyCompactList}\small\item\em make a symmetric and positive definite matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a939222f806c615507d7f3dd350a5b899}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a939222f806c615507d7f3dd350a5b899}{hdnum::vandermonde} (Matrix$<$ T $>$ A, const Vector$<$ T $>$ x)}
+\label{namespacehdnum_a939222f806c615507d7f3dd350a5b899}
+
+\begin{DoxyCompactList}\small\item\em make a vandermonde matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_aefa0119f491196c0afb3a29057fdd5cf}{
+{\footnotesize template$<$class T $>$ }\\Matrix$<$ T $>$ \hyperlink{namespacehdnum_aefa0119f491196c0afb3a29057fdd5cf}{hdnum::copy} (const Matrix$<$ T $>$ A)}
+\label{namespacehdnum_aefa0119f491196c0afb3a29057fdd5cf}
+
+\begin{DoxyCompactList}\small\item\em make a true copy of a matrix \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_a47e5748b68246cf6604e355a070ed134}{
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{namespacehdnum_a47e5748b68246cf6604e355a070ed134}{hdnum::gnuplot} (const std::string \&fname, const Matrix$<$ T $>$ A)}
+\label{namespacehdnum_a47e5748b68246cf6604e355a070ed134}
+
+\begin{DoxyCompactList}\small\item\em gnuplot output for matrix \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file implements a generic and dynamic matrix class. 

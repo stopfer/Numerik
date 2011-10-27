@@ -1,0 +1,64 @@
+\hypertarget{classhdnum_1_1SquareRootProblem}{
+\section{hdnum::SquareRootProblem$<$ N $>$ Class Template Reference}
+\label{classhdnum_1_1SquareRootProblem}\index{hdnum::SquareRootProblem@{hdnum::SquareRootProblem}}
+}
+
+
+Example class for a nonlinear model F(x) = 0;.  
+
+
+
+
+{\ttfamily \#include $<$newton.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_a9c7024d33b3c33be60fd50cf8a95ec12}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1SquareRootProblem_a9c7024d33b3c33be60fd50cf8a95ec12}{size\_\-type}}
+\label{classhdnum_1_1SquareRootProblem_a9c7024d33b3c33be60fd50cf8a95ec12}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_a2aada07411c6a24edd9183c73b79f042}{
+typedef N \hyperlink{classhdnum_1_1SquareRootProblem_a2aada07411c6a24edd9183c73b79f042}{number\_\-type}}
+\label{classhdnum_1_1SquareRootProblem_a2aada07411c6a24edd9183c73b79f042}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_a33e13342dd64285b8d1f9793c8f68193}{
+\hyperlink{classhdnum_1_1SquareRootProblem_a33e13342dd64285b8d1f9793c8f68193}{SquareRootProblem} (\hyperlink{classhdnum_1_1SquareRootProblem_a2aada07411c6a24edd9183c73b79f042}{number\_\-type} a\_\-)}
+\label{classhdnum_1_1SquareRootProblem_a33e13342dd64285b8d1f9793c8f68193}
+
+\begin{DoxyCompactList}\small\item\em constructor stores parameter lambda \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_a57ef59e899224f98c7b338373df82646}{
+std::size\_\-t \hyperlink{classhdnum_1_1SquareRootProblem_a57ef59e899224f98c7b338373df82646}{size} () const }
+\label{classhdnum_1_1SquareRootProblem_a57ef59e899224f98c7b338373df82646}
+
+\begin{DoxyCompactList}\small\item\em return number of componentes for the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_a6d8f30d61e703044b4cb84ce8ef9c479}{
+void \hyperlink{classhdnum_1_1SquareRootProblem_a6d8f30d61e703044b4cb84ce8ef9c479}{F} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ N $>$ \&x, \hyperlink{classhdnum_1_1Vector}{Vector}$<$ N $>$ \&result) const }
+\label{classhdnum_1_1SquareRootProblem_a6d8f30d61e703044b4cb84ce8ef9c479}
+
+\begin{DoxyCompactList}\small\item\em model evaluation \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SquareRootProblem_ab5a5565fde89e4794d5b819ea76b9a1e}{
+void \hyperlink{classhdnum_1_1SquareRootProblem_ab5a5565fde89e4794d5b819ea76b9a1e}{F\_\-x} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ N $>$ \&x, \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ N $>$ \&result) const }
+\label{classhdnum_1_1SquareRootProblem_ab5a5565fde89e4794d5b819ea76b9a1e}
+
+\begin{DoxyCompactList}\small\item\em jacobian evaluation needed for implicit solvers \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class N$>$ class hdnum::SquareRootProblem$<$ N $>$}
+
+Example class for a nonlinear model F(x) = 0;. This example solves F(x) = x$\ast$x -\/ a = 0
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em N}]a type representing x and F components \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{newton_8hh}{newton.hh}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{classhdnum_1_1IE}{
+\section{hdnum::IE$<$ M, S $>$ Class Template Reference}
+\label{classhdnum_1_1IE}\index{hdnum::IE@{hdnum::IE}}
+}
+
+
+Implicit Euler using Newton's method to solve nonlinear system.  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries NonlinearProblem}
+\begin{DoxyCompactList}\small\item\em class providing nonlinear problem to be solved \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1IE_af2d3dd8c57bb78dfd28a613dd11f499a}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1IE_af2d3dd8c57bb78dfd28a613dd11f499a}{size\_\-type}}
+\label{classhdnum_1_1IE_af2d3dd8c57bb78dfd28a613dd11f499a}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{time\_\-type}}
+\label{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a23de7a983f5419c37d8530d49cab4913}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1IE_a23de7a983f5419c37d8530d49cab4913}{number\_\-type}}
+\label{classhdnum_1_1IE_a23de7a983f5419c37d8530d49cab4913}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1IE_a25d8827c46865a4b6dae56a07b70f507}{
+\hyperlink{classhdnum_1_1IE_a25d8827c46865a4b6dae56a07b70f507}{IE} (const M \&model\_\-, const S \&newton\_\-)}
+\label{classhdnum_1_1IE_a25d8827c46865a4b6dae56a07b70f507}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a26bfa23447038750257ecdf75d341283}{
+void \hyperlink{classhdnum_1_1IE_a26bfa23447038750257ecdf75d341283}{set\_\-dt} (\hyperlink{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1IE_a26bfa23447038750257ecdf75d341283}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a3ece1463453f15fe247c030e487ea232}{
+void \hyperlink{classhdnum_1_1IE_a3ece1463453f15fe247c030e487ea232}{set\_\-verbosity} (\hyperlink{classhdnum_1_1IE_af2d3dd8c57bb78dfd28a613dd11f499a}{size\_\-type} verbosity\_\-)}
+\label{classhdnum_1_1IE_a3ece1463453f15fe247c030e487ea232}
+
+\begin{DoxyCompactList}\small\item\em set verbosity level \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a947a239a2ddfe6d3f946db28f04a900d}{
+void \hyperlink{classhdnum_1_1IE_a947a239a2ddfe6d3f946db28f04a900d}{step} ()}
+\label{classhdnum_1_1IE_a947a239a2ddfe6d3f946db28f04a900d}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a69b53dd12e5b00739b26551102c090bb}{
+bool \hyperlink{classhdnum_1_1IE_a69b53dd12e5b00739b26551102c090bb}{get\_\-error} () const }
+\label{classhdnum_1_1IE_a69b53dd12e5b00739b26551102c090bb}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_aa333a60e09305968c3ae333a06c5abd4}{
+void \hyperlink{classhdnum_1_1IE_aa333a60e09305968c3ae333a06c5abd4}{set\_\-state} (\hyperlink{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1IE_a23de7a983f5419c37d8530d49cab4913}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1IE_aa333a60e09305968c3ae333a06c5abd4}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a7c9b9284e27f01f67f776f7e6b5c4cf7}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1IE_a23de7a983f5419c37d8530d49cab4913}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1IE_a7c9b9284e27f01f67f776f7e6b5c4cf7}{get\_\-state} () const }
+\label{classhdnum_1_1IE_a7c9b9284e27f01f67f776f7e6b5c4cf7}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_a2abb282e43dc676c2b192f49e732986a}{
+\hyperlink{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{time\_\-type} \hyperlink{classhdnum_1_1IE_a2abb282e43dc676c2b192f49e732986a}{get\_\-time} () const }
+\label{classhdnum_1_1IE_a2abb282e43dc676c2b192f49e732986a}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_aeaea0a1cdee7135d0e85e980c4f15179}{
+\hyperlink{classhdnum_1_1IE_a4a58f86ec61809cbca7b16922dcbb39e}{time\_\-type} \hyperlink{classhdnum_1_1IE_aeaea0a1cdee7135d0e85e980c4f15179}{get\_\-dt} () const }
+\label{classhdnum_1_1IE_aeaea0a1cdee7135d0e85e980c4f15179}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_acbc50aab0984aa2fc0d59ad02fb530fb}{
+\hyperlink{classhdnum_1_1IE_af2d3dd8c57bb78dfd28a613dd11f499a}{size\_\-type} \hyperlink{classhdnum_1_1IE_acbc50aab0984aa2fc0d59ad02fb530fb}{get\_\-order} () const }
+\label{classhdnum_1_1IE_acbc50aab0984aa2fc0d59ad02fb530fb}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1IE_ac0cc9141ec0c29ea465ffc4b416a52a8}{
+void \hyperlink{classhdnum_1_1IE_ac0cc9141ec0c29ea465ffc4b416a52a8}{get\_\-info} () const }
+\label{classhdnum_1_1IE_ac0cc9141ec0c29ea465ffc4b416a52a8}
+
+\begin{DoxyCompactList}\small\item\em print some information \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M, class S$>$ class hdnum::IE$<$ M, S $>$}
+
+Implicit Euler using Newton's method to solve nonlinear system. The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \item[{\em S}]nonlinear solver \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

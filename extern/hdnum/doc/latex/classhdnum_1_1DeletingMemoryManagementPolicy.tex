@@ -1,0 +1,29 @@
+\hypertarget{classhdnum_1_1DeletingMemoryManagementPolicy}{
+\section{hdnum::DeletingMemoryManagementPolicy Class Reference}
+\label{classhdnum_1_1DeletingMemoryManagementPolicy}\index{hdnum::DeletingMemoryManagementPolicy@{hdnum::DeletingMemoryManagementPolicy}}
+}
+
+
+Delete target if reference count reaches zero.  
+
+
+
+
+{\ttfamily \#include $<$countingptr.hh$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1DeletingMemoryManagementPolicy_a39e3349b6f0e03ecf992f31f9da9ccb9}{
+{\footnotesize template$<$typename T $>$ }\\static void {\bfseries delete\_\-action} (T $\ast$p)}
+\label{classhdnum_1_1DeletingMemoryManagementPolicy_a39e3349b6f0e03ecf992f31f9da9ccb9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Delete target if reference count reaches zero. If this class is given to \hyperlink{classhdnum_1_1CP}{CP} as the memory management policy, the \hyperlink{classhdnum_1_1CP}{CP} objects will delete the pointed to object if the reference count reaches zero. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{countingptr_8hh}{countingptr.hh}\end{DoxyCompactItemize}

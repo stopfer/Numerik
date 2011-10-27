@@ -1,0 +1,56 @@
+\hypertarget{ode_8hh}{
+\section{src/ode.hh File Reference}
+\label{ode_8hh}\index{src/ode.hh@{src/ode.hh}}
+}
+
+
+solvers for ordinary differential equations  
+
+
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include \char`\"{}newton.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}lr.hh\char`\"{}}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhdnum_1_1EE}{hdnum::EE$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Explicit Euler method as an example for an ODE solver. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1ModifiedEuler}{hdnum::ModifiedEuler$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Modified Euler method (order 2 with 2 stages). \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1Heun2}{hdnum::Heun2$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Heun method (order 2 with 2 stages). \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1Heun3}{hdnum::Heun3$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Heun method (order 3 with 3 stages). \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1Kutta3}{hdnum::Kutta3$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Kutta method (order 3 with 3 stages). \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1RungeKutta4}{hdnum::RungeKutta4$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em classical Runge-\/Kutta method (order 4 with 4 stages) \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1RKF45}{hdnum::RKF45$<$ M $>$}
+\begin{DoxyCompactList}\small\item\em Adaptive Runge-\/Kutta-\/Fehlberg method. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1RE}{hdnum::RE$<$ M, S $>$}
+\begin{DoxyCompactList}\small\item\em Adaptive one-\/step method using Richardson extrapolation. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1IE}{hdnum::IE$<$ M, S $>$}
+\begin{DoxyCompactList}\small\item\em Implicit Euler using Newton's method to solve nonlinear system. \item\end{DoxyCompactList}\item 
+class {\bfseries hdnum::IE$<$ M, S $>$::NonlinearProblem}
+\begin{DoxyCompactList}\small\item\em class providing nonlinear problem to be solved \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1DIRK}{hdnum::DIRK$<$ M, S $>$}
+\begin{DoxyCompactList}\small\item\em Implementation of a general Diagonal Implicit Runge-\/Kutta method. \item\end{DoxyCompactList}\item 
+class {\bfseries hdnum::DIRK$<$ M, S $>$::NonlinearProblem}
+\begin{DoxyCompactList}\small\item\em class providing nonlinear problem to be solved \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacehdnum_af626ce0045064b845c0041a9d7327f1b}{
+{\footnotesize template$<$class T , class N $>$ }\\void \hyperlink{namespacehdnum_af626ce0045064b845c0041a9d7327f1b}{hdnum::gnuplot} (const std::string \&fname, const std::vector$<$ T $>$ t, const std::vector$<$ Vector$<$ N $>$ $>$ u)}
+\label{namespacehdnum_af626ce0045064b845c0041a9d7327f1b}
+
+\begin{DoxyCompactList}\small\item\em gnuplot output for time and state sequence \item\end{DoxyCompactList}\item 
+\hypertarget{namespacehdnum_ab0b9aa78d202ad5a652f081d9432dda6}{
+{\footnotesize template$<$class T , class N $>$ }\\void \hyperlink{namespacehdnum_ab0b9aa78d202ad5a652f081d9432dda6}{hdnum::gnuplot} (const std::string \&fname, const std::vector$<$ T $>$ t, const std::vector$<$ Vector$<$ N $>$ $>$ u, const std::vector$<$ T $>$ dt)}
+\label{namespacehdnum_ab0b9aa78d202ad5a652f081d9432dda6}
+
+\begin{DoxyCompactList}\small\item\em gnuplot output for time and state sequence \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+solvers for ordinary differential equations 

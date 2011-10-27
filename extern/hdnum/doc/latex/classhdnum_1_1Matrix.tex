@@ -1,0 +1,267 @@
+\hypertarget{classhdnum_1_1Matrix}{
+\section{hdnum::Matrix$<$ T $>$ Class Template Reference}
+\label{classhdnum_1_1Matrix}\index{hdnum::Matrix@{hdnum::Matrix}}
+}
+
+
+A flexible matrix class.  
+
+
+
+
+{\ttfamily \#include $<$matrix.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Matrix_a6ebaff96f20f8e78a454ffabdd7723f6}{
+typedef T \hyperlink{classhdnum_1_1Matrix_a6ebaff96f20f8e78a454ffabdd7723f6}{value\_\-type}}
+\label{classhdnum_1_1Matrix_a6ebaff96f20f8e78a454ffabdd7723f6}
+
+\begin{DoxyCompactList}\small\item\em Remember the storage type. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_ad41eb9538a08f24849a7b68b4732e0bf}{
+typedef \hyperlink{classhdnum_1_1Matrix_a6ebaff96f20f8e78a454ffabdd7723f6}{value\_\-type} \& \hyperlink{classhdnum_1_1Matrix_ad41eb9538a08f24849a7b68b4732e0bf}{reference}}
+\label{classhdnum_1_1Matrix_ad41eb9538a08f24849a7b68b4732e0bf}
+
+\begin{DoxyCompactList}\small\item\em Reference to an object. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a20309dda0b0e95081958c7d3235e2c20}{
+typedef const \hyperlink{classhdnum_1_1Matrix_a6ebaff96f20f8e78a454ffabdd7723f6}{value\_\-type} \& \hyperlink{classhdnum_1_1Matrix_a20309dda0b0e95081958c7d3235e2c20}{const\_\-reference}}
+\label{classhdnum_1_1Matrix_a20309dda0b0e95081958c7d3235e2c20}
+
+\begin{DoxyCompactList}\small\item\em Const reference to an object. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type}}
+\label{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}
+
+\begin{DoxyCompactList}\small\item\em Type used for array indices. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a32f25247f12a8913e8db646c539f1dbd}{
+typedef std::ptrdiff\_\-t \hyperlink{classhdnum_1_1Matrix_a32f25247f12a8913e8db646c539f1dbd}{difference\_\-type}}
+\label{classhdnum_1_1Matrix_a32f25247f12a8913e8db646c539f1dbd}
+
+\begin{DoxyCompactList}\small\item\em Difference type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Matrix_ae8abe838fca01e6f98811c68b807fdb7}{
+\hyperlink{classhdnum_1_1Matrix_ae8abe838fca01e6f98811c68b807fdb7}{Matrix} ()}
+\label{classhdnum_1_1Matrix_ae8abe838fca01e6f98811c68b807fdb7}
+
+\begin{DoxyCompactList}\small\item\em make empty matrix \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_afe276ea428efa8a82dc2eaa2bf35ff57}{
+\hyperlink{classhdnum_1_1Matrix_afe276ea428efa8a82dc2eaa2bf35ff57}{Matrix} (\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \_\-m, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \_\-n)}
+\label{classhdnum_1_1Matrix_afe276ea428efa8a82dc2eaa2bf35ff57}
+
+\begin{DoxyCompactList}\small\item\em make \_\-m x \_\-n matrix uninitialized \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a59a74b9437fba7526e8dcec22adafa74}{
+\hyperlink{classhdnum_1_1Matrix_a59a74b9437fba7526e8dcec22adafa74}{Matrix} (\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \_\-m, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \_\-n, const T \&\_\-t)}
+\label{classhdnum_1_1Matrix_a59a74b9437fba7526e8dcec22adafa74}
+
+\begin{DoxyCompactList}\small\item\em make \_\-m x \_\-n matrix initialized \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_aa274920768bfee886c06f52638b068f7}{
+\hyperlink{classhdnum_1_1Matrix_aa274920768bfee886c06f52638b068f7}{Matrix} (const \hyperlink{classhdnum_1_1Matrix}{Matrix} \&A)}
+\label{classhdnum_1_1Matrix_aa274920768bfee886c06f52638b068f7}
+
+\begin{DoxyCompactList}\small\item\em copy constructor with reference semantics \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_ad069ec9fdbef159b0069e325bd9bc064}{
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_ad069ec9fdbef159b0069e325bd9bc064}{operator=} (const \hyperlink{classhdnum_1_1Matrix}{Matrix} \&A)}
+\label{classhdnum_1_1Matrix_ad069ec9fdbef159b0069e325bd9bc064}
+
+\begin{DoxyCompactList}\small\item\em assignment operator assumes that argument has exactly the same size \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a5ee9bbcecaa5fca03210f40e4d9f9b35}{
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_a5ee9bbcecaa5fca03210f40e4d9f9b35}{operator=} (const T \&t)}
+\label{classhdnum_1_1Matrix_a5ee9bbcecaa5fca03210f40e4d9f9b35}
+
+\begin{DoxyCompactList}\small\item\em assignment from scalar \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a25e70187797f88c4ccf2f68fe79a7e86}{
+\hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ T $>$ \hyperlink{classhdnum_1_1Matrix_a25e70187797f88c4ccf2f68fe79a7e86}{sub} (\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} i, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} j, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} rows, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} cols)}
+\label{classhdnum_1_1Matrix_a25e70187797f88c4ccf2f68fe79a7e86}
+
+\begin{DoxyCompactList}\small\item\em submatrix extraction \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a70d073fcf197cf4ac085bb667b156ba3}{
+T $\ast$ \hyperlink{classhdnum_1_1Matrix_a70d073fcf197cf4ac085bb667b156ba3}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} i)}
+\label{classhdnum_1_1Matrix_a70d073fcf197cf4ac085bb667b156ba3}
+
+\begin{DoxyCompactList}\small\item\em Component access. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_acd7aa64f80d71dabe9f7d02749dd067e}{
+const T $\ast$ \hyperlink{classhdnum_1_1Matrix_acd7aa64f80d71dabe9f7d02749dd067e}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} i) const }
+\label{classhdnum_1_1Matrix_acd7aa64f80d71dabe9f7d02749dd067e}
+
+\begin{DoxyCompactList}\small\item\em Component access. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_a4f3f23f9a07540723601283d034c10ae}{operator+=} (const \hyperlink{classhdnum_1_1Matrix}{Matrix} \&B)
+\begin{DoxyCompactList}\small\item\em Addition assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_acbc74183e387ce2bc40fa3d785e75a83}{operator-\/=} (const \hyperlink{classhdnum_1_1Matrix}{Matrix} \&B)
+\begin{DoxyCompactList}\small\item\em Subtraction assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_adc378774314424fd9c5600bc34bed356}{operator$\ast$=} (const T \&s)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Matrix}{Matrix} \& \hyperlink{classhdnum_1_1Matrix_ac4850f9b5df8da4a8fb40ddf05a3ed39}{operator/=} (const T \&s)
+\begin{DoxyCompactList}\small\item\em Scalar division assignment. \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1Matrix_acb2eaf3fb83498d4c7b2de964c5e53de}{update} (const T \&s, const \hyperlink{classhdnum_1_1Matrix}{Matrix} \&B)
+\begin{DoxyCompactList}\small\item\em Scaled update of a \hyperlink{classhdnum_1_1Matrix}{Matrix}. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_abd684181d36b38464d2b58827f95fec3}{
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1Matrix_abd684181d36b38464d2b58827f95fec3}{mv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const }
+\label{classhdnum_1_1Matrix_abd684181d36b38464d2b58827f95fec3}
+
+\begin{DoxyCompactList}\small\item\em matrix vector product y = A$\ast$x \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a907264ce1afd644a9b6ef10756b3dcd3}{
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1Matrix_a907264ce1afd644a9b6ef10756b3dcd3}{umv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const }
+\label{classhdnum_1_1Matrix_a907264ce1afd644a9b6ef10756b3dcd3}
+
+\begin{DoxyCompactList}\small\item\em update matrix vector product y += A$\ast$x \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a7eee0aa57c0ea42edc1419031887364a}{
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1Matrix_a7eee0aa57c0ea42edc1419031887364a}{umv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const V \&s, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const }
+\label{classhdnum_1_1Matrix_a7eee0aa57c0ea42edc1419031887364a}
+
+\begin{DoxyCompactList}\small\item\em update matrix vector product y += A$\ast$x \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a42d98f6f42d831ee37c602951503a808}{
+void \hyperlink{classhdnum_1_1Matrix_a42d98f6f42d831ee37c602951503a808}{mm} (const \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ T $>$ \&A, const \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ T $>$ \&B)}
+\label{classhdnum_1_1Matrix_a42d98f6f42d831ee37c602951503a808}
+
+\begin{DoxyCompactList}\small\item\em matrix matrix product C = A$\ast$B \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a9c4539920d988a072fcb9582a64aaeef}{
+void \hyperlink{classhdnum_1_1Matrix_a9c4539920d988a072fcb9582a64aaeef}{umm} (const \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ T $>$ \&A, const \hyperlink{classhdnum_1_1Matrix}{Matrix}$<$ T $>$ \&B)}
+\label{classhdnum_1_1Matrix_a9c4539920d988a072fcb9582a64aaeef}
+
+\begin{DoxyCompactList}\small\item\em matrix matrix product C += A$\ast$B \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_aaa1dfa0cd2e96e07799e1ae1d1a3d8d0}{
+void \hyperlink{classhdnum_1_1Matrix_aaa1dfa0cd2e96e07799e1ae1d1a3d8d0}{sc} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ T $>$ \&x, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} k)}
+\label{classhdnum_1_1Matrix_aaa1dfa0cd2e96e07799e1ae1d1a3d8d0}
+
+\begin{DoxyCompactList}\small\item\em set column: make x the k'th column of A \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_ab274466f69f341a6a2dc18362284efe1}{
+void \hyperlink{classhdnum_1_1Matrix_ab274466f69f341a6a2dc18362284efe1}{sr} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ T $>$ \&x, \hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} k)}
+\label{classhdnum_1_1Matrix_ab274466f69f341a6a2dc18362284efe1}
+
+\begin{DoxyCompactList}\small\item\em set row: make x the k'th row of A \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a0ba1392f7d18208ca7940e2cff23599d}{
+T \hyperlink{classhdnum_1_1Matrix_a0ba1392f7d18208ca7940e2cff23599d}{norm\_\-infty} () const }
+\label{classhdnum_1_1Matrix_a0ba1392f7d18208ca7940e2cff23599d}
+
+\begin{DoxyCompactList}\small\item\em compute row sum norm \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a750b9da89753d0f90c349e5c406ba50a}{
+T \hyperlink{classhdnum_1_1Matrix_a750b9da89753d0f90c349e5c406ba50a}{norm\_\-1} () const }
+\label{classhdnum_1_1Matrix_a750b9da89753d0f90c349e5c406ba50a}
+
+\begin{DoxyCompactList}\small\item\em compute column sum norm \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a7fbe5bceef2d6577f8d68ca3c1216280}{
+\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \hyperlink{classhdnum_1_1Matrix_a7fbe5bceef2d6577f8d68ca3c1216280}{rowsize} () const }
+\label{classhdnum_1_1Matrix_a7fbe5bceef2d6577f8d68ca3c1216280}
+
+\begin{DoxyCompactList}\small\item\em get number of rows \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_af0a22e4c87c7097af07f5bc6307f470b}{
+\hyperlink{classhdnum_1_1Matrix_adeafaf5fa5732e0d67f90ffa2119fbf1}{size\_\-type} \hyperlink{classhdnum_1_1Matrix_af0a22e4c87c7097af07f5bc6307f470b}{colsize} () const }
+\label{classhdnum_1_1Matrix_af0a22e4c87c7097af07f5bc6307f470b}
+
+\begin{DoxyCompactList}\small\item\em get number of columns \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a743699a7471dc4ac86edb3e01cbf251d}{
+int \hyperlink{classhdnum_1_1Matrix_a743699a7471dc4ac86edb3e01cbf251d}{iwidth} () const }
+\label{classhdnum_1_1Matrix_a743699a7471dc4ac86edb3e01cbf251d}
+
+\begin{DoxyCompactList}\small\item\em get index field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_ad2280e529019e6bda5940904068ca82d}{
+int \hyperlink{classhdnum_1_1Matrix_ad2280e529019e6bda5940904068ca82d}{width} () const }
+\label{classhdnum_1_1Matrix_ad2280e529019e6bda5940904068ca82d}
+
+\begin{DoxyCompactList}\small\item\em get data field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a1fdd89980844347b3b5d752bc97be2c3}{
+int \hyperlink{classhdnum_1_1Matrix_a1fdd89980844347b3b5d752bc97be2c3}{precision} () const }
+\label{classhdnum_1_1Matrix_a1fdd89980844347b3b5d752bc97be2c3}
+
+\begin{DoxyCompactList}\small\item\em get data precision for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a67f77c92267311fd152fc2b5d1dce406}{
+void \hyperlink{classhdnum_1_1Matrix_a67f77c92267311fd152fc2b5d1dce406}{iwidth} (int i) const }
+\label{classhdnum_1_1Matrix_a67f77c92267311fd152fc2b5d1dce406}
+
+\begin{DoxyCompactList}\small\item\em set index field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_a9985540222b45151bf160a4c1f0eb4ad}{
+void \hyperlink{classhdnum_1_1Matrix_a9985540222b45151bf160a4c1f0eb4ad}{width} (int i) const }
+\label{classhdnum_1_1Matrix_a9985540222b45151bf160a4c1f0eb4ad}
+
+\begin{DoxyCompactList}\small\item\em set data field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Matrix_aa4575ff95760bb69d7fb916bcfb3e18a}{
+void \hyperlink{classhdnum_1_1Matrix_aa4575ff95760bb69d7fb916bcfb3e18a}{precision} (int i) const }
+\label{classhdnum_1_1Matrix_aa4575ff95760bb69d7fb916bcfb3e18a}
+
+\begin{DoxyCompactList}\small\item\em set data precision for pretty-\/printing \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class hdnum::Matrix$<$ T $>$}
+
+A flexible matrix class. \hyperlink{classhdnum_1_1Matrix}{Matrix} is implemented as a handle to a dynamically allocated array. Copy and assignement operators have reference semantics. In order to make a true copy the function \char`\"{}copy\char`\"{} can be used. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classhdnum_1_1Matrix_adc378774314424fd9c5600bc34bed356}{
+\index{hdnum::Matrix@{hdnum::Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!hdnum::Matrix@{hdnum::Matrix}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Matrix}\& {\bf hdnum::Matrix}$<$ T $>$::operator$\ast$= (const T \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Matrix_adc378774314424fd9c5600bc34bed356}
+
+
+Scalar multiplication assignment. 
+
+Implements A $\ast$= s where s is a scalar
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with vector scalar multiplication \end{DoxyParams}
+\hypertarget{classhdnum_1_1Matrix_a4f3f23f9a07540723601283d034c10ae}{
+\index{hdnum::Matrix@{hdnum::Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!hdnum::Matrix@{hdnum::Matrix}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Matrix}\& {\bf hdnum::Matrix}$<$ T $>$::operator+= (const {\bf Matrix}$<$ T $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Matrix_a4f3f23f9a07540723601283d034c10ae}
+
+
+Addition assignment. 
+
+Implements A += B matrix addition
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em B}]another \hyperlink{classhdnum_1_1Matrix}{Matrix} \end{DoxyParams}
+\hypertarget{classhdnum_1_1Matrix_acbc74183e387ce2bc40fa3d785e75a83}{
+\index{hdnum::Matrix@{hdnum::Matrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!hdnum::Matrix@{hdnum::Matrix}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Matrix}\& {\bf hdnum::Matrix}$<$ T $>$::operator-\/= (const {\bf Matrix}$<$ T $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Matrix_acbc74183e387ce2bc40fa3d785e75a83}
+
+
+Subtraction assignment. 
+
+Implements A -\/= B matrix subtraction
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em B}]another matrix \end{DoxyParams}
+\hypertarget{classhdnum_1_1Matrix_ac4850f9b5df8da4a8fb40ddf05a3ed39}{
+\index{hdnum::Matrix@{hdnum::Matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!hdnum::Matrix@{hdnum::Matrix}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Matrix}\& {\bf hdnum::Matrix}$<$ T $>$::operator/= (const T \& {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Matrix_ac4850f9b5df8da4a8fb40ddf05a3ed39}
+
+
+Scalar division assignment. 
+
+Implements A /= s where s is a scalar
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with vector scalar multiplication \end{DoxyParams}
+\hypertarget{classhdnum_1_1Matrix_acb2eaf3fb83498d4c7b2de964c5e53de}{
+\index{hdnum::Matrix@{hdnum::Matrix}!update@{update}}
+\index{update@{update}!hdnum::Matrix@{hdnum::Matrix}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf hdnum::Matrix}$<$ T $>$::update (const T \& {\em s}, \/  const {\bf Matrix}$<$ T $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Matrix_acb2eaf3fb83498d4c7b2de964c5e53de}
+
+
+Scaled update of a \hyperlink{classhdnum_1_1Matrix}{Matrix}. 
+
+Implements A += s$\ast$B where s is a scalar and B a matrix
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with \item[\mbox{$\leftarrow$} {\em B}]another matrix \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{matrix_8hh}{matrix.hh}\end{DoxyCompactItemize}

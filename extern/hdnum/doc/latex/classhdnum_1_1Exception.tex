@@ -1,0 +1,53 @@
+\hypertarget{classhdnum_1_1Exception}{
+\section{hdnum::Exception Class Reference}
+\label{classhdnum_1_1Exception}\index{hdnum::Exception@{hdnum::Exception}}
+}
+
+
+Base class for Exceptions.  
+
+
+
+
+{\ttfamily \#include $<$exceptions.hh$>$}
+
+Inheritance diagram for hdnum::Exception:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.14754cm]{classhdnum_1_1Exception}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Exception_a1761e43f1a7727c2ee39f32466df8c55}{
+void \hyperlink{classhdnum_1_1Exception_a1761e43f1a7727c2ee39f32466df8c55}{message} (const std::string \&message)}
+\label{classhdnum_1_1Exception_a1761e43f1a7727c2ee39f32466df8c55}
+
+\begin{DoxyCompactList}\small\item\em store string in internal message buffer \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Exception_aa6f1c6150981b76282a20440c9b5e8ab}{
+const std::string \& \hyperlink{classhdnum_1_1Exception_aa6f1c6150981b76282a20440c9b5e8ab}{what} () const }
+\label{classhdnum_1_1Exception_aa6f1c6150981b76282a20440c9b5e8ab}
+
+\begin{DoxyCompactList}\small\item\em output internal message buffer \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for Exceptions. all HDNUM exceptions are derived from this class via trivial subclassing:
+
+
+\begin{DoxyCode}
+        class MyException : public Dune::Exception {};
+\end{DoxyCode}
+
+
+You should not {\ttfamily throw} a Dune::Exception directly but use the macro DUNE\_\-THROW() instead which fills the message-\/buffer of the exception in a standard way and features a way to pass the result in the operator$<$$<$-\/style
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{exceptions_8hh_a7385bc4ca18aaff3f509a30bde2567c0}{HDNUM\_\-THROW}, \hyperlink{classhdnum_1_1IOError}{IOError}, \hyperlink{classhdnum_1_1MathError}{MathError} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{exceptions_8hh}{exceptions.hh}\end{DoxyCompactItemize}

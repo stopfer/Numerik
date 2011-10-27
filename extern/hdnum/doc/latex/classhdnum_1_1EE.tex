@@ -1,0 +1,89 @@
+\hypertarget{classhdnum_1_1EE}{
+\section{hdnum::EE$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1EE}\index{hdnum::EE@{hdnum::EE}}
+}
+
+
+Explicit Euler method as an example for an ODE solver.  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1EE_a633508b18536c883d9fbbcccb7ac7ebc}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1EE_a633508b18536c883d9fbbcccb7ac7ebc}{size\_\-type}}
+\label{classhdnum_1_1EE_a633508b18536c883d9fbbcccb7ac7ebc}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{time\_\-type}}
+\label{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a1ef3f42ee12273be741369aa6fd198cd}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1EE_a1ef3f42ee12273be741369aa6fd198cd}{number\_\-type}}
+\label{classhdnum_1_1EE_a1ef3f42ee12273be741369aa6fd198cd}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1EE_a1121f4c7c4ba2baa9afefc19c1a4dbcf}{
+\hyperlink{classhdnum_1_1EE_a1121f4c7c4ba2baa9afefc19c1a4dbcf}{EE} (const M \&model\_\-)}
+\label{classhdnum_1_1EE_a1121f4c7c4ba2baa9afefc19c1a4dbcf}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a9da0d16e937e3b42bd4385c082909986}{
+void \hyperlink{classhdnum_1_1EE_a9da0d16e937e3b42bd4385c082909986}{set\_\-dt} (\hyperlink{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1EE_a9da0d16e937e3b42bd4385c082909986}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a6de0fb361be627ec08bceba734bf2971}{
+void \hyperlink{classhdnum_1_1EE_a6de0fb361be627ec08bceba734bf2971}{step} ()}
+\label{classhdnum_1_1EE_a6de0fb361be627ec08bceba734bf2971}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a9011390335a5c147590c55efb1200b80}{
+void \hyperlink{classhdnum_1_1EE_a9011390335a5c147590c55efb1200b80}{set\_\-state} (\hyperlink{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1EE_a1ef3f42ee12273be741369aa6fd198cd}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1EE_a9011390335a5c147590c55efb1200b80}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_afeb12f7335aab6942ce190256c4982a5}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1EE_a1ef3f42ee12273be741369aa6fd198cd}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1EE_afeb12f7335aab6942ce190256c4982a5}{get\_\-state} () const }
+\label{classhdnum_1_1EE_afeb12f7335aab6942ce190256c4982a5}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a7c7ae19fc0aa93eac51497748f2101e2}{
+\hyperlink{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{time\_\-type} \hyperlink{classhdnum_1_1EE_a7c7ae19fc0aa93eac51497748f2101e2}{get\_\-time} () const }
+\label{classhdnum_1_1EE_a7c7ae19fc0aa93eac51497748f2101e2}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_a8aa4b8170705a377b04e3dd589c7d2d7}{
+\hyperlink{classhdnum_1_1EE_a812a3ec962aa0b2924e30830828bf306}{time\_\-type} \hyperlink{classhdnum_1_1EE_a8aa4b8170705a377b04e3dd589c7d2d7}{get\_\-dt} () const }
+\label{classhdnum_1_1EE_a8aa4b8170705a377b04e3dd589c7d2d7}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1EE_ab532f7b8db8f30ebac1712fcad3a2d0f}{
+\hyperlink{classhdnum_1_1EE_a633508b18536c883d9fbbcccb7ac7ebc}{size\_\-type} \hyperlink{classhdnum_1_1EE_ab532f7b8db8f30ebac1712fcad3a2d0f}{get\_\-order} () const }
+\label{classhdnum_1_1EE_ab532f7b8db8f30ebac1712fcad3a2d0f}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::EE$<$ M $>$}
+
+Explicit Euler method as an example for an ODE solver. The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

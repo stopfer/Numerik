@@ -1,0 +1,52 @@
+\begin{thebibliography}{EEHJ96}
+
+\bibitem[DH02]{Deuflhard}
+{\sc Deuflhard, P.} \btxandlong{}\ {\sc A.~Hohmann}: {\em {N}umerische
+  {M}athematik {I}, {E}ine algorithmisch orientierte {E}inführung}.
+\newblock de Gruyter, 2002.
+
+\bibitem[EEHJ96]{CDE}
+{\sc Erikson, K.}, {\sc D.~Estep}, {\sc P.~Hansbo} \btxandlong{}\ {\sc
+  C.~Johnson}: {\em Computational Differential Equations}.
+\newblock Cambridge University Press, 1996.
+
+\bibitem[GL89]{GolubVanLoan}
+{\sc Golub, {G. H.}} \btxandlong{}\ {\sc {C. F.}~Van Loan}: {\em Matrix
+  Computations}.
+\newblock Johns Hopkins University Press, 2nd \btxeditionlong{}, 1989.
+
+\bibitem[GO96]{GolubOrtega}
+{\sc Golub, G.} \btxandlong{}\ {\sc {J. M.} Ortega}: {\em Scientific
+  Computing}.
+\newblock Teubner, 1996.
+
+\bibitem[QSS07]{QuarteroniSaccoSaleri}
+{\sc Quarteroni, A.}, {\sc R.~Sacco} \btxandlong{}\ {\sc F.~Saleri}: {\em
+  Numerical Mathematics}.
+\newblock Springer, 2nd \btxeditionlong{}, 2007.
+
+\bibitem[Ran06]{Rannacher0}
+{\sc Rannacher, R.}: {\em Einführung in die {N}umerische {M}athematik
+  ({N}umerik 0)}.
+\newblock \url{http://numerik.iwr.uni-heidelberg.de/~lehre/notes}, 2006.
+
+\bibitem[SB05]{StoerII}
+{\sc Stoer, J.} \btxandlong{}\ {\sc R.~Bulirsch}: {\em Numerische Mathematik
+  {II}}.
+\newblock Springer, 5. \btxeditionlong{}, 2005.
+
+\bibitem[SK05]{Schwarz}
+{\sc Schwarz, {H.-R.}} \btxandlong{}\ {\sc N.~Köckler}: {\em {N}umerische
+  {M}athematik}.
+\newblock Teubner, 5. \btxeditionlong{}, 2005.
+
+\bibitem[Sto05]{StoerI}
+{\sc Stoer, J.}: {\em Numerische Mathematik {I}}.
+\newblock Springer, 9. \btxeditionlong{}, 2005.
+
+\bibitem[SW05]{SchabackWendland}
+{\sc Schaback, R.} \btxandlong{}\ {\sc H.~Wendland}: {\em Numerische
+  Mathematik}.
+\newblock Springer, 5th \btxeditionlong{}, 2005.
+
+\end{thebibliography}

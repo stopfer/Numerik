@@ -1,0 +1,286 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% A general frame for lecture slides and lecture notes in one file
+% using LaTeX beamer
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% only for the article version
+\mode<article> 
+{
+  \usepackage[automark,komastyle]{scrpage2}
+  \usepackage{amsfonts}
+  \usepackage{amscd}
+  \usepackage[headings]{fullpage}
+%  \setlength{\parindent}{0pt}
+%  \setlength{\parskip}{1.25ex plus 0.5ex minus 0.2ex}
+}
+
+% only presentation 
+\mode<presentation>
+{
+%  \usepackage{times}
+%  \usetheme{default}
+  \usepackage{multimedia}
+  \usetheme[secheader]{Boadilla}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{background canvas}[vertical shading][bottom=white!10,top=white!10]
+  \setlength{\parindent}{0pt}
+  \setlength{\parskip}{1.35ex plus 0.5ex minus 0.3ex}
+  \setbeamertemplate{theorems}[numbered]
+  \usefonttheme[onlysmall]{structurebold}
+  \usepackage{amscd}
+}
+
+%% support '.' in pdf file names 
+\usepackage{grffile}
+
+% all after
+\usepackage{tikz} 
+\usepackage{eurosym} 
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{listings}
+\lstset{language=C++, basicstyle=\ttfamily, 
+  keywordstyle=\color{red}\bfseries, tabsize=4, stringstyle=\ttfamily,
+  commentstyle=\it, extendedchars=true, escapeinside={/*@}{@*/}}
+\usepackage{curves}
+%\usepackage{epic}
+\usepackage{calc}
+\usepackage{picinpar}
+%\usepackage{fancybox}
+%\usepackage{xspace}
+\usepackage{enumerate}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{bm}
+\usepackage[german]{varioref} 
+\usepackage{bibgerm}
+%\usepackage{multibib}
+\usepackage{nicefrac}
+\usepackage{cite}
+
+\mode<article> { 
+%  \usepackage[dvips,a4paper]{hyperref}
+  \usepackage{hyperref}
+  \usepackage{multimedia}
+  \usepackage{cite}
+  \setkomafont{pagenumber}{\normalfont\scshape}
+  \setkomafont{pagehead}{\normalfont\scshape}
+}
+%\usepackage{breakurl}
+
+%\newcites{num}{Lehrbücher Numerik}
+%\newcites{cpp}{Lehrbücher C++}
+
+%The theorems
+\mode<presentation> 
+{
+\theoremstyle{definition}
+}
+\mode<article> 
+{
+\theoremstyle{definition}
+}
+
+\newtheorem{Def}{Definition}[section]
+\newtheorem{Bsp}[Def]{Beispiel}
+\newtheorem{Bem}[Def]{Bemerkung}
+\newtheorem{Lem}[Def]{Lemma} 
+\newtheorem{Rgl}[Def]{Regel} 
+\newtheorem{Sat}[Def]{Satz}
+\newtheorem{HSatz}[Def]{Hilfssatz}
+\newtheorem{Kor}[Def]{Korollar}
+\newtheorem{Folg}[Def]{Folgerung} 
+\newtheorem{Beob}[Def]{Beobachtung}
+\newtheorem{wissen}[Def]{Wissen}
+\newtheorem*{geschichte}{Geschichte}
+
+
+%\newtheorem{Def}{Definition}[section]
+%\newtheorem{Exm}[Def]{Example}
+%\newtheorem{Lem}[Def]{Lemma}
+%\newtheorem{Rem}[Def]{Remark}
+%\newtheorem{Rul}[Def]{Rule}
+%\newtheorem{Thm}[Def]{Theorem}
+%\newtheorem{Cor}[Def]{Corollary}
+%\newtheorem{Obs}[Def]{Observation}
+%\newtheorem{Ass}[Def]{Assumption}
+%\newtheorem{Pro}[Def]{Property}
+%\newtheorem{Alg}[Def]{Algorithm}
+%\newtheorem{Prp}[Def]{Proposition}
+%\newtheorem{Lst}[Def]{Listing}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSection[]
+%{
+%  \begin{frame}<beamer>
+%    \frametitle{Contents}
+%\tableofcontents[currentsection,sectionstyle=show/hide,subsectionstyle=show/show/hide]
+%    \tableofcontents[currentsection]
+%  \end{frame}
+%}
+
+% Title definition
+\mode<presentation>
+{
+  \title[HDNum]{Heidelberger Numerikbibliothek für die Lehre}
+  \author{Peter Bastian}
+  \institute[IWR]
+  {
+    Universität Heidelberg\\
+    Interdisziplinäres Zentrum für Wissenschaftliches Rechnen\\
+    Im Neuenheimer Feld 368, D-69120 Heidelberg\\
+	email: \url{Peter.Bastian@iwr.uni-heidelberg.de}
+  }
+  \date{\today}
+  \logo{\includegraphics[width=9mm]{./EPS/iwrlogo-klein}}
+}
+\mode<article>
+{
+  \title{Heidelberger Numerikbibliothek \\ für die Lehre}
+  \author{\textsc{Peter Bastian}\\
+    Universität Heidelberg\\
+    Interdisziplinäres Zentrum für Wissenschaftliches Rechnen\\
+    Im Neuenheimer Feld 368, D-69120 Heidelberg\\
+	email: \url{Peter.Bastian@iwr.uni-heidelberg.de}
+  }
+  \date{\today}
+}
+
+% logo nach oben
+\mode<presentation>
+{
+% No navigation symbols and no lower logo
+\setbeamertemplate{sidebar right}{}
+
+% logo
+\newsavebox{\logobox}
+\sbox{\logobox}{%
+    \hskip\paperwidth%
+    \rlap{%
+      % putting the logo should not change the vertical possition
+      \vbox to 0pt{%
+        \vskip-\paperheight%
+        \vskip0.35cm%
+        \llap{\insertlogo\hskip0.1cm}%
+        % avoid overfull \vbox messages
+        \vss%
+      }%
+    }%
+}
+
+\addtobeamertemplate{footline}{}{%
+    \usebox{\logobox}%
+}
+}
+
+% number equations within sections in article mode
+%\numberwithin{equation}{section}
+
+% math symbols
+\newcommand{\diffd}{\,d}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% now comes the individual stuff lecture by lecture
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mode<article>
+{
+\pagestyle{scrheadings}
+}
+
+\begin{document}
+\nocite{*}
+\mode<presentation>
+{
+  \begin{frame}
+    \titlepage
+  \end{frame}
+}
+\mode<article>
+{
+\maketitle
+}
+
+\begin{abstract}
+Die Heidelberger Numerikbibliothek wurde begleitend zu den Vorlesungen 
+\textit{Einführung in die Numerik} und \textit{Numerik} in der Programmiersprache C++
+entwickelt und stellt 
+einfach zu benutzende Klassen für grundlegende Aufgaben in der Numerik bis hin zur Lösung
+von gewöhnlichen Differentialgleichungen zur Verfügung. In fast allen Klassen ist der
+benutzte Zahlentyp parametrisierbar so dass auch hochpräzise Rechnungen durchgeführt werden können.
+\end{abstract}
+
+%\mode<presentation>{
+%\begin{frame}<presentation>
+%\frametitle{Outline}
+%\tableofcontents[section,sectionstyle=show/show,subsectionstyle=hide/hide/hide] 
+%\end{frame}
+%}
+
+\mode<article>
+{
+\tableofcontents
+}
+
+\mode<all>{
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Die Kapitel
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<all>{\input{./einleitung.tex}}
+\mode<all>{\input{./programmierkurs.tex}}
+\mode<all>{\input{./vecmat.tex}}
+\mode<all>{\input{./ode.tex}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% die weiterführende Literatur wollen wir in der Präsentation nie
+% zeigen
+\mode<presentation> { 
+\begin{frame}<presentation>[allowframebreaks,allowdisplaybreaks]
+  \frametitle{Literatur}
+  \nocite{StoerI}
+%  \nocite{Deuflhard}
+%  \nocite{StoerII}
+  \nocite{Rannacher0}
+%  \nocite{Schwarz}
+%  \nocite{GolubOrtega}
+%  \nocite{GolubVanLoan}
+%  \nocite{CDE}
+%  \nocite{SchabackWendland}
+%  \nocite{QuarteroniSaccoSaleri}
+  \bibliographystyle{geralpha} 
+  \bibliography{lit}
+\end{frame}
+}
+
+% Literatur im Artikel am Schluss
+\mode<article> { 
+  \nocite{StoerI}
+  \nocite{Deuflhard}
+  \nocite{StoerII}
+  \nocite{Rannacher0}
+  \nocite{Schwarz}
+  \nocite{GolubOrtega}
+  \nocite{GolubVanLoan}
+  \nocite{CDE}
+  \nocite{SchabackWendland}
+  \nocite{QuarteroniSaccoSaleri}
+  \bibliographystyle{geralpha} 
+  \bibliography{lit} 
+}
+
+\end{document}

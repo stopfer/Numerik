@@ -1,0 +1,89 @@
+\hypertarget{classhdnum_1_1Heun2}{
+\section{hdnum::Heun2$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1Heun2}\index{hdnum::Heun2@{hdnum::Heun2}}
+}
+
+
+Heun method (order 2 with 2 stages).  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Heun2_a32d59e62cf1c8dcc50cd2583fae3bf09}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1Heun2_a32d59e62cf1c8dcc50cd2583fae3bf09}{size\_\-type}}
+\label{classhdnum_1_1Heun2_a32d59e62cf1c8dcc50cd2583fae3bf09}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{time\_\-type}}
+\label{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_af16dadf05575fe6ec2c0602fedfe8d2b}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1Heun2_af16dadf05575fe6ec2c0602fedfe8d2b}{number\_\-type}}
+\label{classhdnum_1_1Heun2_af16dadf05575fe6ec2c0602fedfe8d2b}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Heun2_aeddfa6a0a287892a6008da5c95d13dd7}{
+\hyperlink{classhdnum_1_1Heun2_aeddfa6a0a287892a6008da5c95d13dd7}{Heun2} (const M \&model\_\-)}
+\label{classhdnum_1_1Heun2_aeddfa6a0a287892a6008da5c95d13dd7}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_a4998cbb9dc1e4aa127a2209a5d5cb69c}{
+void \hyperlink{classhdnum_1_1Heun2_a4998cbb9dc1e4aa127a2209a5d5cb69c}{set\_\-dt} (\hyperlink{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1Heun2_a4998cbb9dc1e4aa127a2209a5d5cb69c}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_a967c7c1e842f5400d568ebf0b7c92877}{
+void \hyperlink{classhdnum_1_1Heun2_a967c7c1e842f5400d568ebf0b7c92877}{step} ()}
+\label{classhdnum_1_1Heun2_a967c7c1e842f5400d568ebf0b7c92877}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_ad5f075aa349590dbfb2e99fc565dadfc}{
+void \hyperlink{classhdnum_1_1Heun2_ad5f075aa349590dbfb2e99fc565dadfc}{set\_\-state} (\hyperlink{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1Heun2_af16dadf05575fe6ec2c0602fedfe8d2b}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1Heun2_ad5f075aa349590dbfb2e99fc565dadfc}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_ad14ab9cd78584ada47e543820bb73b78}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1Heun2_af16dadf05575fe6ec2c0602fedfe8d2b}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1Heun2_ad14ab9cd78584ada47e543820bb73b78}{get\_\-state} () const }
+\label{classhdnum_1_1Heun2_ad14ab9cd78584ada47e543820bb73b78}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_a5ad86e97fa21759e935b1e79b7ff4029}{
+\hyperlink{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{time\_\-type} \hyperlink{classhdnum_1_1Heun2_a5ad86e97fa21759e935b1e79b7ff4029}{get\_\-time} () const }
+\label{classhdnum_1_1Heun2_a5ad86e97fa21759e935b1e79b7ff4029}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_abde1a7c6195ecfd92184ed9d08173806}{
+\hyperlink{classhdnum_1_1Heun2_ac2e59a8551ffbce1455c0fd5266965fd}{time\_\-type} \hyperlink{classhdnum_1_1Heun2_abde1a7c6195ecfd92184ed9d08173806}{get\_\-dt} () const }
+\label{classhdnum_1_1Heun2_abde1a7c6195ecfd92184ed9d08173806}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Heun2_a943af41b853f8b3d37e1889a6e60a17b}{
+\hyperlink{classhdnum_1_1Heun2_a32d59e62cf1c8dcc50cd2583fae3bf09}{size\_\-type} \hyperlink{classhdnum_1_1Heun2_a943af41b853f8b3d37e1889a6e60a17b}{get\_\-order} () const }
+\label{classhdnum_1_1Heun2_a943af41b853f8b3d37e1889a6e60a17b}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::Heun2$<$ M $>$}
+
+Heun method (order 2 with 2 stages). The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

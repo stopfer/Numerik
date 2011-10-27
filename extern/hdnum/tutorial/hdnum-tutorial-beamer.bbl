@@ -1,0 +1,12 @@
+\begin{thebibliography}{Ran06}
+
+\bibitem[Ran06]{Rannacher0}
+{\sc Rannacher, R.}: {\em Einführung in die {N}umerische {M}athematik
+  ({N}umerik 0)}.
+\newblock \url{http://numerik.iwr.uni-heidelberg.de/~lehre/notes}, 2006.
+
+\bibitem[Sto05]{StoerI}
+{\sc Stoer, J.}: {\em Numerische Mathematik {I}}.
+\newblock Springer, 9. \btxeditionlong{}, 2005.
+
+\end{thebibliography}

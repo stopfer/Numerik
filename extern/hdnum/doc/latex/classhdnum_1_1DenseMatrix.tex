@@ -1,0 +1,1208 @@
+\hypertarget{classhdnum_1_1DenseMatrix}{
+\section{hdnum::DenseMatrix$<$ REAL $>$ Class Template Reference}
+\label{classhdnum_1_1DenseMatrix}\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+}
+
+
+Class with mathematical matrix operations.  
+
+
+
+
+{\ttfamily \#include $<$densematrix.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_ac524278e2ff8ab9e47d03376bb1d35cc}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_ac524278e2ff8ab9e47d03376bb1d35cc}{size\_\-type}}
+\label{classhdnum_1_1DenseMatrix_ac524278e2ff8ab9e47d03376bb1d35cc}
+
+\begin{DoxyCompactList}\small\item\em Type used for array indices. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a74403a826f8e6d873e0108e3dfc0b271}{
+typedef std::vector$<$ REAL $>$ {\bfseries VType}}
+\label{classhdnum_1_1DenseMatrix_a74403a826f8e6d873e0108e3dfc0b271}
+
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_ab680a3c46c7cba92a82eef5d4d3eb0b9}{
+typedef VType::const\_\-iterator {\bfseries ConstVectorIterator}}
+\label{classhdnum_1_1DenseMatrix_ab680a3c46c7cba92a82eef5d4d3eb0b9}
+
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_ac5d21573d755db58b7a53bd49b2e89d3}{
+typedef VType::iterator {\bfseries VectorIterator}}
+\label{classhdnum_1_1DenseMatrix_ac5d21573d755db58b7a53bd49b2e89d3}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_aa8aebe927f62a0f8f9728225cbdf8f82}{
+{\bfseries DenseMatrix} (const std::size\_\-t \_\-rows, const std::size\_\-t \_\-cols, const REAL def\_\-val=0)}
+\label{classhdnum_1_1DenseMatrix_aa8aebe927f62a0f8f9728225cbdf8f82}
+
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a628d1da6da24e801560d14d8b7c672a4}{
+void {\bfseries addNewRow} (const \hyperlink{classhdnum_1_1Vector}{hdnum::Vector}$<$ REAL $>$ \&rowvector)}
+\label{classhdnum_1_1DenseMatrix_a628d1da6da24e801560d14d8b7c672a4}
+
+\item 
+size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_aa5cc4ed9e7ccaafa1d9396ded5e7189b}{rowsize} () const 
+\begin{DoxyCompactList}\small\item\em get number of rows of the matrix \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_ac120c9c3beacb257ea9a8596079bfe4c}{colsize} () const 
+\begin{DoxyCompactList}\small\item\em get number of columns of the matrix \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_ac3efbe4dfe52f76b40a83be56ccfe13a}{
+bool {\bfseries scientific} () const }
+\label{classhdnum_1_1DenseMatrix_ac3efbe4dfe52f76b40a83be56ccfe13a}
+
+\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_afef39f0ff9f8ade07b226172b425fb2f}{scientific} (bool b) const 
+\begin{DoxyCompactList}\small\item\em Switch between floating point (default=true) and fixed point (false) display. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a569e06e19a7f8789677bda6c80b62a79}{
+std::size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_a569e06e19a7f8789677bda6c80b62a79}{iwidth} () const }
+\label{classhdnum_1_1DenseMatrix_a569e06e19a7f8789677bda6c80b62a79}
+
+\begin{DoxyCompactList}\small\item\em get index field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a7fb556886e5de7700f5eaf8b855414c7}{
+std::size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_a7fb556886e5de7700f5eaf8b855414c7}{width} () const }
+\label{classhdnum_1_1DenseMatrix_a7fb556886e5de7700f5eaf8b855414c7}
+
+\begin{DoxyCompactList}\small\item\em get data field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a289a6535cdeda96e7054e8fdecde8a49}{
+std::size\_\-t \hyperlink{classhdnum_1_1DenseMatrix_a289a6535cdeda96e7054e8fdecde8a49}{precision} () const }
+\label{classhdnum_1_1DenseMatrix_a289a6535cdeda96e7054e8fdecde8a49}
+
+\begin{DoxyCompactList}\small\item\em get data precision for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a9d3daebcef6d176c9300a4ce6d7691ad}{
+void \hyperlink{classhdnum_1_1DenseMatrix_a9d3daebcef6d176c9300a4ce6d7691ad}{iwidth} (std::size\_\-t i) const }
+\label{classhdnum_1_1DenseMatrix_a9d3daebcef6d176c9300a4ce6d7691ad}
+
+\begin{DoxyCompactList}\small\item\em set index field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a58fe239565e09a1e31539d83241ac5cd}{
+void \hyperlink{classhdnum_1_1DenseMatrix_a58fe239565e09a1e31539d83241ac5cd}{width} (std::size\_\-t i) const }
+\label{classhdnum_1_1DenseMatrix_a58fe239565e09a1e31539d83241ac5cd}
+
+\begin{DoxyCompactList}\small\item\em set data field width for pretty-\/printing \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a7c685b80c0fce12bf1b93ae788acdb91}{
+void \hyperlink{classhdnum_1_1DenseMatrix_a7c685b80c0fce12bf1b93ae788acdb91}{precision} (std::size\_\-t i) const }
+\label{classhdnum_1_1DenseMatrix_a7c685b80c0fce12bf1b93ae788acdb91}
+
+\begin{DoxyCompactList}\small\item\em set data precision for pretty-\/printing \item\end{DoxyCompactList}\item 
+REAL \& \hyperlink{classhdnum_1_1DenseMatrix_aaaedd0bde6bff8e04a0df7ef2afccbf5}{operator()} (const std::size\_\-t row, const std::size\_\-t col)
+\begin{DoxyCompactList}\small\item\em (i,j)-\/operator for accessing entries of a (m x n)-\/matrix directly \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_ab7c954af7b135112fa5f729dbac12180}{
+const REAL \& {\bfseries operator()} (const std::size\_\-t row, const std::size\_\-t col) const }
+\label{classhdnum_1_1DenseMatrix_ab7c954af7b135112fa5f729dbac12180}
+
+\item 
+\hypertarget{classhdnum_1_1DenseMatrix_a707394b6c91149af1b9c8d58d2936c54}{
+const ConstVectorIterator {\bfseries operator\mbox{[}$\,$\mbox{]}} (const std::size\_\-t row) const }
+\label{classhdnum_1_1DenseMatrix_a707394b6c91149af1b9c8d58d2936c54}
+
+\item 
+VectorIterator \hyperlink{classhdnum_1_1DenseMatrix_a0b75e9b18cb4ef4eea002473d889bff8}{operator\mbox{[}$\,$\mbox{]}} (const std::size\_\-t row)
+\begin{DoxyCompactList}\small\item\em \mbox{[}i\mbox{]}\mbox{[}j\mbox{]}-\/operator for accessing entries of a (m x n)-\/matrix directly \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_a45a853bb1f130f7eed4590246b2b5cb5}{operator=} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&A)
+\begin{DoxyCompactList}\small\item\em assignment operator \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_a71db0fae467cdc4951ae4f3c67165b2f}{operator=} (const REAL value)
+\begin{DoxyCompactList}\small\item\em assignment from a scalar value \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_aebf9d5238390cc39144b8eeb2d76a6f0}{operator+=} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&B)
+\begin{DoxyCompactList}\small\item\em Addition assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_a4b0031fef6e91b5f319862f16457ac9f}{operator-\/=} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&B)
+\begin{DoxyCompactList}\small\item\em Subtraction assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_a0681152377c82cc1bffa0384577e3d6b}{operator$\ast$=} (const REAL s)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication assignment. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \& \hyperlink{classhdnum_1_1DenseMatrix_a05fab8204f026598d4d97a04013ed7c5}{operator/=} (const REAL s)
+\begin{DoxyCompactList}\small\item\em Scalar division assignment. \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_a60a10bbc94192242d3206df18eb0978b}{update} (const REAL s, const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&B)
+\begin{DoxyCompactList}\small\item\em Scaled update of a \hyperlink{classhdnum_1_1Matrix}{Matrix}. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a63a0aa62c65545ae7aeee7a44e10568e}{mv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const 
+\begin{DoxyCompactList}\small\item\em matrix vector product y = A$\ast$x \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a7c179eb4b54a828bf8624f3222f710ce}{umv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const 
+\begin{DoxyCompactList}\small\item\em update matrix vector product y += A$\ast$x \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class V $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_aabf780a319d2d9d4379f8d5832c1a99c}{umv} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&y, const V \&s, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ V $>$ \&x) const 
+\begin{DoxyCompactList}\small\item\em update matrix vector product y += sA$\ast$x \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_ad79f3e02f3a7a3b2639992cc717470d9}{mm} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&A, const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&B)
+\begin{DoxyCompactList}\small\item\em assign to matrix product C = A$\ast$B to matrix C \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_a45630f26522adf719f3947d09145b7c2}{umm} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&A, const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&B)
+\begin{DoxyCompactList}\small\item\em add matrix product A$\ast$B to matrix C \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_a815aef5dfc09aecd12472dbfd4ab1e37}{sc} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x, std::size\_\-t k)
+\begin{DoxyCompactList}\small\item\em set column: make x the k'th column of A \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1DenseMatrix_a833f6bd37078251cb91018a7c0c339aa}{sr} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x, std::size\_\-t k)
+\begin{DoxyCompactList}\small\item\em set row: make x the k'th row of A \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_aea0ca5908d85d37f61646088e7623159}{
+REAL \hyperlink{classhdnum_1_1DenseMatrix_aea0ca5908d85d37f61646088e7623159}{norm\_\-infty} () const }
+\label{classhdnum_1_1DenseMatrix_aea0ca5908d85d37f61646088e7623159}
+
+\begin{DoxyCompactList}\small\item\em compute row sum norm \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1DenseMatrix_abff8476e13341659ce2fcb6145dd351b}{
+REAL \hyperlink{classhdnum_1_1DenseMatrix_abff8476e13341659ce2fcb6145dd351b}{norm\_\-1} () const }
+\label{classhdnum_1_1DenseMatrix_abff8476e13341659ce2fcb6145dd351b}
+
+\begin{DoxyCompactList}\small\item\em compute column sum norm \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \hyperlink{classhdnum_1_1DenseMatrix_a6c43e793e3c9d91b1c216137a26f9ab7}{operator$\ast$} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x)
+\begin{DoxyCompactList}\small\item\em vector = matrix $\ast$ vector \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \hyperlink{classhdnum_1_1DenseMatrix_a32bf5f7e4113e65aaeee04177d22a522}{operator$\ast$} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&x) const 
+\begin{DoxyCompactList}\small\item\em matrix = matrix $\ast$ matrix \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \hyperlink{classhdnum_1_1DenseMatrix_ab31d1c60b8078d01bd131e36a486f091}{operator+} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&x) const 
+\begin{DoxyCompactList}\small\item\em matrix = matrix + matrix \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \hyperlink{classhdnum_1_1DenseMatrix_a0579e65186e9f546b40d718ec7502afd}{operator-\/} (const \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \&x) const 
+\begin{DoxyCompactList}\small\item\em matrix = matrix -\/ matrix \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a7827fbef0d569f0b605a6a260e1571f3}{identity} (\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ T $>$ \&A)
+\item 
+{\footnotesize template$<$typename REAL $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a2a328e8b5dca944a17fce76e1a51c7ae}{spd} (\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&A)
+\item 
+{\footnotesize template$<$typename REAL $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a1ed8c7d92b4b38e3e48eaf3a8cce1d27}{vandermonde} (\hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&A, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ x)
+\item 
+{\footnotesize template$<$typename REAL $>$ }\\void \hyperlink{classhdnum_1_1DenseMatrix_a5c106d0beabd399734dd2b1a6637626e}{readMatrixFromFile} (const std::string \&filename, \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}$<$ REAL $>$ \&A)
+\begin{DoxyCompactList}\small\item\em Read matrix from a text file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename REAL$>$ class hdnum::DenseMatrix$<$ REAL $>$}
+
+Class with mathematical matrix operations. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classhdnum_1_1DenseMatrix_ac120c9c3beacb257ea9a8596079bfe4c}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!colsize@{colsize}}
+\index{colsize@{colsize}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{colsize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ size\_\-t {\bf hdnum::DenseMatrix}$<$ REAL $>$::colsize () const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_ac120c9c3beacb257ea9a8596079bfe4c}
+
+
+get number of columns of the matrix 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,5);
+  size_t nColumns = A.colsize();
+  std::cout << "Matrix A has " << nColumns << " columns." << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+Matrix A has 5 columns.
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_ad79f3e02f3a7a3b2639992cc717470d9}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!mm@{mm}}
+\index{mm@{mm}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{mm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::mm (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em A}, \/  const {\bf DenseMatrix}$<$ REAL $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_ad79f3e02f3a7a3b2639992cc717470d9}
+
+
+assign to matrix product C = A$\ast$B to matrix C 
+
+Implements C = A$\ast$B where A and B are matrices
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(2,6,1.0);
+  hdnum::DenseMatrix<double> B(6,3,-1.0);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(6);          // use at least 6 columns for displaying matrix entries
+  A.precision(3);      // display 3 digits behind the point 
+
+  std::cout << "A =" << A << std::endl;
+  std::cout << "B =" << B << std::endl;
+
+  hdnum::DenseMatrix<double> C(2,3);
+  C.mm(A,B);
+  std::cout << "C = A*B =" << C << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A =
+                  0      1      2      3      4      5 
+          0   1.000  1.000  1.000  1.000  1.000  1.000 
+          1   1.000  1.000  1.000  1.000  1.000  1.000 
+
+B =
+                  0      1      2 
+          0  -1.000 -1.000 -1.000 
+          1  -1.000 -1.000 -1.000 
+          2  -1.000 -1.000 -1.000 
+          3  -1.000 -1.000 -1.000 
+          4  -1.000 -1.000 -1.000 
+          5  -1.000 -1.000 -1.000 
+
+C = A*B =
+                  0      1      2 
+          0  -6.000 -6.000 -6.000 
+          1  -6.000 -6.000 -6.000 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a63a0aa62c65545ae7aeee7a44e10568e}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!mv@{mv}}
+\index{mv@{mv}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{mv}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ template$<$class V $>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::mv ({\bf Vector}$<$ V $>$ \& {\em y}, \/  const {\bf Vector}$<$ V $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a63a0aa62c65545ae7aeee7a44e10568e}
+
+
+matrix vector product y = A$\ast$x 
+
+Implements y = A$\ast$x where x and y are a vectors and A is a matrix
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em y}]reference to the resulting \hyperlink{classhdnum_1_1Vector}{Vector} \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3,10.0);
+  hdnum::Vector<double> y(2);
+  hdnum::DenseMatrix<double> A(2,3,1.0);
+
+  x.scientific(false); // fixed point representation for all Vector objects
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+
+  std::cout << "A =" << A << std::endl;
+  std::cout << "x =" << x << std::endl;
+  A.mv(y,x);
+  std::cout << "y = A*x =" << y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A =
+                      0          1          2 
+          0       1.000      1.000      1.000 
+          1       1.000      1.000      1.000 
+
+x =
+[ 0]     10.0000000
+[ 1]     10.0000000
+[ 2]     10.0000000
+
+y = A*x =
+[ 0]     30.0000000
+[ 1]     30.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_aaaedd0bde6bff8e04a0df7ef2afccbf5}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator()@{operator()}}
+\index{operator()@{operator()}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ REAL\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator() (const std::size\_\-t {\em row}, \/  const std::size\_\-t {\em col})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_aaaedd0bde6bff8e04a0df7ef2afccbf5}
+
+
+(i,j)-\/operator for accessing entries of a (m x n)-\/matrix directly 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]row index (0...m-\/1) \item[\mbox{$\leftarrow$} {\em j}]column index (0...n-\/1)\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(3);
+
+  identity(A);  // Defines the identity matrix of the same dimension
+  std::cout << "A=" << A << std::endl;
+
+  std::cout << "reading A(0,0)=" << A(0,0) << std::endl;
+
+  std::cout << "resetting A(0,0) and A(2,3)..." << std::endl;
+  A(0,0) = 1.234;
+  A(2,3) = 432.1;
+  
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2        3 
+          0     1.000    0.000    0.000    0.000 
+          1     0.000    1.000    0.000    0.000 
+          2     0.000    0.000    1.000    0.000 
+          3     0.000    0.000    0.000    1.000 
+
+reading A(0,0)=1.000
+resetting A(0,0) and A(2,3)...
+A=
+                    0        1        2        3 
+          0     1.234    0.000    0.000    0.000 
+          1     0.000    1.000    0.000    0.000 
+          2     0.000    0.000    1.000  432.100 
+          3     0.000    0.000    0.000    1.000 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a32bf5f7e4113e65aaeee04177d22a522}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix} {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator$\ast$ (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a32bf5f7e4113e65aaeee04177d22a522}
+
+
+matrix = matrix $\ast$ matrix 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(3,3,2.0);
+  hdnum::DenseMatrix<double> B(3,3,4.0);
+  hdnum::DenseMatrix<double> C(3,3);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+
+  std::cout << "A=" << A << std::endl;
+  std::cout << "B=" << B << std::endl;
+  C=A*B;
+  std::cout << "C=A*B=" << C << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2 
+          0       2.0      2.0      2.0 
+          1       2.0      2.0      2.0 
+          2       2.0      2.0      2.0 
+
+B=
+                    0        1        2 
+          0       4.0      4.0      4.0 
+          1       4.0      4.0      4.0 
+          2       4.0      4.0      4.0 
+
+C=A*B=
+                    0        1        2 
+          0      24.0     24.0     24.0 
+          1      24.0     24.0     24.0 
+          2      24.0     24.0     24.0 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a6c43e793e3c9d91b1c216137a26f9ab7}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf Vector}$<$REAL$>$ {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator$\ast$ (const {\bf Vector}$<$ REAL $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a6c43e793e3c9d91b1c216137a26f9ab7}
+
+
+vector = matrix $\ast$ vector 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3,4.0);
+  hdnum::DenseMatrix<double> A(3,3,2.0);
+  hdnum::Vector<double> y(3);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+  
+  x.scientific(false); // fixed point representation for all Vector objects
+  x.width(8);
+  x.precision(1);
+
+
+  std::cout << "A=" << A << std::endl;
+  std::cout << "x=" << x << std::endl;
+  y=A*x;
+  std::cout << "y=A*x" << y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2 
+          0       2.0      2.0      2.0 
+          1       2.0      2.0      2.0 
+          2       2.0      2.0      2.0 
+
+x=
+[ 0]     4.0
+[ 1]     4.0
+[ 2]     4.0
+
+y=A*x
+[ 0]    24.0
+[ 1]    24.0
+[ 2]    24.0
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a0681152377c82cc1bffa0384577e3d6b}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator$\ast$= (const REAL {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a0681152377c82cc1bffa0384577e3d6b}
+
+
+Scalar multiplication assignment. 
+
+Implements A $\ast$= s where s is a scalar
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+          double s = 0.5;
+          hdnum::DenseMatrix<double> A(2,3,1.0);
+          std::cout << "A=" << A << std::endl;
+          A *= s;
+          std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                      0          1          2 
+          0   1.000e+00  1.000e+00  1.000e+00 
+          1   1.000e+00  1.000e+00  1.000e+00 
+
+0.5*A =
+                      0          1          2 
+          0   5.000e-01  5.000e-01  5.000e-01 
+          1   5.000e-01  5.000e-01  5.000e-01 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_ab31d1c60b8078d01bd131e36a486f091}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator+@{operator+}}
+\index{operator+@{operator+}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix} {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator+ (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_ab31d1c60b8078d01bd131e36a486f091}
+
+
+matrix = matrix + matrix 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(3,3,2.0);
+  hdnum::DenseMatrix<double> B(3,3,4.0);
+  hdnum::DenseMatrix<double> C(3,3);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+
+  std::cout << "A=" << A << std::endl;
+  std::cout << "B=" << B << std::endl;
+  C=A+B;
+  std::cout << "C=A+B=" << C << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2 
+          0       2.0      2.0      2.0 
+          1       2.0      2.0      2.0 
+          2       2.0      2.0      2.0 
+
+B=
+                    0        1        2 
+          0       4.0      4.0      4.0 
+          1       4.0      4.0      4.0 
+          2       4.0      4.0      4.0 
+
+C=A+B=
+                    0        1        2 
+          0       6.0      6.0      6.0 
+          1       6.0      6.0      6.0 
+          2       6.0      6.0      6.0 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_aebf9d5238390cc39144b8eeb2d76a6f0}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator+= (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_aebf9d5238390cc39144b8eeb2d76a6f0}
+
+
+Addition assignment. 
+
+Implements A += B matrix addition
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em B}]another \hyperlink{classhdnum_1_1Matrix}{Matrix} \end{DoxyParams}
+\hypertarget{classhdnum_1_1DenseMatrix_a0579e65186e9f546b40d718ec7502afd}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix} {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator-\/ (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a0579e65186e9f546b40d718ec7502afd}
+
+
+matrix = matrix -\/ matrix 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(3,3,2.0);
+  hdnum::DenseMatrix<double> B(3,3,4.0);
+  hdnum::DenseMatrix<double> C(3,3);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+
+  std::cout << "A=" << A << std::endl;
+  std::cout << "B=" << B << std::endl;
+  C=A-B;
+  std::cout << "C=A-B=" << C << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2 
+          0       2.0      2.0      2.0 
+          1       2.0      2.0      2.0 
+          2       2.0      2.0      2.0 
+
+B=
+                    0        1        2 
+          0       4.0      4.0      4.0 
+          1       4.0      4.0      4.0 
+          2       4.0      4.0      4.0 
+
+C=A-B=
+                    0        1        2 
+          0      -2.0     -2.0     -2.0 
+          1      -2.0     -2.0     -2.0 
+          2      -2.0     -2.0     -2.0 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a4b0031fef6e91b5f319862f16457ac9f}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator-\/= (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a4b0031fef6e91b5f319862f16457ac9f}
+
+
+Subtraction assignment. 
+
+Implements A -\/= B matrix subtraction
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em B}]another matrix \end{DoxyParams}
+\hypertarget{classhdnum_1_1DenseMatrix_a05fab8204f026598d4d97a04013ed7c5}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator/= (const REAL {\em s})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a05fab8204f026598d4d97a04013ed7c5}
+
+
+Scalar division assignment. 
+
+Implements A /= s where s is a scalar
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+          double s = 0.5;
+          hdnum::DenseMatrix<double> A(2,3,1.0);
+          std::cout << "A=" << A << std::endl;
+          A /= s;
+          std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                      0          1          2 
+          0   1.000e+00  1.000e+00  1.000e+00 
+          1   1.000e+00  1.000e+00  1.000e+00 
+
+A/0.5 =
+                      0          1          2 
+          0   2.000e+00  2.000e+00  2.000e+00 
+          1   2.000e+00  2.000e+00  2.000e+00 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a71db0fae467cdc4951ae4f3c67165b2f}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator= (const REAL {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a71db0fae467cdc4951ae4f3c67165b2f}
+
+
+assignment from a scalar value 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(2,3);
+  A = 5.432;
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(3);
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2 
+          0     5.432    5.432    5.432
+          1     5.432    5.432    5.432
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a45a853bb1f130f7eed4590246b2b5cb5}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator=@{operator=}}
+\index{operator=@{operator=}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf DenseMatrix}\& {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator= (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em A})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a45a853bb1f130f7eed4590246b2b5cb5}
+
+
+assignment operator 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  spd(A);
+  hdnum::DenseMatrix<double> B(4,4);
+  B = A;
+  std::cout << "B=" << B << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+B=
+                      0          1          2          3 
+          0   4.000e+00 -1.000e+00 -2.500e-01 -1.111e-01 
+          1  -1.000e+00  4.000e+00 -1.000e+00 -2.500e-01 
+          2  -2.500e-01 -1.000e+00  4.000e+00 -1.000e+00 
+          3  -1.111e-01 -2.500e-01 -1.000e+00  4.000e+00 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a0b75e9b18cb4ef4eea002473d889bff8}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ VectorIterator {\bf hdnum::DenseMatrix}$<$ REAL $>$::operator\mbox{[}$\,$\mbox{]} (const std::size\_\-t {\em row})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a0b75e9b18cb4ef4eea002473d889bff8}
+
+
+\mbox{[}i\mbox{]}\mbox{[}j\mbox{]}-\/operator for accessing entries of a (m x n)-\/matrix directly 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]row index (0...m-\/1) \item[\mbox{$\leftarrow$} {\em j}]column index (0...n-\/1)\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(3);
+
+  identity(A);  // Defines the identity matrix of the same dimension
+  std::cout << "A=" << A << std::endl;
+
+  std::cout << "reading A[0][0]=" << A[0][0] << std::endl;
+  std::cout << "resetting A[0][0] and A[2][3]..." << std::endl;
+  A[0][0] = 1.234;
+  A[2][3] = 432.1;
+
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2        3 
+          0     1.000    0.000    0.000    0.000 
+          1     0.000    1.000    0.000    0.000 
+          2     0.000    0.000    1.000    0.000 
+          3     0.000    0.000    0.000    1.000 
+
+reading A[0][0]=1.000
+resetting A[0][0] and A[2][3]...
+A=
+                    0        1        2        3 
+          0     1.234    0.000    0.000    0.000 
+          1     0.000    1.000    0.000    0.000 
+          2     0.000    0.000    1.000  432.100 
+          3     0.000    0.000    0.000    1.000 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_aa5cc4ed9e7ccaafa1d9396ded5e7189b}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!rowsize@{rowsize}}
+\index{rowsize@{rowsize}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{rowsize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ size\_\-t {\bf hdnum::DenseMatrix}$<$ REAL $>$::rowsize () const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_aa5cc4ed9e7ccaafa1d9396ded5e7189b}
+
+
+get number of rows of the matrix 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,5);
+  size_t nRows = A.rowsize();
+  std::cout << "Matrix A has " << nRows << " rows." << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+Matrix A has 4 rows.
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a815aef5dfc09aecd12472dbfd4ab1e37}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!sc@{sc}}
+\index{sc@{sc}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{sc}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::sc (const {\bf Vector}$<$ REAL $>$ \& {\em x}, \/  std::size\_\-t {\em k})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a815aef5dfc09aecd12472dbfd4ab1e37}
+
+
+set column: make x the k'th column of A 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector} \item[\mbox{$\leftarrow$} {\em k}]number of the column of A to be set\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(2,434.0);
+  hdnum::DenseMatrix<double> A(2,6);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+  
+  std::cout << "original A=" << A << std::endl;
+  A.sc(x,3);   // redefine fourth column of the matrix
+  std::cout << "modified A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+original A=
+                    0        1        2        3        4        5 
+          0       0.0      0.0      0.0      0.0      0.0      0.0 
+          1       0.0      0.0      0.0      0.0      0.0      0.0 
+
+modified A=
+                    0        1        2        3        4        5 
+          0       0.0      0.0      0.0    434.0      0.0      0.0 
+          1       0.0      0.0      0.0    434.0      0.0      0.0 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_afef39f0ff9f8ade07b226172b425fb2f}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!scientific@{scientific}}
+\index{scientific@{scientific}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{scientific}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::scientific (bool {\em b}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_afef39f0ff9f8ade07b226172b425fb2f}
+
+
+Switch between floating point (default=true) and fixed point (false) display. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(3);
+  identity(A);  // Defines the identity matrix of the same dimension
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                    0        1        2        3 
+          0     1.000    0.000    0.000    0.000 
+          1     0.000    1.000    0.000    0.000 
+          2     0.000    0.000    1.000    0.000 
+          3     0.000    0.000    0.000    1.000 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a833f6bd37078251cb91018a7c0c339aa}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!sr@{sr}}
+\index{sr@{sr}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{sr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::sr (const {\bf Vector}$<$ REAL $>$ \& {\em x}, \/  std::size\_\-t {\em k})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a833f6bd37078251cb91018a7c0c339aa}
+
+
+set row: make x the k'th row of A 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector} \item[\mbox{$\leftarrow$} {\em k}]number of the row of A to be set\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3,434.0);
+  hdnum::DenseMatrix<double> A(3,3);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(8);
+  A.precision(1);
+  
+  std::cout << "original A=" << A << std::endl;
+  A.sr(x,1);   // redefine second row of the matrix
+  std::cout << "modified A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+original A=
+                    0        1        2 
+          0       0.0      0.0      0.0 
+          1       0.0      0.0      0.0 
+          2       0.0      0.0      0.0 
+
+modified A=
+                    0        1        2 
+          0       0.0      0.0      0.0 
+          1     434.0    434.0    434.0 
+          2       0.0      0.0      0.0 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a45630f26522adf719f3947d09145b7c2}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!umm@{umm}}
+\index{umm@{umm}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{umm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::umm (const {\bf DenseMatrix}$<$ REAL $>$ \& {\em A}, \/  const {\bf DenseMatrix}$<$ REAL $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a45630f26522adf719f3947d09145b7c2}
+
+
+add matrix product A$\ast$B to matrix C 
+
+Implements C += A$\ast$B where A, B and C are matrices
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(2,6,1.0);
+  hdnum::DenseMatrix<double> B(6,3,-1.0);
+  hdnum::DenseMatrix<double> C(2,3,0.5);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(6);
+  A.precision(3);
+
+  std::cout << "C =" << C << std::endl;
+  std::cout << "A =" << A << std::endl;
+  std::cout << "B =" << B << std::endl;
+
+  C.umm(A,B);
+  std::cout << "C + A*B =" << C << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+C =
+                  0      1      2 
+          0   0.500  0.500  0.500 
+          1   0.500  0.500  0.500 
+
+A =
+                  0      1      2      3      4      5 
+          0   1.000  1.000  1.000  1.000  1.000  1.000 
+          1   1.000  1.000  1.000  1.000  1.000  1.000 
+
+B =
+                  0      1      2 
+          0  -1.000 -1.000 -1.000 
+          1  -1.000 -1.000 -1.000 
+          2  -1.000 -1.000 -1.000 
+          3  -1.000 -1.000 -1.000 
+          4  -1.000 -1.000 -1.000 
+          5  -1.000 -1.000 -1.000 
+
+C + A*B =
+                  0      1      2 
+          0  -5.500 -5.500 -5.500 
+          1  -5.500 -5.500 -5.500 
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_aabf780a319d2d9d4379f8d5832c1a99c}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!umv@{umv}}
+\index{umv@{umv}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{umv}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ template$<$class V $>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::umv ({\bf Vector}$<$ V $>$ \& {\em y}, \/  const V \& {\em s}, \/  const {\bf Vector}$<$ V $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_aabf780a319d2d9d4379f8d5832c1a99c}
+
+
+update matrix vector product y += sA$\ast$x 
+
+Implements y += sA$\ast$x where s is a scalar value, x and y are a vectors and A is a matrix
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em y}]reference to the resulting \hyperlink{classhdnum_1_1Vector}{Vector} \item[\mbox{$\leftarrow$} {\em s}]constant reference to a number type \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  double s=0.5;
+  hdnum::Vector<double> x(3,10.0);
+  hdnum::Vector<double> y(2,5.0);
+  hdnum::DenseMatrix<double> A(2,3,1.0);
+
+  x.scientific(false); // fixed point representation for all Vector objects
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+
+  std::cout << "y =" << y << std::endl;
+  std::cout << "A =" << A << std::endl;
+  std::cout << "x =" << x << std::endl;
+  A.umv(y,s,x);
+  std::cout << "y = s*A*x =" << y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+y =
+[ 0]      5.0000000
+[ 1]      5.0000000
+
+A =
+                      0          1          2 
+          0       1.000      1.000      1.000 
+          1       1.000      1.000      1.000 
+
+x =
+[ 0]     10.0000000
+[ 1]     10.0000000
+[ 2]     10.0000000
+
+y = s*A*x =
+[ 0]     20.0000000
+[ 1]     20.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a7c179eb4b54a828bf8624f3222f710ce}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!umv@{umv}}
+\index{umv@{umv}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{umv}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ template$<$class V $>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::umv ({\bf Vector}$<$ V $>$ \& {\em y}, \/  const {\bf Vector}$<$ V $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a7c179eb4b54a828bf8624f3222f710ce}
+
+
+update matrix vector product y += A$\ast$x 
+
+Implements y += A$\ast$x where x and y are a vectors and A is a matrix
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em y}]reference to the resulting \hyperlink{classhdnum_1_1Vector}{Vector} \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3,10.0);
+  hdnum::Vector<double> y(2,5.0);
+  hdnum::DenseMatrix<double> A(2,3,1.0);
+
+  x.scientific(false); // fixed point representation for all Vector objects
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+
+  std::cout << "y =" << y << std::endl;
+  std::cout << "A =" << A << std::endl;
+  std::cout << "x =" << x << std::endl;
+  A.umv(y,x);
+  std::cout << "y = A*x =" << y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+y =
+[ 0]      5.0000000
+[ 1]      5.0000000
+
+A =
+                      0          1          2 
+          0       1.000      1.000      1.000 
+          1       1.000      1.000      1.000 
+
+x =
+[ 0]     10.0000000
+[ 1]     10.0000000
+[ 2]     10.0000000
+
+y + A*x =
+[ 0]     35.0000000
+[ 1]     35.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a60a10bbc94192242d3206df18eb0978b}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!update@{update}}
+\index{update@{update}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::DenseMatrix}$<$ REAL $>$::update (const REAL {\em s}, \/  const {\bf DenseMatrix}$<$ REAL $>$ \& {\em B})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a60a10bbc94192242d3206df18eb0978b}
+
+
+Scaled update of a \hyperlink{classhdnum_1_1Matrix}{Matrix}. 
+
+Implements A += s$\ast$B where s is a scalar and B a matrix
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em s}]scalar value to multiply with \item[\mbox{$\leftarrow$} {\em B}]another matrix\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+          double s = 0.5;
+          hdnum::DenseMatrix<double> A(2,3,1.0);
+          hdnum::DenseMatrix<double> B(2,3,2.0);
+          A.update(s,B);
+          std::cout << "A + s*B =" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A + s*B =
+                      0          1          2 
+          0       1.500      1.500      1.500 
+          1       1.500      1.500      1.500 
+	  \end{DoxyVerb}
+ 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classhdnum_1_1DenseMatrix_a7827fbef0d569f0b605a6a260e1571f3}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!identity@{identity}}
+\index{identity@{identity}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void identity ({\bf DenseMatrix}$<$ T $>$ \& {\em A})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a7827fbef0d569f0b605a6a260e1571f3}
+\par
+ {\bfseries Function:} make identity matrix 
+\begin{DoxyCode}
+  template<class T>
+  inline void identity (DenseMatrix<T> &A)
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em A}]reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} that shall be filled with entries\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  identity(A);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(10);
+  A.precision(5);
+
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                      0          1          2          3 
+          0     1.00000    0.00000    0.00000    0.00000 
+          1     0.00000    1.00000    0.00000    0.00000 
+          2     0.00000    0.00000    1.00000    0.00000 
+          3     0.00000    0.00000    0.00000    1.00000 
+	\end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a5c106d0beabd399734dd2b1a6637626e}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!readMatrixFromFile@{readMatrixFromFile}}
+\index{readMatrixFromFile@{readMatrixFromFile}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{readMatrixFromFile}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ void readMatrixFromFile (const std::string \& {\em filename}, \/  {\bf DenseMatrix}$<$ REAL $>$ \& {\em A})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a5c106d0beabd399734dd2b1a6637626e}
+
+
+Read matrix from a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em filename}]name of the text file \item[\mbox{$\leftrightarrow$} {\em A}]reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::DenseMatrix<number> L;
+readMatrixFromFile("matrixL.dat", L );
+std::cout << "L=" << L << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+Contents of "matrixL.dat":
+1.000e+00  0.000e+00  0.000e+00	 
+2.000e+00  1.000e+00  0.000e+00	 
+3.000e+00  2.000e+00  1.000e+00	 
+
+would give:
+L=
+                      0          1          2
+          0   1.000e+00  0.000e+00  0.000e+00
+          1   2.000e+00  1.000e+00  0.000e+00
+          2   3.000e+00  2.000e+00  1.000e+00
+	\end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a2a328e8b5dca944a17fce76e1a51c7ae}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!spd@{spd}}
+\index{spd@{spd}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{spd}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ void spd ({\bf DenseMatrix}$<$ REAL $>$ \& {\em A})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a2a328e8b5dca944a17fce76e1a51c7ae}
+\par
+ {\bfseries Function:} make a symmetric and positive definite matrix 
+\begin{DoxyCode}
+  template<typename REAL>
+  inline void spd (DenseMatrix<REAL> &A)
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em A}]reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} that shall be filled with entries\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::DenseMatrix<double> A(4,4);
+  spd(A);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(10);
+  A.precision(5);
+
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+A=
+                      0          1          2          3 
+          0     4.00000   -1.00000   -0.25000   -0.11111 
+          1    -1.00000    4.00000   -1.00000   -0.25000 
+          2    -0.25000   -1.00000    4.00000   -1.00000 
+          3    -0.11111   -0.25000   -1.00000    4.00000 
+	\end{DoxyVerb}
+ \hypertarget{classhdnum_1_1DenseMatrix_a1ed8c7d92b4b38e3e48eaf3a8cce1d27}{
+\index{hdnum::DenseMatrix@{hdnum::DenseMatrix}!vandermonde@{vandermonde}}
+\index{vandermonde@{vandermonde}!hdnum::DenseMatrix@{hdnum::DenseMatrix}}
+\subsubsection[{vandermonde}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ void vandermonde ({\bf DenseMatrix}$<$ REAL $>$ \& {\em A}, \/  const {\bf Vector}$<$ REAL $>$ {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1DenseMatrix_a1ed8c7d92b4b38e3e48eaf3a8cce1d27}
+\par
+ {\bfseries Function:} make a vandermonde matrix 
+\begin{DoxyCode}
+  template<typename REAL>
+  inline void vandermonde (DenseMatrix<REAL> &A, const Vector<REAL> x)
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em A}]reference to a \hyperlink{classhdnum_1_1DenseMatrix}{DenseMatrix} that shall be filled with entries \item[\mbox{$\leftarrow$} {\em x}]constant reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(4);
+  fill(x,2.0,1.0);
+  hdnum::DenseMatrix<double> A(4,4);
+  vandermonde(A,x);
+
+  A.scientific(false); // fixed point representation for all DenseMatrix objects
+  A.width(10);
+  A.precision(5);
+
+  x.scientific(false); // fixed point representation for all Vector objects
+  x.width(10);
+  x.precision(5);
+
+  std::cout << "x=" << x << std::endl;
+  std::cout << "A=" << A << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]   2.00000
+[ 1]   3.00000
+[ 2]   4.00000
+[ 3]   5.00000
+
+A=
+                      0          1          2          3 
+          0     1.00000    2.00000    4.00000    8.00000 
+          1     1.00000    3.00000    9.00000   27.00000 
+          2     1.00000    4.00000   16.00000   64.00000 
+          3     1.00000    5.00000   25.00000  125.00000 
+
+	\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/densematrix.hh\end{DoxyCompactItemize}

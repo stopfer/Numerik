@@ -1,0 +1,138 @@
+\hypertarget{classhdnum_1_1SGrid}{
+\section{hdnum::SGrid$<$ N, DF, dimension $>$ Class Template Reference}
+\label{classhdnum_1_1SGrid}\index{hdnum::SGrid@{hdnum::SGrid}}
+}
+
+
+Structured Grid for Finite Differences.  
+
+
+
+
+{\ttfamily \#include $<$sgrid.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries dim} =  dimension
+ \}
+\item 
+\hypertarget{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type}}
+\label{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}
+
+\begin{DoxyCompactList}\small\item\em Export size type. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{
+typedef N \hyperlink{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{number\_\-type}}
+\label{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}
+
+\begin{DoxyCompactList}\small\item\em Export number type. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a0442a89c48bb466449cb1a7e5d4cc5f6}{
+typedef DF \hyperlink{classhdnum_1_1SGrid_a0442a89c48bb466449cb1a7e5d4cc5f6}{DomainFunction}}
+\label{classhdnum_1_1SGrid_a0442a89c48bb466449cb1a7e5d4cc5f6}
+
+\begin{DoxyCompactList}\small\item\em Type of the function defining the domain. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classhdnum_1_1SGrid_ada654dda6b112ebe8c29fef72f917b7b}{SGrid} (const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{number\_\-type} $>$ extent\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} $>$ size\_\-, const \hyperlink{classhdnum_1_1SGrid_a0442a89c48bb466449cb1a7e5d4cc5f6}{DomainFunction} \&df\_\-)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} \hyperlink{classhdnum_1_1SGrid_a64eff228d60e47b1ecceaf331ba54173}{getNeighborIndex} (const \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} ln, const \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} n\_\-dim, const int n\_\-side, const int k=1) const 
+\begin{DoxyCompactList}\small\item\em Provides the index of the k-\/th neighbor of the node with index ln. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a47cc9aa07b061592f69480c0d128e70c}{
+bool \hyperlink{classhdnum_1_1SGrid_a47cc9aa07b061592f69480c0d128e70c}{isBoundaryNode} (const \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} ln) const }
+\label{classhdnum_1_1SGrid_a47cc9aa07b061592f69480c0d128e70c}
+
+\begin{DoxyCompactList}\small\item\em Returns true if the node is on the boundary of the discrete compuational domain. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a60ed482ea236e8fe974401e637efd526}{
+\hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} \hyperlink{classhdnum_1_1SGrid_a60ed482ea236e8fe974401e637efd526}{getNumberOfNodes} () const }
+\label{classhdnum_1_1SGrid_a60ed482ea236e8fe974401e637efd526}
+
+\begin{DoxyCompactList}\small\item\em Returns the number of nodes which are in the compuational domain. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a3f45476d2463aa8ee9d7cb3c2fc13e86}{
+\hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} $>$ {\bfseries getGridSize} () const }
+\label{classhdnum_1_1SGrid_a3f45476d2463aa8ee9d7cb3c2fc13e86}
+
+\item 
+\hypertarget{classhdnum_1_1SGrid_af77f316487e41dc0f7bcd972f2c12a85}{
+\hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{number\_\-type} $>$ \hyperlink{classhdnum_1_1SGrid_af77f316487e41dc0f7bcd972f2c12a85}{getCellWidth} () const }
+\label{classhdnum_1_1SGrid_af77f316487e41dc0f7bcd972f2c12a85}
+
+\begin{DoxyCompactList}\small\item\em Returns the cell width h of the structured grid. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a3d5abab14a7aea4304ebf01a0567c733}{
+\hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{number\_\-type} $>$ \hyperlink{classhdnum_1_1SGrid_a3d5abab14a7aea4304ebf01a0567c733}{getCoordinates} (const \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} ln) const }
+\label{classhdnum_1_1SGrid_a3d5abab14a7aea4304ebf01a0567c733}
+
+\begin{DoxyCompactList}\small\item\em Returns the world coordinates of the node with the given node index. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a136c4dcd9ff0fd17f4c590ce3334e05f}{
+std::vector$<$ \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1SGrid_ab27de1dac2771512d96a858153db82f5}{number\_\-type} $>$ $>$ {\bfseries getNodeCoordinates} () const }
+\label{classhdnum_1_1SGrid_a136c4dcd9ff0fd17f4c590ce3334e05f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1SGrid_aedaa35a3ac460551ba71aabebf411b5d}{
+const \hyperlink{classhdnum_1_1SGrid_aba7c973b280ecd56f211ac4b8d746280}{size\_\-type} \hyperlink{classhdnum_1_1SGrid_aedaa35a3ac460551ba71aabebf411b5d}{invalid\_\-node}}
+\label{classhdnum_1_1SGrid_aedaa35a3ac460551ba71aabebf411b5d}
+
+\begin{DoxyCompactList}\small\item\em The value which is returned to indicate an invalid node. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1SGrid_a0824662b4e8828f13b1600a4226e82a0}{
+static const int \hyperlink{classhdnum_1_1SGrid_a0824662b4e8828f13b1600a4226e82a0}{positive} = 1}
+\label{classhdnum_1_1SGrid_a0824662b4e8828f13b1600a4226e82a0}
+
+\begin{DoxyCompactList}\small\item\em Side definitions for usage in getNeighborIndex(..). \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1SGrid_a4e9a18163df1318fc15ac094ac28196b}{
+static const int {\bfseries negative} = -\/1}
+\label{classhdnum_1_1SGrid_a4e9a18163df1318fc15ac094ac28196b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class N, class DF, int dimension$>$ class hdnum::SGrid$<$ N, DF, dimension $>$}
+
+Structured Grid for Finite Differences. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em N}]A continuous type representing coordinate values. \item[{\em DF}]A boolean function which defines the domain. \item[{\em dimension}]The grid dimension. \end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classhdnum_1_1SGrid_ada654dda6b112ebe8c29fef72f917b7b}{
+\index{hdnum::SGrid@{hdnum::SGrid}!SGrid@{SGrid}}
+\index{SGrid@{SGrid}!hdnum::SGrid@{hdnum::SGrid}}
+\subsubsection[{SGrid}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class N , class DF , int dimension$>$ {\bf hdnum::SGrid}$<$ N, DF, dimension $>$::{\bf SGrid} (const {\bf Vector}$<$ {\bf number\_\-type} $>$ {\em extent\_\-}, \/  const {\bf Vector}$<$ {\bf size\_\-type} $>$ {\em size\_\-}, \/  const {\bf DomainFunction} \& {\em df\_\-})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1SGrid_ada654dda6b112ebe8c29fef72f917b7b}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em extent\_\-}]The extent of the grid domain. The actual computational domain may be smaller and is defined by the domain function df\_\-.\item[\mbox{$\leftarrow$} {\em size\_\-}]The number of nodes in each grid dimension.\item[\mbox{$\leftarrow$} {\em df\_\-}]The domain function. It has to provide a boolean function evaluate(Vector$<$number\_\-type$>$ x) which returns true if the node which is positioned at the coordinates of x is within the computational domain. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classhdnum_1_1SGrid_a64eff228d60e47b1ecceaf331ba54173}{
+\index{hdnum::SGrid@{hdnum::SGrid}!getNeighborIndex@{getNeighborIndex}}
+\index{getNeighborIndex@{getNeighborIndex}!hdnum::SGrid@{hdnum::SGrid}}
+\subsubsection[{getNeighborIndex}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class N , class DF , int dimension$>$ {\bf size\_\-type} {\bf hdnum::SGrid}$<$ N, DF, dimension $>$::getNeighborIndex (const {\bf size\_\-type} {\em ln}, \/  const {\bf size\_\-type} {\em n\_\-dim}, \/  const int {\em n\_\-side}, \/  const int {\em k} = {\ttfamily 1}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1SGrid_a64eff228d60e47b1ecceaf331ba54173}
+
+
+Provides the index of the k-\/th neighbor of the node with index ln. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ln}]Index of the node whose neighbor is to be determined.\item[\mbox{$\leftarrow$} {\em n\_\-dim}]The axes which connects the node and its neighbor (e.g. n\_\-dim = 0 for a neighbor in the direction of the x-\/axes\item[\mbox{$\leftarrow$} {\em n\_\-side}]Determines whether the neighbor is in positive of negative direction of the given axes. Should be either \hyperlink{classhdnum_1_1SGrid_a0824662b4e8828f13b1600a4226e82a0}{SGrid::positive} or SGrid::negative .\item[\mbox{$\leftarrow$} {\em k}]For k=1 it will return the direct neighbor. Higher values will give distant nodes in the given direction. If the indicated node is not within the grid any more, then invalid\_\-node will be returned. For k=0 it will simply return ln.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\_\-type The index of the neighbor node. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/sgrid.hh\end{DoxyCompactItemize}

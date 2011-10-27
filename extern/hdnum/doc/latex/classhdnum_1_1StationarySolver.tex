@@ -1,0 +1,69 @@
+\hypertarget{classhdnum_1_1StationarySolver}{
+\section{hdnum::StationarySolver$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1StationarySolver}\index{hdnum::StationarySolver@{hdnum::StationarySolver}}
+}
+
+
+Stationary problem solver. E.g. for elliptic problmes.  
+
+
+
+
+{\ttfamily \#include $<$pde.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1StationarySolver_a95c041e1f3af75fd035bd94cb58184d8}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1StationarySolver_a95c041e1f3af75fd035bd94cb58184d8}{size\_\-type}}
+\label{classhdnum_1_1StationarySolver_a95c041e1f3af75fd035bd94cb58184d8}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1StationarySolver_a54c185de5fd4ddd83991cf985e89f40b}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1StationarySolver_a54c185de5fd4ddd83991cf985e89f40b}{time\_\-type}}
+\label{classhdnum_1_1StationarySolver_a54c185de5fd4ddd83991cf985e89f40b}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1StationarySolver_a48abc9e5fb531e68c63e5c72bdbb28a6}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1StationarySolver_a48abc9e5fb531e68c63e5c72bdbb28a6}{number\_\-type}}
+\label{classhdnum_1_1StationarySolver_a48abc9e5fb531e68c63e5c72bdbb28a6}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1StationarySolver_a4282c63a68f76418efa5a924c34bcfc1}{
+\hyperlink{classhdnum_1_1StationarySolver_a4282c63a68f76418efa5a924c34bcfc1}{StationarySolver} (const M \&model\_\-)}
+\label{classhdnum_1_1StationarySolver_a4282c63a68f76418efa5a924c34bcfc1}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1StationarySolver_a7efb580302c52ed737346f05536b94c6}{
+void \hyperlink{classhdnum_1_1StationarySolver_a7efb580302c52ed737346f05536b94c6}{solve} ()}
+\label{classhdnum_1_1StationarySolver_a7efb580302c52ed737346f05536b94c6}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1StationarySolver_a057916fb88d97f739ecdd00e5237297c}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1StationarySolver_a48abc9e5fb531e68c63e5c72bdbb28a6}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1StationarySolver_a057916fb88d97f739ecdd00e5237297c}{get\_\-state} () const }
+\label{classhdnum_1_1StationarySolver_a057916fb88d97f739ecdd00e5237297c}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1StationarySolver_a33ef43557b544c275e2240f155a33e6f}{
+\hyperlink{classhdnum_1_1StationarySolver_a95c041e1f3af75fd035bd94cb58184d8}{size\_\-type} \hyperlink{classhdnum_1_1StationarySolver_a33ef43557b544c275e2240f155a33e6f}{get\_\-order} () const }
+\label{classhdnum_1_1StationarySolver_a33ef43557b544c275e2240f155a33e6f}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::StationarySolver$<$ M $>$}
+
+Stationary problem solver. E.g. for elliptic problmes. The PDE solver is parametrized by a model. The model also exports all relevant types for the solution. The PDE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{pde_8hh}{pde.hh}\end{DoxyCompactItemize}

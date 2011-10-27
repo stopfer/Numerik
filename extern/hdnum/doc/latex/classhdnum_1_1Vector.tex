@@ -1,0 +1,498 @@
+\hypertarget{classhdnum_1_1Vector}{
+\section{hdnum::Vector$<$ REAL $>$ Class Template Reference}
+\label{classhdnum_1_1Vector}\index{hdnum::Vector@{hdnum::Vector}}
+}
+
+
+Class with mathematical vector operations.  
+
+
+
+
+{\ttfamily \#include $<$vector.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Vector_a21a951721fb2e12d8e1550f637fcb06d}{
+typedef std::size\_\-t \hyperlink{classhdnum_1_1Vector_a21a951721fb2e12d8e1550f637fcb06d}{size\_\-type}}
+\label{classhdnum_1_1Vector_a21a951721fb2e12d8e1550f637fcb06d}
+
+\begin{DoxyCompactList}\small\item\em Type used for array indices. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Vector_a25444a918837812c5cc7ad66e1aa77e2}{
+{\bfseries Vector} (const size\_\-t size, const REAL defaultvalue\_\-=0)}
+\label{classhdnum_1_1Vector_a25444a918837812c5cc7ad66e1aa77e2}
+
+\item 
+\hyperlink{classhdnum_1_1Vector}{Vector} \& \hyperlink{classhdnum_1_1Vector_a1cc1f492977e5e6dcf600024b2a75492}{operator=} (const REAL value)
+\begin{DoxyCompactList}\small\item\em Assign all values of the \hyperlink{classhdnum_1_1Vector}{Vector} from one scalar value: x = value. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Vector}{Vector} \& \hyperlink{classhdnum_1_1Vector_af410c46d0f56d02d15ff53aecb1b5701}{operator$\ast$=} (const REAL value)
+\begin{DoxyCompactList}\small\item\em Assigning a vector from a given vector: x = y. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Vector_ab5ac2b488ae212f37783fb601024c84f}{
+\hyperlink{classhdnum_1_1Vector}{Vector} \& {\bfseries operator/=} (const REAL value)}
+\label{classhdnum_1_1Vector_ab5ac2b488ae212f37783fb601024c84f}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a642332d4aa66727ae7bb5b6f36688278}{
+\hyperlink{classhdnum_1_1Vector}{Vector} \& {\bfseries operator+=} (const \hyperlink{classhdnum_1_1Vector}{Vector} \&y)}
+\label{classhdnum_1_1Vector_a642332d4aa66727ae7bb5b6f36688278}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_ac6fecb3e3fe595dc19bf7571398608d0}{
+\hyperlink{classhdnum_1_1Vector}{Vector} \& {\bfseries operator-\/=} (const \hyperlink{classhdnum_1_1Vector}{Vector} \&y)}
+\label{classhdnum_1_1Vector_ac6fecb3e3fe595dc19bf7571398608d0}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a5b6de8d247ad4ed6b62cfcfd6264b958}{
+\hyperlink{classhdnum_1_1Vector}{Vector} \& {\bfseries update} (const REAL alpha, const \hyperlink{classhdnum_1_1Vector}{Vector} \&y)}
+\label{classhdnum_1_1Vector_a5b6de8d247ad4ed6b62cfcfd6264b958}
+
+\item 
+REAL \hyperlink{classhdnum_1_1Vector_aef63f9bb0fd5490d989317559ab5417e}{operator$\ast$} (\hyperlink{classhdnum_1_1Vector}{Vector} \&x) const 
+\begin{DoxyCompactList}\small\item\em Inner product with another vector. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Vector}{Vector} \hyperlink{classhdnum_1_1Vector_a15b3fcda96f788a4de617d24f6974647}{operator+} (\hyperlink{classhdnum_1_1Vector}{Vector} \&x) const 
+\begin{DoxyCompactList}\small\item\em Adding two vectors x+y. \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Vector}{Vector} \hyperlink{classhdnum_1_1Vector_af44713378f5150c2d12a981e6641f09a}{operator-\/} (\hyperlink{classhdnum_1_1Vector}{Vector} \&x) const 
+\begin{DoxyCompactList}\small\item\em vector subtraction x-\/y \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Vector_a861d14f56f15f030baa8e77a6fd7294d}{
+REAL \hyperlink{classhdnum_1_1Vector_a861d14f56f15f030baa8e77a6fd7294d}{two\_\-norm\_\-2} () const }
+\label{classhdnum_1_1Vector_a861d14f56f15f030baa8e77a6fd7294d}
+
+\begin{DoxyCompactList}\small\item\em Square of the Euclidean norm. \item\end{DoxyCompactList}\item 
+REAL \hyperlink{classhdnum_1_1Vector_a5d44d50fe956733a43a59300c559c13c}{two\_\-norm} () const 
+\begin{DoxyCompactList}\small\item\em Euclidean norm of a vector. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Vector_ae95ec8cc3365696d65b4c7a51c61522d}{
+bool \hyperlink{classhdnum_1_1Vector_ae95ec8cc3365696d65b4c7a51c61522d}{scientific} () const }
+\label{classhdnum_1_1Vector_ae95ec8cc3365696d65b4c7a51c61522d}
+
+\begin{DoxyCompactList}\small\item\em pretty-\/print output property: true = scientific, false = fixed point representation \item\end{DoxyCompactList}\item 
+void \hyperlink{classhdnum_1_1Vector_ab9befaae588c670c4bc2a848d9072b97}{scientific} (bool b) const 
+\begin{DoxyCompactList}\small\item\em scientific(true) is the default, scientific(false) switches to the fixed point representation \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Vector_a232022d5d9ff38b63c1495823875cec2}{
+std::size\_\-t {\bfseries width} () const }
+\label{classhdnum_1_1Vector_a232022d5d9ff38b63c1495823875cec2}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a78d2ee2c0096fbe9cbe5f8d1784e568c}{
+void {\bfseries width} (std::size\_\-t i) const }
+\label{classhdnum_1_1Vector_a78d2ee2c0096fbe9cbe5f8d1784e568c}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_abf554eaf0a7ecc0bad0417283592f0a9}{
+std::size\_\-t {\bfseries iwidth} () const }
+\label{classhdnum_1_1Vector_abf554eaf0a7ecc0bad0417283592f0a9}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a27b91a95ee7395f755e67ea75536c379}{
+void {\bfseries iwidth} (std::size\_\-t i) const }
+\label{classhdnum_1_1Vector_a27b91a95ee7395f755e67ea75536c379}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a0c3b0743b35e145ef9943f919410f072}{
+std::size\_\-t {\bfseries precision} () const }
+\label{classhdnum_1_1Vector_a0c3b0743b35e145ef9943f919410f072}
+
+\item 
+\hypertarget{classhdnum_1_1Vector_a721b7c7def445694f44ee1fe6e25ca90}{
+void {\bfseries precision} (std::size\_\-t i) const }
+\label{classhdnum_1_1Vector_a721b7c7def445694f44ee1fe6e25ca90}
+
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename REAL $>$ }\\std::ostream \& \hyperlink{classhdnum_1_1Vector_a50345eaaa46f20d031cc751aa35e4232}{operator$<$$<$} (std::ostream \&os, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x)
+\begin{DoxyCompactList}\small\item\em Output operator for \hyperlink{classhdnum_1_1Vector}{Vector}. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename REAL $>$ }\\void \hyperlink{classhdnum_1_1Vector_aa4e036b4657b6e29d60f6f6c6638f403}{gnuplot} (const std::string \&fname, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ x)
+\begin{DoxyCompactList}\small\item\em Output contents of a \hyperlink{classhdnum_1_1Vector}{Vector} x to a text file named fname. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename REAL $>$ }\\void \hyperlink{classhdnum_1_1Vector_a4e37b684a0a8fec1d254c6dc142d34dd}{readVectorFromFile} (const std::string \&filename, \hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&\hyperlink{classstd_1_1vector}{vector})
+\begin{DoxyCompactList}\small\item\em Read vector from a text file. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class REAL $>$ }\\void \hyperlink{classhdnum_1_1Vector_acc994daebde7d1e9699353a5672d5a92}{fill} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x, const REAL \&t, const REAL \&dt)
+\begin{DoxyCompactList}\small\item\em Fill vector, with entries starting at t, consecutively shifted by dt. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class REAL $>$ }\\void \hyperlink{classhdnum_1_1Vector_a99ec4439cc5942afee540708022372e7}{unitvector} (\hyperlink{classhdnum_1_1Vector}{Vector}$<$ REAL $>$ \&x, std::size\_\-t j)
+\begin{DoxyCompactList}\small\item\em Defines j-\/th unitvector (j=0,...,n-\/1) where n = length of the vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename REAL$>$ class hdnum::Vector$<$ REAL $>$}
+
+Class with mathematical vector operations. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classhdnum_1_1Vector_aef63f9bb0fd5490d989317559ab5417e}{
+\index{hdnum::Vector@{hdnum::Vector}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ REAL {\bf hdnum::Vector}$<$ REAL $>$::operator$\ast$ ({\bf Vector}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_aef63f9bb0fd5490d989317559ab5417e}
+
+
+Inner product with another vector. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::Vector<double> x(2);
+x.scientific(false); // set fixed point display mode
+x[0] = 12.0;
+x[1] = 3.0;
+std::cout << "x=" << x << std::endl;
+hdnum::Vector<double> y(2);
+y[0] = 4.0;
+y[1] = -1.0;
+std::cout << "y=" << y << std::endl;
+double s = x*y;
+std::cout << "s = x*y = " << s << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]     12.0000000
+[ 1]      3.0000000
+
+y=
+[ 0]      4.0000000
+[ 1]     -1.0000000
+
+s = x*y = 45.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_af410c46d0f56d02d15ff53aecb1b5701}{
+\index{hdnum::Vector@{hdnum::Vector}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf Vector}\& {\bf hdnum::Vector}$<$ REAL $>$::operator$\ast$= (const REAL {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_af410c46d0f56d02d15ff53aecb1b5701}
+
+
+Assigning a vector from a given vector: x = y. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::Vector<double> x(4);
+hdnum::Vector<double> y(4);
+x[0] = 1.23;
+x[1] = 2.31;
+x[2] = 4.54;
+x[3] = 9.98;
+std::cout << "x=" << x << std::endl;
+y = x;
+std::cout << "y=" << y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]  1.2300000e+00
+[ 1]  2.3100000e+00
+[ 2]  4.5400000e+00
+[ 3]  9.9800000e+00
+
+y=
+[ 0]  1.2300000e+00
+[ 1]  2.3100000e+00
+[ 2]  4.5400000e+00
+[ 3]  9.9800000e+00
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a15b3fcda96f788a4de617d24f6974647}{
+\index{hdnum::Vector@{hdnum::Vector}!operator+@{operator+}}
+\index{operator+@{operator+}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf Vector} {\bf hdnum::Vector}$<$ REAL $>$::operator+ ({\bf Vector}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_a15b3fcda96f788a4de617d24f6974647}
+
+
+Adding two vectors x+y. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::Vector<double> x(2);
+x.scientific(false); // set fixed point display mode
+x[0] = 12.0;
+x[1] = 3.0;
+std::cout << "x=" << x << std::endl;
+hdnum::Vector<double> y(2);
+y[0] = 4.0;
+y[1] = -1.0;
+std::cout << "y=" << y << std::endl;
+std::cout << "x+y = " << x+y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]     12.0000000
+[ 1]      3.0000000
+
+y=
+[ 0]      4.0000000
+[ 1]     -1.0000000
+
+x+y = 
+[ 0]     16.0000000
+[ 1]      2.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_af44713378f5150c2d12a981e6641f09a}{
+\index{hdnum::Vector@{hdnum::Vector}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf Vector} {\bf hdnum::Vector}$<$ REAL $>$::operator-\/ ({\bf Vector}$<$ REAL $>$ \& {\em x}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_af44713378f5150c2d12a981e6641f09a}
+
+
+vector subtraction x-\/y 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::Vector<double> x(2);
+x.scientific(false); // set fixed point display mode
+x[0] = 12.0;
+x[1] = 3.0;
+std::cout << "x=" << x << std::endl;
+hdnum::Vector<double> y(2);
+y[0] = 4.0;
+y[1] = -1.0;
+std::cout << "y=" << y << std::endl;
+std::cout << "x-y = " << x-y << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]     12.0000000
+[ 1]      3.0000000
+
+y=
+[ 0]      4.0000000
+[ 1]     -1.0000000
+
+x-y = 
+[ 0]      8.0000000
+[ 1]      4.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a1cc1f492977e5e6dcf600024b2a75492}{
+\index{hdnum::Vector@{hdnum::Vector}!operator=@{operator=}}
+\index{operator=@{operator=}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ {\bf Vector}\& {\bf hdnum::Vector}$<$ REAL $>$::operator= (const REAL {\em value})\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_a1cc1f492977e5e6dcf600024b2a75492}
+
+
+Assign all values of the \hyperlink{classhdnum_1_1Vector}{Vector} from one scalar value: x = value. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+hdnum::Vector<double> x(4);
+x = 1.23;
+std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]  1.2340000e+00
+[ 1]  1.2340000e+00
+[ 2]  1.2340000e+00
+[ 3]  1.2340000e+00
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_ab9befaae588c670c4bc2a848d9072b97}{
+\index{hdnum::Vector@{hdnum::Vector}!scientific@{scientific}}
+\index{scientific@{scientific}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{scientific}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ void {\bf hdnum::Vector}$<$ REAL $>$::scientific (bool {\em b}) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_ab9befaae588c670c4bc2a848d9072b97}
+
+
+scientific(true) is the default, scientific(false) switches to the fixed point representation 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3);
+  x[0] = 2.0;
+  x[1] = 2.0;
+  x[2] = 1.0;
+  std::cout << "x=" << x << std::endl;
+  x.scientific(false); // set fixed point display mode
+  std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]  2.0000000e+00
+[ 1]  2.0000000e+00
+[ 2]  1.0000000e+00
+
+x=
+[ 0]      2.0000000
+[ 1]      2.0000000
+[ 2]      1.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a5d44d50fe956733a43a59300c559c13c}{
+\index{hdnum::Vector@{hdnum::Vector}!two\_\-norm@{two\_\-norm}}
+\index{two\_\-norm@{two\_\-norm}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{two\_\-norm}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL$>$ REAL {\bf hdnum::Vector}$<$ REAL $>$::two\_\-norm () const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Vector_a5d44d50fe956733a43a59300c559c13c}
+
+
+Euclidean norm of a vector. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3);
+  x.scientific(false); // set fixed point display mode
+  x[0] = 2.0;
+  x[1] = 2.0;
+  x[2] = 1.0;
+  std::cout << "x=" << x << std::endl;
+  std::cout << "euclidean norm of x = " << x.two_norm() << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]      2.0000000
+[ 1]      2.0000000
+[ 2]      1.0000000
+
+euclidean norm of x = 3.0000000
+	  \end{DoxyVerb}
+ 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classhdnum_1_1Vector_acc994daebde7d1e9699353a5672d5a92}{
+\index{hdnum::Vector@{hdnum::Vector}!fill@{fill}}
+\index{fill@{fill}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class REAL $>$ void fill ({\bf Vector}$<$ REAL $>$ \& {\em x}, \/  const REAL \& {\em t}, \/  const REAL \& {\em dt})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1Vector_acc994daebde7d1e9699353a5672d5a92}
+
+
+Fill vector, with entries starting at t, consecutively shifted by dt. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(5);
+  fill(x,2.01,0.1);
+  x.scientific(false); // set fixed point display mode
+  std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]      2.0100000
+[ 1]      2.1100000
+[ 2]      2.2100000
+[ 3]      2.3100000
+[ 4]      2.4100000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_aa4e036b4657b6e29d60f6f6c6638f403}{
+\index{hdnum::Vector@{hdnum::Vector}!gnuplot@{gnuplot}}
+\index{gnuplot@{gnuplot}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{gnuplot}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ void gnuplot (const std::string \& {\em fname}, \/  const {\bf Vector}$<$ REAL $>$ {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1Vector_aa4e036b4657b6e29d60f6f6c6638f403}
+
+
+Output contents of a \hyperlink{classhdnum_1_1Vector}{Vector} x to a text file named fname. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(5);
+  unitvector(x,3);
+  x.scientific(false); // set fixed point display mode
+  gnuplot("test.dat",x);
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+Contents of 'test.dat':
+              0      0.0000000
+              1      0.0000000
+              2      0.0000000
+              3      1.0000000
+              4      0.0000000
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a50345eaaa46f20d031cc751aa35e4232}{
+\index{hdnum::Vector@{hdnum::Vector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ std::ostream \& operator$<$$<$ (std::ostream \& {\em os}, \/  const {\bf Vector}$<$ REAL $>$ \& {\em x})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1Vector_a50345eaaa46f20d031cc751aa35e4232}
+
+
+Output operator for \hyperlink{classhdnum_1_1Vector}{Vector}. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(3);
+  x[0] = 2.0;
+  x[1] = 2.0;
+  x[2] = 1.0;
+  std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]  2.0000000e+00
+[ 1]  2.0000000e+00
+[ 2]  1.0000000e+00
+	  \end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a4e37b684a0a8fec1d254c6dc142d34dd}{
+\index{hdnum::Vector@{hdnum::Vector}!readVectorFromFile@{readVectorFromFile}}
+\index{readVectorFromFile@{readVectorFromFile}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{readVectorFromFile}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename REAL $>$ void readVectorFromFile (const std::string \& {\em filename}, \/  {\bf Vector}$<$ REAL $>$ \& {\em vector})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1Vector_a4e37b684a0a8fec1d254c6dc142d34dd}
+
+
+Read vector from a text file. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em filename}]name of the text file \item[\mbox{$\leftrightarrow$} {\em x}]reference to a \hyperlink{classhdnum_1_1Vector}{Vector}\end{DoxyParams}
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<number> x;
+  readVectorFromFile("x.dat", x );
+  std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+Contents of "x.dat":
+1.0
+2.0
+3.0
+
+would give:
+x=
+[ 0]  1.0000000e+00
+[ 1]  2.0000000e+00
+[ 2]  3.0000000e+00
+	\end{DoxyVerb}
+ \hypertarget{classhdnum_1_1Vector_a99ec4439cc5942afee540708022372e7}{
+\index{hdnum::Vector@{hdnum::Vector}!unitvector@{unitvector}}
+\index{unitvector@{unitvector}!hdnum::Vector@{hdnum::Vector}}
+\subsubsection[{unitvector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class REAL $>$ void unitvector ({\bf Vector}$<$ REAL $>$ \& {\em x}, \/  std::size\_\-t {\em j})\hspace{0.3cm}{\ttfamily  \mbox{[}related\mbox{]}}}}
+\label{classhdnum_1_1Vector_a99ec4439cc5942afee540708022372e7}
+
+
+Defines j-\/th unitvector (j=0,...,n-\/1) where n = length of the vector. 
+
+{\bfseries Example:} 
+\begin{DoxyCode}
+  hdnum::Vector<double> x(5);
+  unitvector(x,3);
+  x.scientific(false); // set fixed point display mode
+  std::cout << "x=" << x << std::endl;
+\end{DoxyCode}
+
+
+{\bfseries Output:} \begin{DoxyVerb}
+x=
+[ 0]      0.0000000
+[ 1]      0.0000000
+[ 2]      0.0000000
+[ 3]      1.0000000
+[ 4]      0.0000000
+	  \end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/vector.hh\end{DoxyCompactItemize}

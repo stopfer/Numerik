@@ -1,0 +1,4 @@
+\frametitle {Hauptprogramm für Modellproblem}
+\framesubtitle{(Datei \texttt{examples/modelproblem.cc})}
+\lstinputlisting[basicstyle=\tiny,numbers=left,
+numberstyle=\tiny, numbersep=2pt]{../examples/modelproblem.cc}

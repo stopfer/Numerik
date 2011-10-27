@@ -1,0 +1,79 @@
+\hypertarget{classhdnum_1_1Countable}{
+\section{hdnum::Countable Class Reference}
+\label{classhdnum_1_1Countable}\index{hdnum::Countable@{hdnum::Countable}}
+}
+
+
+Base class for object pointed to by \hyperlink{classhdnum_1_1CP}{CP}.  
+
+
+
+
+{\ttfamily \#include $<$countingptr.hh$>$}
+
+Inheritance diagram for hdnum::Countable:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhdnum_1_1Countable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1Countable_a45b6c9588aad15524d23935086829847}{
+\hyperlink{classhdnum_1_1Countable_a45b6c9588aad15524d23935086829847}{Countable} ()}
+\label{classhdnum_1_1Countable_a45b6c9588aad15524d23935086829847}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_a1bf12e6a87ae66f1b310a9c202fd9844}{
+\hyperlink{classhdnum_1_1Countable_a1bf12e6a87ae66f1b310a9c202fd9844}{Countable} (const \hyperlink{classhdnum_1_1Countable}{Countable} \&)}
+\label{classhdnum_1_1Countable_a1bf12e6a87ae66f1b310a9c202fd9844}
+
+\begin{DoxyCompactList}\small\item\em copy constructor: new object, no pointer exists \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_af7d443a1f3195b7b456d47f5f76f5fcf}{
+\hyperlink{classhdnum_1_1Countable}{Countable} \& \hyperlink{classhdnum_1_1Countable_af7d443a1f3195b7b456d47f5f76f5fcf}{operator=} (const \hyperlink{classhdnum_1_1Countable}{Countable} \&)}
+\label{classhdnum_1_1Countable_af7d443a1f3195b7b456d47f5f76f5fcf}
+
+\begin{DoxyCompactList}\small\item\em number of pointers does not change \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_aa8116fca1ddfee3971847c55f9fe15bc}{
+void \hyperlink{classhdnum_1_1Countable_aa8116fca1ddfee3971847c55f9fe15bc}{reference\_\-counter\_\-increment} () const }
+\label{classhdnum_1_1Countable_aa8116fca1ddfee3971847c55f9fe15bc}
+
+\begin{DoxyCompactList}\small\item\em increment reference counter \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_a02c3a28bb4d4bfc74615fb5648e250dc}{
+void \hyperlink{classhdnum_1_1Countable_a02c3a28bb4d4bfc74615fb5648e250dc}{reference\_\-counter\_\-decrement} () const }
+\label{classhdnum_1_1Countable_a02c3a28bb4d4bfc74615fb5648e250dc}
+
+\begin{DoxyCompactList}\small\item\em decrement reference counter \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_a13818b6671192ee672b96abaf2467eb2}{
+bool \hyperlink{classhdnum_1_1Countable_a13818b6671192ee672b96abaf2467eb2}{reference\_\-counter\_\-zero} () const }
+\label{classhdnum_1_1Countable_a13818b6671192ee672b96abaf2467eb2}
+
+\begin{DoxyCompactList}\small\item\em check wether the reference counter is zero \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1Countable_aae830a9bca6bf2223b1383e2c4dd7d22}{
+int \hyperlink{classhdnum_1_1Countable_aae830a9bca6bf2223b1383e2c4dd7d22}{get\_\-reference\_\-counter} () const }
+\label{classhdnum_1_1Countable_aae830a9bca6bf2223b1383e2c4dd7d22}
+
+\begin{DoxyCompactList}\small\item\em get value of reference counter \item\end{DoxyCompactList}\item 
+\hyperlink{classhdnum_1_1Countable_a3a8b009981f6c23579c45770ab18f1aa}{$\sim$Countable} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for object pointed to by \hyperlink{classhdnum_1_1CP}{CP}. This provides the necessary functionality in the target object for the \hyperlink{classhdnum_1_1CP}{CP} template class to work. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classhdnum_1_1Countable_a3a8b009981f6c23579c45770ab18f1aa}{
+\index{hdnum::Countable@{hdnum::Countable}!$\sim$Countable@{$\sim$Countable}}
+\index{$\sim$Countable@{$\sim$Countable}!hdnum::Countable@{hdnum::Countable}}
+\subsubsection[{$\sim$Countable}]{\setlength{\rightskip}{0pt plus 5cm}hdnum::Countable::$\sim$Countable ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classhdnum_1_1Countable_a3a8b009981f6c23579c45770ab18f1aa}
+
+
+Destructor. 
+
+Warn if any \hyperlink{classhdnum_1_1CP}{CP} is still pointing to us. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{countingptr_8hh}{countingptr.hh}\end{DoxyCompactItemize}

@@ -1,0 +1,89 @@
+\hypertarget{classhdnum_1_1RungeKutta4}{
+\section{hdnum::RungeKutta4$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1RungeKutta4}\index{hdnum::RungeKutta4@{hdnum::RungeKutta4}}
+}
+
+
+classical Runge-\/Kutta method (order 4 with 4 stages)  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a35c0f2a31327913676b7287fb1ef23dc}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1RungeKutta4_a35c0f2a31327913676b7287fb1ef23dc}{size\_\-type}}
+\label{classhdnum_1_1RungeKutta4_a35c0f2a31327913676b7287fb1ef23dc}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{time\_\-type}}
+\label{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a8a2af290f6503769876570bba58fdff2}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1RungeKutta4_a8a2af290f6503769876570bba58fdff2}{number\_\-type}}
+\label{classhdnum_1_1RungeKutta4_a8a2af290f6503769876570bba58fdff2}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a576f1d99c638594c745b54956254c100}{
+\hyperlink{classhdnum_1_1RungeKutta4_a576f1d99c638594c745b54956254c100}{RungeKutta4} (const M \&model\_\-)}
+\label{classhdnum_1_1RungeKutta4_a576f1d99c638594c745b54956254c100}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a035f34c6ac918a9ae8f0fd2bc67da620}{
+void \hyperlink{classhdnum_1_1RungeKutta4_a035f34c6ac918a9ae8f0fd2bc67da620}{set\_\-dt} (\hyperlink{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1RungeKutta4_a035f34c6ac918a9ae8f0fd2bc67da620}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a243e063d6c0a8982a4addc1d97f547e0}{
+void \hyperlink{classhdnum_1_1RungeKutta4_a243e063d6c0a8982a4addc1d97f547e0}{step} ()}
+\label{classhdnum_1_1RungeKutta4_a243e063d6c0a8982a4addc1d97f547e0}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a06f337a2c23a40ea1cb798365879c9aa}{
+void \hyperlink{classhdnum_1_1RungeKutta4_a06f337a2c23a40ea1cb798365879c9aa}{set\_\-state} (\hyperlink{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1RungeKutta4_a8a2af290f6503769876570bba58fdff2}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1RungeKutta4_a06f337a2c23a40ea1cb798365879c9aa}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a2769ffd570ccb23004b4996a4cebf279}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1RungeKutta4_a8a2af290f6503769876570bba58fdff2}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1RungeKutta4_a2769ffd570ccb23004b4996a4cebf279}{get\_\-state} () const }
+\label{classhdnum_1_1RungeKutta4_a2769ffd570ccb23004b4996a4cebf279}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a371015562c4918d748b49df3c521b0d0}{
+\hyperlink{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{time\_\-type} \hyperlink{classhdnum_1_1RungeKutta4_a371015562c4918d748b49df3c521b0d0}{get\_\-time} () const }
+\label{classhdnum_1_1RungeKutta4_a371015562c4918d748b49df3c521b0d0}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_aa808a6a3dfd672359999e44906da4692}{
+\hyperlink{classhdnum_1_1RungeKutta4_accd5f055f7a407e0012622fbf4298e84}{time\_\-type} \hyperlink{classhdnum_1_1RungeKutta4_aa808a6a3dfd672359999e44906da4692}{get\_\-dt} () const }
+\label{classhdnum_1_1RungeKutta4_aa808a6a3dfd672359999e44906da4692}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RungeKutta4_a74544dbe43813719b549d97903772a52}{
+\hyperlink{classhdnum_1_1RungeKutta4_a35c0f2a31327913676b7287fb1ef23dc}{size\_\-type} \hyperlink{classhdnum_1_1RungeKutta4_a74544dbe43813719b549d97903772a52}{get\_\-order} () const }
+\label{classhdnum_1_1RungeKutta4_a74544dbe43813719b549d97903772a52}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::RungeKutta4$<$ M $>$}
+
+classical Runge-\/Kutta method (order 4 with 4 stages) The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

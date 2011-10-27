@@ -1,0 +1,99 @@
+\hypertarget{exceptions_8hh}{
+\section{src/exceptions.hh File Reference}
+\label{exceptions_8hh}\index{src/exceptions.hh@{src/exceptions.hh}}
+}
+
+
+A few common exception classes.  
+
+
+{\ttfamily \#include $<$string$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classhdnum_1_1Exception}{hdnum::Exception}
+\begin{DoxyCompactList}\small\item\em Base class for Exceptions. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1IOError}{hdnum::IOError}
+\begin{DoxyCompactList}\small\item\em Default exception class for I/O errors. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1MathError}{hdnum::MathError}
+\begin{DoxyCompactList}\small\item\em Default exception class for mathematical errors. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1RangeError}{hdnum::RangeError}
+\begin{DoxyCompactList}\small\item\em Default exception class for range errors. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1NotImplemented}{hdnum::NotImplemented}
+\begin{DoxyCompactList}\small\item\em Default exception for dummy implementations. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1SystemError}{hdnum::SystemError}
+\begin{DoxyCompactList}\small\item\em Default exception class for OS errors. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1OutOfMemoryError}{hdnum::OutOfMemoryError}
+\begin{DoxyCompactList}\small\item\em Default exception if memory allocation fails. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1InvalidStateException}{hdnum::InvalidStateException}
+\begin{DoxyCompactList}\small\item\em Default exception if a function was called while the object is not in a valid state for that function. \item\end{DoxyCompactList}\item 
+class \hyperlink{classhdnum_1_1ErrorException}{hdnum::ErrorException}
+\begin{DoxyCompactList}\small\item\em General Error. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{exceptions_8hh_a3166b62636d7a133db5150ce192d0ad3}{
+\#define {\bfseries THROWSPEC}(E)~\#E $<$$<$ \char`\"{}: \char`\"{}}
+\label{exceptions_8hh_a3166b62636d7a133db5150ce192d0ad3}
+
+\item 
+\#define \hyperlink{exceptions_8hh_a7385bc4ca18aaff3f509a30bde2567c0}{HDNUM\_\-THROW}(E, m)
+\item 
+\#define {\bfseries HDNUM\_\-ERROR}(m)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespacehdnum_a892de125bed4e6f2dcc4a55300573e32}{
+std::ostream \& {\bfseries hdnum::operator$<$$<$} (std::ostream \&stream, const Exception \&e)}
+\label{namespacehdnum_a892de125bed4e6f2dcc4a55300573e32}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A few common exception classes. This file defines a common framework for generating exception subclasses and to throw them in a simple manner. Taken from the DUNE project www.dune-\/project.org 
+
+\subsection{Define Documentation}
+\hypertarget{exceptions_8hh_ac5258d45eb46dc2d92f02f0c61bd58f9}{
+\index{exceptions.hh@{exceptions.hh}!HDNUM\_\-ERROR@{HDNUM\_\-ERROR}}
+\index{HDNUM\_\-ERROR@{HDNUM\_\-ERROR}!exceptions.hh@{exceptions.hh}}
+\subsubsection[{HDNUM\_\-ERROR}]{\setlength{\rightskip}{0pt plus 5cm}\#define HDNUM\_\-ERROR(m)}}
+\label{exceptions_8hh_ac5258d45eb46dc2d92f02f0c61bd58f9}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { hdnum::ErrorException th__ex; std::ostringstream th__out;          \
+        th__out << THROWSPEC(hdnum::ErrorException) << m; \
+        th__ex.message(th__out.str()); \
+        std::cout << th__ex.what() << std::endl; \
+        throw th__ex;                              \
+  } while (0)
+\end{DoxyCode}
+\hypertarget{exceptions_8hh_a7385bc4ca18aaff3f509a30bde2567c0}{
+\index{exceptions.hh@{exceptions.hh}!HDNUM\_\-THROW@{HDNUM\_\-THROW}}
+\index{HDNUM\_\-THROW@{HDNUM\_\-THROW}!exceptions.hh@{exceptions.hh}}
+\subsubsection[{HDNUM\_\-THROW}]{\setlength{\rightskip}{0pt plus 5cm}\#define HDNUM\_\-THROW(E, \/  m)}}
+\label{exceptions_8hh_a7385bc4ca18aaff3f509a30bde2567c0}
+{\bfseries Value:}
+\begin{DoxyCode}
+do { E th__ex; std::ostringstream th__out;              \
+        th__out << THROWSPEC(E) << m; th__ex.message(th__out.str()); throw th__ex
+      ; \
+  } while (0)
+\end{DoxyCode}
+Macro to throw an exception
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em E}]exception class derived from Dune::Exception \item[{\em m}]reason for this exception in ostream-\/notation\end{DoxyParams}
+Example:
+
+
+\begin{DoxyCode}
+        if (filehandle == 0)
+    DUNE_THROW(FileError, "Could not open " << filename << " for reading!")
+\end{DoxyCode}
+
+
+DUNE\_\-THROW automatically adds information about the exception thrown to the text. If DUNE\_\-DEVEL\_\-MODE is defined more detail about the function where the exception happened is included. This mode can be activated via the {\ttfamily -\/-\/enable-\/dunedevel} switch of {\ttfamily }./configure 

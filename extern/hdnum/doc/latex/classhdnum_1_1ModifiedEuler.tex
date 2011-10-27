@@ -1,0 +1,89 @@
+\hypertarget{classhdnum_1_1ModifiedEuler}{
+\section{hdnum::ModifiedEuler$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1ModifiedEuler}\index{hdnum::ModifiedEuler@{hdnum::ModifiedEuler}}
+}
+
+
+Modified Euler method (order 2 with 2 stages).  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_aa8841e11397920c273afab1f9a04c9bd}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1ModifiedEuler_aa8841e11397920c273afab1f9a04c9bd}{size\_\-type}}
+\label{classhdnum_1_1ModifiedEuler_aa8841e11397920c273afab1f9a04c9bd}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{time\_\-type}}
+\label{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_abcfd3cb8a5b446f721582af3b170476e}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1ModifiedEuler_abcfd3cb8a5b446f721582af3b170476e}{number\_\-type}}
+\label{classhdnum_1_1ModifiedEuler_abcfd3cb8a5b446f721582af3b170476e}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_ac7ad8c2a695fa27a8666dd4cd5a2e105}{
+\hyperlink{classhdnum_1_1ModifiedEuler_ac7ad8c2a695fa27a8666dd4cd5a2e105}{ModifiedEuler} (const M \&model\_\-)}
+\label{classhdnum_1_1ModifiedEuler_ac7ad8c2a695fa27a8666dd4cd5a2e105}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_ad40c382bf56183ddb0a86e327d3ac7ac}{
+void \hyperlink{classhdnum_1_1ModifiedEuler_ad40c382bf56183ddb0a86e327d3ac7ac}{set\_\-dt} (\hyperlink{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1ModifiedEuler_ad40c382bf56183ddb0a86e327d3ac7ac}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_a1842b79faa9c19fb406c0dfe92ae613d}{
+void \hyperlink{classhdnum_1_1ModifiedEuler_a1842b79faa9c19fb406c0dfe92ae613d}{step} ()}
+\label{classhdnum_1_1ModifiedEuler_a1842b79faa9c19fb406c0dfe92ae613d}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_a5fed8e518bd7f3f12e58c1cc6e6121fb}{
+void \hyperlink{classhdnum_1_1ModifiedEuler_a5fed8e518bd7f3f12e58c1cc6e6121fb}{set\_\-state} (\hyperlink{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{time\_\-type} t\_\-, const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1ModifiedEuler_abcfd3cb8a5b446f721582af3b170476e}{number\_\-type} $>$ \&u\_\-)}
+\label{classhdnum_1_1ModifiedEuler_a5fed8e518bd7f3f12e58c1cc6e6121fb}
+
+\begin{DoxyCompactList}\small\item\em set current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_ab73d18011b660a3e7b7c53caecac96b7}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1ModifiedEuler_abcfd3cb8a5b446f721582af3b170476e}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1ModifiedEuler_ab73d18011b660a3e7b7c53caecac96b7}{get\_\-state} () const }
+\label{classhdnum_1_1ModifiedEuler_ab73d18011b660a3e7b7c53caecac96b7}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_a837697657a3543e87c4b3e15ceda8491}{
+\hyperlink{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{time\_\-type} \hyperlink{classhdnum_1_1ModifiedEuler_a837697657a3543e87c4b3e15ceda8491}{get\_\-time} () const }
+\label{classhdnum_1_1ModifiedEuler_a837697657a3543e87c4b3e15ceda8491}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_a697a2e3423e5ba2a9bd41b61e1358da5}{
+\hyperlink{classhdnum_1_1ModifiedEuler_a1c273cddcddf36f6e47f713080c06b41}{time\_\-type} \hyperlink{classhdnum_1_1ModifiedEuler_a697a2e3423e5ba2a9bd41b61e1358da5}{get\_\-dt} () const }
+\label{classhdnum_1_1ModifiedEuler_a697a2e3423e5ba2a9bd41b61e1358da5}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1ModifiedEuler_abaf92ae2a3a462996b5208d326cc9a6b}{
+\hyperlink{classhdnum_1_1ModifiedEuler_aa8841e11397920c273afab1f9a04c9bd}{size\_\-type} \hyperlink{classhdnum_1_1ModifiedEuler_abaf92ae2a3a462996b5208d326cc9a6b}{get\_\-order} () const }
+\label{classhdnum_1_1ModifiedEuler_abaf92ae2a3a462996b5208d326cc9a6b}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::ModifiedEuler$<$ M $>$}
+
+Modified Euler method (order 2 with 2 stages). The ODE solver is parametrized by a model. The model also exports all relevant types for time and states. The ODE solver encapsulates the states needed for the computation.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\section{Gewöhnliche Differentialgleichungen}
+
+\mode<presentation>{
+  \begin{frame}<presentation> \frametitle{Inhalt}
+    \tableofcontents[currentsection,sectionstyle=show/hide,subsectionstyle=show/show/hide]
+  \end{frame}
+}
+
+\subsection{Differentialgleichungsmodelle und Löser}
+
+\begin{frame}[fragile]
+\frametitle{Gewöhnliche Differentialgleichungen in HDNUM}
+\begin{itemize}
+\item Erlaube Lösung beliebiger Modelle mit beliebigen Lösern.
+\item Erlaube variable Typen für Zeit und Zustand.
+\item Trenne folgende Komponenten:
+\begin{itemize}
+\item Differentialgleichungsmodell (inklusive Anfangsbedingung),
+\item Lösungsverfahren,
+\item Steuerung und Zeitschleife.
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Differentialgleichungsmodell}
+Ein Differentialgleichungsmodell ist gegeben durch
+\begin{itemize}
+\item Typen für Zeit und Zustandskomponenten variabel.
+\item Größe des Systems $d$.
+\item Anfangszustand $(t_0,u_0)$.
+\item Funktion $f(t,x) : \mathbb{R}\times\mathbb{R}^d \to \mathbb{R}^d$.
+\item Optional die Jacobimatrix $f_x(t,x)$ (wird für implizite Verfahren benötigt).
+\item Für Zustand und Jacobimatrix verwenden wir Vektor- und Matrixklassen aus HDNUM.
+\end{itemize}
+Als nächstes ein Beispiel für das Modellproblem
+\begin{equation*}
+u'(t) = \lambda u(t), \quad t\geq t_0, \quad u(t_0)=u_0, \quad \lambda\in\mathbb{R}, \mathbb{C}. 
+\end{equation*}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks,allowdisplaybreaks]
+\frametitle{Modellproblem}
+\framesubtitle{(Datei \texttt{examples/modelproblem.hh})}
+\lstinputlisting[basicstyle=\tiny,numbers=left, 
+numberstyle=\tiny, numbersep=2pt]{../examples/modelproblem.hh}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Differentialgleichungslöser}
+\begin{itemize}
+\item Differentialgleichungsmodell ist ein Template-Parameter.
+\item Typen für Zeit und Zustand werden aus Differentialgleichungsmodell genommen.
+\item Kapselt aktuellen Zustand und aktuelle Zeit (und evtl. weitere Zustände).
+\item Methode \lstinline{step} führt einen Schritt des Verfahrens durch.
+\end{itemize}
+Als nächstes ein Beispiel für den expliziten Euler.
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks,allowdisplaybreaks]
+\frametitle{Expliziter Euler}
+\framesubtitle{(Datei \texttt{examples/expliciteuler.hh})}
+\lstinputlisting[basicstyle=\tiny,numbers=left, 
+numberstyle=\tiny, numbersep=2pt]{../examples/expliciteuler.hh}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Lösung und Ergebnisausgabe}
+Die Lösung eines Differentialgleichungsmodells besteht nun aus
+\begin{itemize}
+\item Instantieren der entsprechenden Objekte für Modell und Löser.
+\item Zeitschrittschleife bis zur gewünschten Endzeit.
+\item Speicherung und Ausgabe der Ergebnisse in einem \lstinline{hdnum::Vector}.
+\item Visualisierung der Ergebnisse mit \lstinline{gnuplot}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile,allowframebreaks,allowdisplaybreaks]
+\frametitle{Hauptprogramm für Modellproblem}
+\framesubtitle{(Datei \texttt{examples/modelproblem.cc})}
+\lstinputlisting[basicstyle=\tiny,numbers=left, 
+numberstyle=\tiny, numbersep=2pt]{../examples/modelproblem.cc}
+\end{frame}
+

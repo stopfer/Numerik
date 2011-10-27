@@ -1,0 +1,92 @@
+\hypertarget{classhdnum_1_1RKF45}{
+\section{hdnum::RKF45$<$ M $>$ Class Template Reference}
+\label{classhdnum_1_1RKF45}\index{hdnum::RKF45@{hdnum::RKF45}}
+}
+
+
+Adaptive Runge-\/Kutta-\/Fehlberg method.  
+
+
+
+
+{\ttfamily \#include $<$ode.hh$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1RKF45_a7fd97c231601ffb9373fbb5dad8a60f3}{
+typedef M::size\_\-type \hyperlink{classhdnum_1_1RKF45_a7fd97c231601ffb9373fbb5dad8a60f3}{size\_\-type}}
+\label{classhdnum_1_1RKF45_a7fd97c231601ffb9373fbb5dad8a60f3}
+
+\begin{DoxyCompactList}\small\item\em export size\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{
+typedef M::time\_\-type \hyperlink{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{time\_\-type}}
+\label{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}
+
+\begin{DoxyCompactList}\small\item\em export time\_\-type \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_af34f11a4cdc46bb0323db78fcb3712da}{
+typedef M::number\_\-type \hyperlink{classhdnum_1_1RKF45_af34f11a4cdc46bb0323db78fcb3712da}{number\_\-type}}
+\label{classhdnum_1_1RKF45_af34f11a4cdc46bb0323db78fcb3712da}
+
+\begin{DoxyCompactList}\small\item\em export number\_\-type \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classhdnum_1_1RKF45_a7757b93351fc2a2a98fe503ef92dbe3b}{
+\hyperlink{classhdnum_1_1RKF45_a7757b93351fc2a2a98fe503ef92dbe3b}{RKF45} (const M \&model\_\-)}
+\label{classhdnum_1_1RKF45_a7757b93351fc2a2a98fe503ef92dbe3b}
+
+\begin{DoxyCompactList}\small\item\em constructor stores reference to the model \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_aa0724f83cd7bb44451e21b1780b3f100}{
+void \hyperlink{classhdnum_1_1RKF45_aa0724f83cd7bb44451e21b1780b3f100}{set\_\-dt} (\hyperlink{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{time\_\-type} dt\_\-)}
+\label{classhdnum_1_1RKF45_aa0724f83cd7bb44451e21b1780b3f100}
+
+\begin{DoxyCompactList}\small\item\em set time step for subsequent steps \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_ac5c815988db76d77a28e1833dd6a6cb6}{
+void \hyperlink{classhdnum_1_1RKF45_ac5c815988db76d77a28e1833dd6a6cb6}{set\_\-TOL} (\hyperlink{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{time\_\-type} TOL\_\-)}
+\label{classhdnum_1_1RKF45_ac5c815988db76d77a28e1833dd6a6cb6}
+
+\begin{DoxyCompactList}\small\item\em set tolerance for adaptive computation \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_aa61bd540faf3b35e42788e5127a2ecf1}{
+void \hyperlink{classhdnum_1_1RKF45_aa61bd540faf3b35e42788e5127a2ecf1}{step} ()}
+\label{classhdnum_1_1RKF45_aa61bd540faf3b35e42788e5127a2ecf1}
+
+\begin{DoxyCompactList}\small\item\em do one step \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_a13ea82e111ab9e30fd9b6faf5e825e3d}{
+const \hyperlink{classhdnum_1_1Vector}{Vector}$<$ \hyperlink{classhdnum_1_1RKF45_af34f11a4cdc46bb0323db78fcb3712da}{number\_\-type} $>$ \& \hyperlink{classhdnum_1_1RKF45_a13ea82e111ab9e30fd9b6faf5e825e3d}{get\_\-state} () const }
+\label{classhdnum_1_1RKF45_a13ea82e111ab9e30fd9b6faf5e825e3d}
+
+\begin{DoxyCompactList}\small\item\em get current state \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_a5f9dfeeba9abeee37fdc5e8d79d30488}{
+\hyperlink{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{time\_\-type} \hyperlink{classhdnum_1_1RKF45_a5f9dfeeba9abeee37fdc5e8d79d30488}{get\_\-time} () const }
+\label{classhdnum_1_1RKF45_a5f9dfeeba9abeee37fdc5e8d79d30488}
+
+\begin{DoxyCompactList}\small\item\em get current time \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_aee7cdf5b333ca31418917f76ab70dcef}{
+\hyperlink{classhdnum_1_1RKF45_a27ab73a7d7756f59d4422a96afd9ea00}{time\_\-type} \hyperlink{classhdnum_1_1RKF45_aee7cdf5b333ca31418917f76ab70dcef}{get\_\-dt} () const }
+\label{classhdnum_1_1RKF45_aee7cdf5b333ca31418917f76ab70dcef}
+
+\begin{DoxyCompactList}\small\item\em get dt used in last step (i.e. to compute current state) \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_ace56b907855d8323b4161ebc3e3d20dc}{
+\hyperlink{classhdnum_1_1RKF45_a7fd97c231601ffb9373fbb5dad8a60f3}{size\_\-type} \hyperlink{classhdnum_1_1RKF45_ace56b907855d8323b4161ebc3e3d20dc}{get\_\-order} () const }
+\label{classhdnum_1_1RKF45_ace56b907855d8323b4161ebc3e3d20dc}
+
+\begin{DoxyCompactList}\small\item\em return consistency order of the method \item\end{DoxyCompactList}\item 
+\hypertarget{classhdnum_1_1RKF45_af3f56f53dc2398a808e4fa85c658c56c}{
+void \hyperlink{classhdnum_1_1RKF45_af3f56f53dc2398a808e4fa85c658c56c}{get\_\-info} () const }
+\label{classhdnum_1_1RKF45_af3f56f53dc2398a808e4fa85c658c56c}
+
+\begin{DoxyCompactList}\small\item\em print some information \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class M$>$ class hdnum::RKF45$<$ M $>$}
+
+Adaptive Runge-\/Kutta-\/Fehlberg method. 
+\begin{DoxyTemplParams}{Template Parameters}
+\item[{\em M}]the model type \end{DoxyTemplParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{ode_8hh}{ode.hh}\end{DoxyCompactItemize}

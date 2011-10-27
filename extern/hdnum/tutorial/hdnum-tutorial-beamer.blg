@@ -1,0 +1,45 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: hdnum-tutorial-beamer.aux
+The style file: geralpha.bst
+Database file #1: lit.bib
+You've used 2 entries,
+            2768 wiz_defined-function locations,
+            616 strings with 5288 characters,
+and the built_in function-call counts, 579 in all, are:
+= -- 57
+> -- 16
+< -- 2
++ -- 4
+- -- 4
+* -- 36
+:= -- 108
+add.period$ -- 4
+call.type$ -- 2
+change.case$ -- 8
+chr.to.int$ -- 2
+cite$ -- 2
+duplicate$ -- 29
+empty$ -- 45
+format.name$ -- 8
+if$ -- 119
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 11
+num.names$ -- 6
+pop$ -- 10
+preamble$ -- 1
+purify$ -- 12
+quote$ -- 0
+skip$ -- 23
+stack$ -- 0
+substring$ -- 14
+swap$ -- 4
+text.length$ -- 2
+text.prefix$ -- 2
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 4
+width$ -- 4
+write$ -- 25
