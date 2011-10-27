@@ -8,7 +8,7 @@
 \usepackage{ngerman}
 
 %Umlaute ermöglichen
-\usepackage[utf8]{inputenc}
+\usepackage[latin1]{inputenc}
 
 %Kopf- und Fußzeile
 \usepackage{fancyhdr}
@@ -39,6 +39,97 @@
 %Linie unten
 \renewcommand{\footrulewidth}{0.5pt}
 
+%for captionof{figure}{"caption"}
+\usepackage{caption}
+
+%%for c++ syntax highlights
+\usepackage{listings} 
+\usepackage{verbatim}
+
+%%for tikz
+\usepackage{tikz,times}
+\usetikzlibrary{mindmap,trees,backgrounds,arrows}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+
+%%some colors
+\definecolor{myblue}{RGB}{80,80,160}
+\definecolor{mygreen}{RGB}{80,160,80}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\definecolor{red}{rgb}{.98,0,0}
+\definecolor{shellbackgroundcolor}{rgb}{1,1,1}
+\definecolor{shellfontcolor}{rgb}{0,0,0}
+\definecolor{shadethmcolor}{rgb}{1,1,1}
+\definecolor{bg}{rgb}{0.975,0.98,1}
+\definecolor{shaderulecolor}{rgb}{0.40,0.45,0.40}%
+\definecolor{mywhite}{rgb}{1,1,1}
+\definecolor{myblack}{rgb}{0,0,0}
+
+%%c++ newenvironment
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{1} \ttfamily,
+  commentstyle=\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  %frame=trBL,
+  backgroundcolor=\color{white},
+  rulecolor=\color{shaderulecolor},
+  %frame=single ,
+  numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={Vector,VectorVector,EE,DglE1} }
+
+\lstnewenvironment{cppcode}[1][]%
+{
+%\begin{center}
+\minipage{\textwidth}
+\renewcommand\lstlistingname{C++ Code Snipped}%
+\renewcommand\lstlistlistingname{c++ Code Snippeds}%
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{9} \ttfamily,
+  commentstyle=\bfseries\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  caption=#1,
+  frame=tb,
+  backgroundcolor=\color{bg},
+  rulecolor=\color{black},
+  %frame=single ,
+  %numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={VectorVector,DglE1,EE,Model,Solver} }
+}
+{
+\endminipage
+%\end{center}
+}
+
+\newcommand{\parspace}{ $\;$\\  \\ }
+
+\newcommand{\code}[1]{\lstinline| #1 |}
+
 \begin{document}
 	%\title{Strukturen großer Netzwerke}
 	%\author{Kathrin Ronellenfitsch}
@@ -49,10 +140,24 @@
 		\bfseries % Fettdruck einschalten
 		\sffamily % Serifenlose Schrift
 		Numerik Blatt 1\\[1em]
+		\normalsize
+		Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
 	\end{center}
 
 	
 	\section*{Aufgabe 1}
+    \subsection*{1.1}
+    Betrachtet man die verschiedenen Werte von $h$ als verschiedene Stoerungen
+    so konennen  $a(h)$ und $a(h/2)$  exponentiell von einander abweichen daher
+    ist ein Ansatz mit $h^{\alpha}$ noetig. Ist der exakte Limes $a$ nicht
+    bekannt hat man  in $a(h)-a=ch^{\alpha}$ 3 Unbekannte: $\alpha$, $c$ und $h$
+    also brauch man mindestens 3 werte fuer $h$ und $a(h)$ um $\alpha$ zu
+    bestimmen (3 gleichungen aufstellen, $c$ und $a$ eliminieren und nach
+    $\alpha$ aufloesen). Intuitiv scheint der folgende Ansatz auch halbwegs
+    sinnig:
+    \begin{equation*}
+        \hat{\alpha}= \frac{1} { \log{2}} \log{\left( \left| \frac{a(h)-a(h/2)}{a(h/2)-a(h/4)}\right|\right) }
+    \end{equation*} 
 
 	\subsection*{1.2}
 
@@ -61,24 +166,22 @@
 	\end{equation*}
 
 	\begin{align*}
-		\text {Für die Funktion } a(h) \text { ist } \alpha &= 0,97945814541457965476281482566687 \text { für } h = 2^{-1} \\
-		\alpha &= 0,99650129714686439500725871826916 \text { für } h = 2^{-2}\\
-		\alpha &=1,0122954612465577835350916427437 \text { für } h = 2^{-3}\\
-		\alpha &=1,0349719537012195623351823080027 \text { für } h = 2^{-4}\\
-		\alpha &=1,0778395991421372118765685735054 \text { für } h = 2^{-5}
+		\text {Für die Funktion } a(h) \text { ist } \alpha &= 0,979458145414579 \text { für } h = 2^{-1} \\
+		\alpha &= 0,996501297146864 \text { für } h = 2^{-2} \\
+		\alpha &= 1,01229546124656 \text { für } h = 2^{-3} \\
+		\alpha &= 1,03497195370122 \text { für } h = 2^{-4} \\
+		\alpha &= 1,07783959914214 \text { für } h = 2^{-5} \\
+		\alpha_{\text{average}} &= 1,0202132913
 	\end{align*}
 
 	\begin{align*}
- 		\text{ Für die Funktion } b(h) \text { ist } \alpha &= 1,9276661079397713256862345483521 \text { für } h = 2^{-1} \\
-		\alpha &=1,9859616431746979817126184821811 \text { für } h = 2^{-2} \\
-		\alpha &=2,0000427011314665582530341699186 \text { für } h = 2^{-3} \\
-		\alpha &=2,0153154176936988493579676056588 \text { für } h = 2^{-4} \\
-		\alpha &=2,071233030595396752950228994114 \text { für } h = 2^{-5}
+ 		\text{ Für die Funktion } b(h) \text { ist } \alpha &= 1,92766610793977 \text { für } h = 2^{-1} \\
+		\alpha &= 1,9859616431747 \text { für } h = 2^{-2} \\
+		\alpha &= 2,00004270113147 \text { für } h = 2^{-3} \\
+		\alpha &= 2,0153154176937 \text { für } h = 2^{-4} \\
+		\alpha &= 2,0712330305954 \text { für } h = 2^{-5} \\
+		\alpha_{\text{average}} &= 2,0000437801
  	\end{align*}
-
-
-
-
 
 	\section*{Aufgabe 2}
 
@@ -135,48 +238,242 @@
 
 	\begin{align*}
 		u(t) & = \sum\limits_{i=1}^{n} \zeta_{i}e^{\alpha_{i}t} \quad  \Rightarrow \\
-		u'(t) & =  \sum\limits_{i=1}^{n} \alpha_{i}\zeta_{i}e^{\alpha_{i}t}
+		u'(t) & =  \sum\limits_{i=1}^{n} \alpha_{i}\zeta_{i}e^{\alpha_{i}t} \\
 	\end{align*}
-
+    \ldots
 
 	\subsection*{3.2}
 
-	\begin{equation*}
-		x'(t) = \begin{pmatrix}
-				5 & -2 \\
-				-2 & 5 
-			\end{pmatrix} x(t), \qquad x(0) = \begin{pmatrix}
-										1 \\
-										3 
-									\end{pmatrix} 
-	\end{equation*}
+    Charakteristisches Polynom:
+    \[ x^2 - 10x + 21 \]
 
-	\begin{equation*}
-		\text {Nach Aufgabe 3.1 ist}\ x(t)\  \text {von der Form}  \sum\limits_{i=1}^{n} \zeta_{i}e^{\alpha_{i}t}.\\
-		\text {Da}\ x(0)  =\begin{pmatrix}
-						1 \\
-						3 
-					\end{pmatrix} \text {ist, gilt} 
-					\begin{pmatrix}
-						1 \\
-						3 
-					\end{pmatrix} =  \sum\limits_{i=1}^{2} \zeta_{i}e^{\alpha_{i}\cdot0} = \zeta_1 + \zeta_2 \quad \text{und es gilt}
-	\end{equation*}
+    reelle Eigenwerte:   
+    \[  3 ,  7  \]
 
-	\begin{equation*}
-		 x'(0) = \begin{pmatrix}
-				5 & -2 \\
-				-2 & 5 
-				\end{pmatrix}\begin{pmatrix}
-							1 \\
-							3 
-						\end{pmatrix} = \begin{pmatrix}
-									-1 \\
-									13 
-								\end{pmatrix} = 
-		 \sum\limits_{i=1}^{2} \alpha_{i}\zeta_{i}e^{\alpha_{i}\cdot0} = 
-		\alpha_1\zeta_1 +\alpha_2 \zeta_2
-	\end{equation*}
-	
+    Eigenvektor zum Eigenwert 3:
+    $
+        \left(
+        \begin{tabular}{c}
+            $1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+    $
 
+    Eigenvektor zum Eigenwert 7:
+    $
+        \left(
+        \begin{tabular}{c}
+            $-1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+    $
+
+    \[ 
+        \left(
+        \begin{tabular}{c}
+            $x_1(t)$ \\ 
+            $x_2(t)$
+        \end{tabular} 
+        \right)
+        =C_1 e^{3 \cdot t}
+        \left(
+        \begin{tabular}{c}
+            $1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+        +
+        C_2 e^{7 \cdot t}
+        \left(
+        \begin{tabular}{c}
+            $-1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+    \]
+
+    Mit 
+    $
+        x(0)=
+        \left(
+        \begin{tabular}{c}
+            $1$ \\ 
+            $3$
+        \end{tabular} 
+        \right)
+    $
+    ergibt sich 
+
+    \[ 
+        \left(
+        \begin{tabular}{c}
+            $x_1(t)$ \\ 
+            $x_2(t)$
+        \end{tabular} 
+        \right)
+        =2 e^{3 \cdot t}
+        \left(
+        \begin{tabular}{c}
+            $1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+        + e^{7 \cdot t}
+        \left(
+        \begin{tabular}{c}
+            $-1$ \\ 
+            $1$
+        \end{tabular} 
+        \right)
+    \]
+
+    \newpage
+    
+    \section*{Aufgabe 4}
+    \subsection*{a)}
+    
+    InitialValueProblem:
+
+    \begin{cppcode}
+/** @brief Example class for a differential equation model
+
+    The model is
+
+    u'(t) = lambda*t*u^2(t), -3 <= t <= 3, u(t_0) = 1 / 901.
+
+    \tparam T a type representing time values
+    \tparam N a type representing states and f-values
+*/
+template<class T, class N=T>
+class InitialValueProblem {
+private:
+    const N lambda;
+    const N u0;
+    const N t0;
+
+public:
+    /** \brief export size_type */
+    typedef std::size_t size_type;
+
+    /** \brief export time_type */
+    typedef T time_type;
+
+    /** \brief export number_type */
+    typedef N number_type;
+
+    //! constructor stores parameter lambda
+    InitialValueProblem (const N& lambda_, const N& u0_, const N& t0_)
+        : lambda(lambda_), u0(u0_), t0(t0_)
+    {}
+
+    //! return number of componentes for the model
+    std::size_t size () const
+    {
+        return 1;
+    }
+
+    //! set initial state including time value
+    void initialize (T& t0, hdnum::Vector<N>& x0) const
+    {
+        t0 = this->t0;
+        x0[0] = u0;
+    }
+
+    //! model evaluation
+    void f (const T& t, const hdnum::Vector<N>& x, hdnum::Vector<N>& result) const
+    {
+      result[0] = lambda*t*x[0]*x[0];
+    }
+
+    //! jacobian evaluation needed for implicit solvers
+    void f_x (const T& t, const hdnum::Vector<N>& x, hdnum::DenseMatrix<N>& result) const 
+    {
+      throw std::string("Jacobian evaluation not implemented!");
+    }
+};
+    \end{cppcode}
+    
+    \newpage
+    
+    \subsection*{b)}
+    Approximation der analytischen Lösung:
+    
+    Verwendete Headder:
+    
+    \begin{cppcode}
+#include <iostream>
+
+#include "hdnum.hh"
+#include "initial_value_problem.h"
+#include "expliciteuler.hh"          //from examplecode of hdnum
+    \end{cppcode}
+    
+    Hilfsfunktion um bestmögliche Annäherung an einen vorgegebenen Zeitschritt
+    zu bestimmen:
+    
+    \begin{cppcode}
+// y - eps < x < y + eps ?
+bool inRange(const double x, const double y, const double eps) {
+    if(x > y - eps) {
+        if (x < y + eps) {
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+}
+    \end{cppcode}
+    
+    \newpage
+    
+    main():
+    
+    \begin{cppcode}
+int main() {
+    typedef double Number;                          // define a number type
+
+    const Number t0 = -3.0;                         // initial time
+    const Number tStep = 0.00001;                       // delta t
+    const Number tIntermediate = 1.0;               // state at this time will be printed on console
+    const Number tMax = 3.0;                        // end time
+    const Number u0 = 1.0/901.0;                    // initial state
+    const Number lambda = -200.0;                   // factor for the model
+
+    typedef InitialValueProblem<Number> Model;      // Model type
+    Model model(lambda, u0, t0);                    // instantiate model
+
+    typedef ExplicitEuler<Model> Solver;            // Solver type
+    Solver solver(model);                           // instantiate solver
+    solver.set_dt(tStep);                           // set initial time step
+
+    hdnum::Vector<Number> times;                    // store time values here
+    hdnum::Vector<hdnum::Vector<Number> > states;   // store states here
+    times.push_back(solver.get_time());             // initial time
+    states.push_back(solver.get_state());           // initial state
+
+    while (solver.get_time() <= tMax)               // the time loop
+    {
+      solver.step();                                // advance model by one time step
+      times.push_back(solver.get_time());           // save time
+      states.push_back(solver.get_state());         // and state
+      if(inRange(tIntermediate, solver.get_time(), tStep/2.0)) {        // print state at intermediate time
+          std::cout << "State at time t = " << solver.get_time() << ": " << solver.get_state() << std::endl;
+      }
+    }
+
+    gnuplot("exercise_01_4.dat",times,states);      // output model result
+
+    return 0;
+}
+    \end{cppcode}
+    
+    \subsection*{c)}
+    
+    \begin{center}
+        \includegraphics[scale=0.5,angle={270}]{exercise_01_4.ps}
+    \end{center}
 \end{document}
