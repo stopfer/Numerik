@@ -8,7 +8,8 @@
 \usepackage{ngerman}
 
 %Umlaute ermöglichen
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 
 %Kopf- und Fußzeile
 \usepackage{fancyhdr}
@@ -39,6 +40,9 @@
 
 %Linie unten
 \renewcommand{\footrulewidth}{0.5pt}
+
+%keine Einrückung am Absatzanfang
+\parindent=0pt
 
 %for captionof{figure}{"caption"}
 \usepackage{caption}
@@ -181,7 +185,16 @@
 		\begin{equation*}
 			||f(t,u) - f(t,v)|| =||u^2 - v^2|| = ||(u + v) (u - v)|| = ||u + v|| ||u - v|| \leq L(t) ||u - v||
 		\end{equation*}
-		mit $L(t) = \max\limits_{u,v ,\in D} ||u + v||  \Rightarrow$ die Funktion genuegt der lokalen Lipschitzbedingung $ \Rightarrow $ die Loesung der AWA ist eindeutig. 
+		mit $L(t) = \max\limits_{u,v ,\in D} ||u + v||  \Rightarrow$ die Funktion genuegt der lokalen Lipschitzbedingung $ \Rightarrow $ die Loesung der AWA ist eindeutig. \newline \newline
+
+		{\bf Globalitaet:}
+		\begin{equation*}
+			u'(t) = u(t)^2 \Leftrightarrow \frac{du}{dt} = u^2 \Rightarrow \int \frac{1}{u^2}du = \int 1 dt \Rightarrow -u^{-1} = t+C \Rightarrow -1 = (t+C) \cdot u \Rightarrow u = \frac{-1}{C+t}
+		\end{equation*}
+		
+		Da $u(0) = 1$ gilt, folgt $C= -1$ und somit ist die Loesung der DGL $u(t) = \frac{1}{1-t}$\\
+		Fuer $t = 1$ ist $u(t)$ nicht definiert und damit ist die Loesung nicht global.
+
 
  		\subsection*{2.2}
 
@@ -197,7 +210,20 @@
 		\begin{equation*}
 			||f(t,u) - f(t,v)|| =||-u^2 + v^2|| = ||(v + u) (v - u)|| = ||v + u|| ||v - u|| = ||v + u|| ||-u - (-v)|| \leq L(t) || -u - (-v)|| 
 		\end{equation*}
-		mit $L(t) = \max\limits_{u,v ,\in D} ||u + v||  \Rightarrow$ die Funktion genuegt der lokalen Lipschitzbedingung $\Rightarrow$ die Loesung der AWA ist eindeutig. 
+		mit $L(t) = \max\limits_{u,v ,\in D} ||u + v||  \Rightarrow$ die Funktion genuegt der lokalen Lipschitzbedingung $\Rightarrow$ die Loesung der AWA ist eindeutig. \newline \newline
+
+		{\bf Globalitaet:}
+		\begin{equation*}
+			u'(t) =- u(t)^2 \Leftrightarrow \frac{du}{dt} = -u^2 \Rightarrow \int \frac{1}{-u^2}du = \int 1 dt \Rightarrow u^{-1} = t+C \Rightarrow 1 = (t+C) \cdot u \Rightarrow u = \frac{1}{C+t}
+		\end{equation*}
+		
+		Da $u(0) = 1$ gilt, folgt $C= 1$ und somit ist die Loesung der DGL $u(t) = \frac{1}{1+t}$\\
+		Es gilt: 
+		\begin{equation*}
+			\left| \left| u(t) \right| \right| = \left| \left| \frac{1}{1+t} \right| \right| = \frac{1}{1+t} \leq 1 \quad \text {für } t \geq 0
+		\end{equation*}
+
+		Damit folgt mit Korollar 2.4 über die globale Existenz, dass sich $u$ zu einer Lösung auf ganz $\mathbb{R}$ fortsetzen lässt.
 
 
 
@@ -225,7 +251,15 @@
 		\nexists L(t) \text { mit } \frac{||f(t,u) - f(t,v)||}{ ||u - v|| } \leq L(t)  \Leftrightarrow ||f(t,u) - f(t,v)|| \leq L(t) ||u - v|| \Rightarrow
 		\end{equation*}
 
-		die Funktion genuegt keiner Lipschitzbedingung
+		die Funktion genuegt keiner Lipschitzbedingung.\newline \newline
+		Die Loesung der Gleichung ist nicht eindeutig, da:
+
+		\begin{equation*}
+			u'(t) = u(t)^{1/2} \Leftrightarrow \frac{du}{dt} = u^{1/2} \Rightarrow \int \frac{1}{u^{1/2}}du = \int 1 dt \Rightarrow 2u^{1/2} = t+C \Rightarrow 4u = (t+C)^2 \Rightarrow u = \frac{(t+C)^2}{4}
+		\end{equation*}
+
+		Da $u(0) = 1$ gilt, folgt $\frac{C^2}{4} = 1$ und somit $C=\pm 2$.\\
+		Also ist sowohl $u(t) = \frac{(t+2)^2}{4}$ als auch  $u(t) = \frac{(t-2)^2}{4}$ eine Loesung der DGL.
 
 
  		\subsection*{2.4}
@@ -237,6 +271,5 @@
 		\begin{equation*}
 			 \frac{||f(t,u) - f(t,0)||}{ ||u - 0|| } = \left | \left | \frac{\cos(u) - 2u - \cos(0) - 2 \cdot 0}{u} \right| \right| =  \left | \left | \frac{\cos(u)}{u} - 2 - \frac{1}{u} \right| \right|
 		\end{equation*}
-
 
 \end{document}
