@@ -1,2 +1,3 @@
 add_subdirectory(tutorial)
 add_subdirectory(exercise_01_4)
+add_subdirectory(Blatt_02)
