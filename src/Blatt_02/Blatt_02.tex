@@ -152,22 +152,73 @@
 	
 	\section*{Aufgabe 1}
 
-    		\subsection*{1.1}
+    	\subsection*{1.1}
 
 		\begin{align*}
 			v'''''(x) - a(x)u'(x) &= f(x),	\\
 			u''(x) - b(x)v(x) &= g(x)
 		\end{align*}
 
-		
-		 \subsection*{1.2}
+        sei:
+        \begin{align*}
+            i(x) &:= v''''(x) \hspace{4.0em} \Rightarrow &i'(x) = v'''''(x)
+            \hspace{5.9em}\\
+            j(x) &:= v'''(x) \hspace{4.2em} \Rightarrow &j'(x) = v''''(x) = i(x)
+            \hspace{3em}\\
+            k(x) &:= v''(x) \hspace{4.5em} \Rightarrow &k'(x) = v'''(x) = j(x)
+            \hspace{3.1em}\\
+            l(x) &:= v'(x) \hspace{4.7em} \Rightarrow &l'(x) = v''(x) = k(x)
+            \hspace{3.2em}\\
+            m(x) &:= u'(x) \hspace{4.6em} \Rightarrow &m'(x) = u''(x) = l(x)
+            \hspace{3.3em}\\
+        \end{align*}
+		$\Rightarrow$
+		\begin{align*}
+		  i'(x) - a(x)v'(x) & = f(x)\\
+		  j'(x) & = i(x)\\
+		  k'(x) & = j(x)\\
+		  l'(x) & = k(x)\\
+		  v'(x) & = l(x)\\
+		\end{align*}
+        und
+        \begin{align*}
+          m'(x) - b(x)v(x) & = g(x)\\
+          u'(x) & = m(x)\\
+        \end{align*}
+        		
+		\subsection*{1.2}
 
 		\begin{align*}
 			v'''''(x) - a(x)u''(x) &= f(x),	\\
 			u''(x) - b(x)v(x) &= g(x)
 		\end{align*}
 
-
+        sei:
+        \begin{align*}
+            i(x) &:= v''''(x) \hspace{4.0em} \Rightarrow &i'(x) = v'''''(x)
+            \hspace{5.9em}\\
+            j(x) &:= v'''(x) \hspace{4.2em} \Rightarrow &j'(x) = v''''(x) = i(x)
+            \hspace{3em}\\
+            k(x) &:= v''(x) \hspace{4.5em} \Rightarrow &k'(x) = v'''(x) = j(x)
+            \hspace{3.1em}\\
+            l(x) &:= v'(x) \hspace{4.7em} \Rightarrow &l'(x) = v''(x) = k(x)
+            \hspace{3.2em}\\
+            m(x) &:= u'(x) \hspace{4.6em} \Rightarrow &m'(x) = u''(x) = l(x)
+            \hspace{3.3em}\\
+        \end{align*}
+        $\Rightarrow$
+        \begin{align*}
+          i'(x) - a(x)m'(x) & = f(x)\\
+          j'(x) & = i(x)\\
+          k'(x) & = j(x)\\
+          l'(x) & = k(x)\\
+          v'(x) & = l(x)\\
+        \end{align*}
+        und
+        \begin{align*}
+          m'(x) - b(x)v(x) & = g(x)\\
+          u'(x) & = m(x)\\
+        \end{align*}
 
 	\section*{Aufgabe 2}
 
@@ -386,17 +437,18 @@ int main() {
     
     \subsection*{Berechnete Werte:}
     
-    \begin{tabular}[htbp]{c|c}
-    h & Konvergenzordnung \\
-    \hline
-    $2^{-5}$ & $0.697208$ \\
-    $2^{-6}$ & $0.790967$ \\
-    $2^{-7}$ & $0.861423$ \\
-    $2^{-8}$ & $0.911732$ \\
-    $2^{-9}$ & $0.946279$ \\
-    \hline
-    \hline
-    $\varnothing$ & 0.841522
-
-    \end{tabular}
+    \begin{center}
+        \begin{tabular}[htbp]{c|c}
+        h & Konvergenzordnung \\
+        \hline
+        $2^{-5}$ & $0.697208$ \\
+        $2^{-6}$ & $0.790967$ \\
+        $2^{-7}$ & $0.861423$ \\
+        $2^{-8}$ & $0.911732$ \\
+        $2^{-9}$ & $0.946279$ \\
+        \hline
+        \hline
+        $\varnothing$ & 0.841522
+        \end{tabular}
+    \end{center}
 \end{document}
