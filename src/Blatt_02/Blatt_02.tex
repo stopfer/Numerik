@@ -323,8 +323,29 @@
 			 \frac{||f(t,u) - f(t,0)||}{ ||u - 0|| } = \left | \left | \frac{\cos(u) - 2u - \cos(0) - 2 \cdot 0}{u} \right| \right| =  \left | \left | \frac{\cos(u)}{u} - 2 - \frac{1}{u} \right| \right|
 		\end{equation*}
 
-    \section*{Aufgabe 3}
-    
+
+
+
+	\section*{Aufgabe 3}
+
+  		\subsection*{3.1}
+
+		\begin{align*}    	
+		x_{1}'(t) & = x_{1}(t) + x_{2}(t)\\
+		x_{2}'(t) & = x_{2}(t) \quad  \Rightarrow x_{2}(t) = e^C \cdot e^t \text{ und da } x_2(0) = 1 \text{ sein soll, muss } C = 0 \text { sein. } 
+		\end{align*}
+
+		\begin{align*}
+		\Rightarrow  x_{1}'(t)  - x_{1}(t) = e^t  \text { ist von der Form }  x_{1}'(t)  + f(t)x_{1}(t) = g(t) \text{ mit } f(t) = -1, \ g(t) = e^t
+		\end{align*}
+
+		Für die homogene AWA $ x_{1}'(t)  - x_{1}(t) = 0$ ist $e^{t+C}$ eine Lösung.\\ Eine partikuläre Lösung ist $u(t) \cdot e^{t + C}$, mit $u'(t) = \frac{g(t)}{e^{\int -F(t)dt}} = \frac{e^t}{e^t} = 1 \quad \Rightarrow u(t) = t$ \\ Homogene und partikuläre Lösung addiert ergeben zusammen die Lösung der AWA: \\ $x_1(t) = t  \cdot e^{t + C} + e^{t + C}$ und da $x_1(0) = 1 \Rightarrow e^{t+C} = 1$ also $C=0$ und somit
+		\begin{equation*}
+		x_1'(t) = t \cdot e^{t } + e^{t} + e^{t} 
+		\end{equation*}
+
+
+
     \section*{Aufgabe 4}
 
     Verwendete Headder:
