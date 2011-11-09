@@ -19,6 +19,16 @@ find_package(GMP)
 #gnuplot installed?
 find_package(Gnuplot REQUIRED)
 
+# LaTeX installed?
+FIND_PACKAGE(LATEX)
+
+if(PDFLATEX_COMPILER)
+    include(UseLATEX)
+    set(LATEX_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/doc")
+else(PDFLATEX_COMPILER)
+    message("LaTeX not found!")
+endif(PDFLATEX_COMPILER)
+
 #add include directories
 include_directories(${GMP_INCLUDE_DIR} ${HDNUM_INCLUDE_DIR})
 
