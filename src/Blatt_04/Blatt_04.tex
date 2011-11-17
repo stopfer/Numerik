@@ -1,0 +1,201 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[10pt,oneside,a4paper]{scrartcl}
+
+%Einstellungen der Seitenränder
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}
+
+%neue Rechtschreibung
+\usepackage{ngerman}
+
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%ermöglicht Text ein- / auszublenden
+\usepackage{comment}
+
+%\includecomment{Vortrag}
+\excludecomment{Vortrag}
+
+%to do
+\usepackage{todonotes}
+
+%Mathesachen
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Zeichnen
+\usepackage{tikz}
+
+%ermöglicht, Abbildung nicht zu benennen
+\usepackage{caption}
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+
+%keine Einrückung am Absatzanfang
+\parindent=0pt
+
+%for captionof{figure}{"caption"}
+\usepackage{caption}
+
+%%for c++ syntax highlights
+\usepackage{listings} 
+\usepackage{verbatim}
+
+%%for tikz
+\usepackage{tikz,times}
+\usetikzlibrary{mindmap,trees,backgrounds,arrows}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+
+%%some colors
+\definecolor{myblue}{RGB}{80,80,160}
+\definecolor{mygreen}{RGB}{80,160,80}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\definecolor{red}{rgb}{.98,0,0}
+\definecolor{shellbackgroundcolor}{rgb}{1,1,1}
+\definecolor{shellfontcolor}{rgb}{0,0,0}
+\definecolor{shadethmcolor}{rgb}{1,1,1}
+\definecolor{bg}{rgb}{0.975,0.98,1}
+\definecolor{shaderulecolor}{rgb}{0.40,0.45,0.40}%
+\definecolor{mywhite}{rgb}{1,1,1}
+\definecolor{myblack}{rgb}{0,0,0}
+
+%%c++ newenvironment
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{1} \ttfamily,
+  commentstyle=\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  %frame=trBL,
+  backgroundcolor=\color{white},
+  rulecolor=\color{shaderulecolor},
+  %frame=single ,
+  numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={Vector,VectorVector,EE,DglE1} }
+
+\lstnewenvironment{cppcode}[1][]%
+{
+%\begin{center}
+\minipage{\textwidth}
+\renewcommand\lstlistingname{C++ Code Snipped}%
+\renewcommand\lstlistlistingname{c++ Code Snippeds}%
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{9} \ttfamily,
+  commentstyle=\bfseries\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  caption=#1,
+  frame=tb,
+  backgroundcolor=\color{bg},
+  rulecolor=\color{black},
+  %frame=single ,
+  %numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={VectorVector,DglE1,EE,Model,Solver} }
+}
+{
+\endminipage
+%\end{center}
+}
+
+\newcommand{\parspace}{ $\;$\\  \\ }
+
+\newcommand{\code}[1]{\lstinline| #1 |}
+
+\begin{document}
+	\begin{center}
+		\huge % Schriftgröße einstellen
+		\bfseries % Fettdruck einschalten
+		\sffamily % Serifenlose Schrift
+		Numerik Blatt 1\\[1em]
+		\normalsize
+		Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
+	\end{center}
+
+	
+	\section*{Aufgabe 1}
+
+    	\subsection*{1.1}
+
+
+	\subsection*{1.2}
+
+
+	\subsection*{1.3}
+	
+	\section*{Aufgabe 2}
+	\subsection*{2.1}	
+\begin{itemize}
+\item Wie lautet der Algorithmus zur Einbeziehung des globalen Fehlers, wenn statt einer Schritt-
+weitenhalbierung eine Schrittweitenviertelung vorngenommen wird?
+\end{itemize}
+
+Es gilt analog zu  Rannacher Script 2.3.1:
+\[
+y^{H}_{n+1}-u(t_{n+1})=
+\left(1+O(H))e_n -(H)^{m+1}  \tau^{m}_{n+1} + O(H^{m+2}\right)
+\]
+
+\[
+y^{H/4}_{n+1}-u(t_{n+1})=
+\left(1+O(H))e_n -4(\frac{1}{4}H)^{m+1}  \tau^{m}_{n+1} +
+O(H^{m+2}\right)
+\]
+Subtraktion ergibt:
+\[
+y^{H}_{n+1}-y^{H/4}_{n+1}=
+O(H)e_n- \tau^{m}_{n+1}
+\left(4(\frac{1}{4}H)^{m+1}) - H^{m+1} \right) +
+O(H^{m+2}
+\]
+
+daraus folgt (wenn man die O-Terme weglaesst):
+\[
+\tau^{m}_{n+1}=
+\frac{y^{H}_{n+1}-y^{H/4}_{n+1}}
+{H^{m+1}(1-4^{-m})}
+\]
+der Algorithmus zur adaptiven Schrittweitensteuerung
+ist nun analog zu Rannacher Script 2.3.2: (Schrittweitenkontrolle durch Schrittweitenhalbierung)
+
+\subsection*{2.2}
+Schrittweitensteuerung durch Schrittweitenviertelung ist in Prinzip fuer jede Einschrittmehtode anwendbar. Fuer implizite Einschrittmethoden ist eine lokale Extrapolation noetig.
+
+
+
+
+
+\end{document}
