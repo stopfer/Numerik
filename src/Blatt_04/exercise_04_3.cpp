@@ -2,92 +2,85 @@
 
 #include "hdnum.hh"
 #include "initial_value_problem.h"
-#include "expliciteuler.hh"             //from examplecode of hdnum
-#include "heuns_method.h"
-
-// y - eps < x < y + eps ?
-bool inRange(const double x, const double y, const double eps) {
-  if(x > y - eps) {
-    if (x < y + eps) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
-  }
-}
-
-template <class T>
-T computeConvergenceOrder(const T x1, const T x2, const T xExact) {
-  const T error1 = x1 - xExact;
-  const T error2 = x2 - xExact;
-  return log(fabs(error1 / error2)) / log(2.0);
-}
-
-template <class VECTOR>
-typename VECTOR::value_type computeAverage(const VECTOR& vec) {
-  typename VECTOR::value_type average = 0.0;
-  for(size_t i = 0; i < vec.size(); i++) {
-    average += vec.at(i);
-  }
-  average /= vec.size();
-  return average;
-}
 
 int main() {
-  typedef double Number;                    // define a number type
+   typedef double Number; // define a number type
 
-  const Number t0             = -0.5;       // initial time
-        Number tStep          = 0.00001;    // delta t
-  const Number tIntermediate  = 0.0;        // state at this time will be printed on console
-  const Number uIntermediate  = sqrt(1 - (tIntermediate * tIntermediate)); // exact state at tIntermediate
-  const Number tMax           = 1.0;        // end time
-  const Number u0             = 0.75;       // initial state
-  const Number lambda         = -1.0;     // factor for the model
+   const Number t0 = -3.0; // initial time
+   const Number tStep0 = 0.0001; // delta t
+   const Number tMax = -1.0; // end time
+   const Number u0 = 1.0 / 901.0; // initial state
+   const Number T= tMax-t0;
 
-  const size_t iStart         = 3;
-  const size_t iEnd           = 8;
+   typedef InitialValueProblem<Number> Model; // Model type
+   Model model( u0, t0); // instantiate model
+   typedef hdnum::Kutta3<Model> Solver; // solver
+   Solver solver(model); // instantiate solver
 
-  hdnum::Vector<Number> statesIntermediate;     // store intermediate state values
-  for(size_t i = iStart; i <= iEnd; i++) {
-    tStep = pow(2.0, -static_cast<double>(i));
-    typedef InitialValueProblem<Number> Model;  // Model type
-    Model model(lambda, u0, t0);                // instantiate model
 
-    typedef ExplicitEuler<Model> Solver;        // Solver type
-    //typedef HeunsMethod<Model> Solver;        // Solver type
-    Solver solver(model);                       // instantiate solver
-    solver.set_dt(tStep);                       // set initial time step
+   hdnum::Vector<Number> times; // store time values here
+   hdnum::Vector<hdnum::Vector<Number> > states; // store states here
+   times.push_back(solver.get_time()); // initial time
+   states.push_back(solver.get_state()); // initial state
+   Number h_n=tStep0;
+   Number maxError=0;
+   while (solver.get_time() <= tMax) // the time loop
+   {
+      std::cout<<solver.get_time()<<"\n";
+      //do 2 steps with half stepsize
+      solver.set_dt(h_n/2.0); // set initial time step
+      solver.step(); // advance model by a half time step
+      solver.step(); // advance model by a half time step
+      Number yHalfStep=solver.get_state()[0];
+      // 
+      solver.set_dt(h_n); // set normal time step
+      solver.set_state(times.back(),states.back());
+      solver.step(); // advance model by one time step
+      times.push_back(solver.get_time()); // save time
+      states.push_back(solver.get_state()); // and state
 
-    hdnum::Vector<Number> times;                // store time values here
-    hdnum::Vector<hdnum::Vector<Number> > states;   // store states here
-    times.push_back(solver.get_time());       // initial time
-    states.push_back(solver.get_state());       // initial state
+      Number yFullStep=solver.get_state()[0];
+      Number absDiffHalfFullStep=std::fabs(yHalfStep-yFullStep);
 
-    while (solver.get_time() < tMax)         // the time loop
-    {
-      solver.step();                          // advance model by one time step
-      times.push_back(solver.get_time());       // save time
-      states.push_back(solver.get_state());     // and state
-      if(inRange(tIntermediate, solver.get_time(), tStep/2.0)) {    // print state at intermediate time
-        //std::cout << "State at time t(delta t = " << tStep << ") = " << solver.get_time() << ": " << solver.get_state() << std::endl;
-        statesIntermediate.push_back(solver.get_state().at(0));
+      const size_t m=3; //kutta 3
+      Number epsilon=std::pow(10.0,-10.0);
+      Number TOL=epsilon*std::fabs(solver.get_state()[0])/h_n;
+      Number TermA=std::pow(2.0*h_n,m+1)*(1.0-std::pow(2.0,-1.0*m));
+      Number TermB=T*std::fabs(absDiffHalfFullStep);
+      Number h_opt=((TermA*TOL)/TermB);
+      h_opt=std::pow(h_opt, Number(1)/Number(m));
+      
+      //h_n=h_opt  is fine with  1/2 h_n <=h_opt
+      //do the "real" step with the optimized h_n
+      h_n=h_opt;
+      solver.set_dt(h_n);
+      solver.step(); // advance model by one time step
+      times.push_back(solver.get_time()); // save time
+      states.push_back(solver.get_state()); // and state
+      const Number error=fabs(1.0/(1.0+100.0*std::pow(solver.get_time(),2))-solver.get_state()[0]);
+      if(error>maxError){
+         maxError=error;
       }
-    }
-    if(i == iEnd) {
-      gnuplot("exercise_03_3.dat",times,states);    // output model result
-    }
-  }
+   }
+   
+   std::cout<<"max error: "<<maxError<<"\n";
+   solver.set_state(t0,states.front());
+   solver.set_dt(tStep0);
+   h_n=tStep0;
+   while (solver.get_time() <= tMax) // the time loop
+   {
+      std::cout<<solver.get_time()<<"\n";
+      solver.set_dt(h_n);
+      solver.step();
+      const Number error=fabs(1.0/(1.0+100.0*std::pow(solver.get_time(),2))-solver.get_state()[0]);
+      if(error>maxError){
+        //std::cout<<" error h_old: "<<h_n<<"h_new"<<h_n/2<<"\n";
+        h_n*=0.99;
+        solver.set_dt(h_n);
+        solver.set_state(t0,states.front());
+      }
+   }
+   std::cout<<"fixed h_n for same error : "<<h_n<<"\n";
 
-  hdnum::Vector<Number> convergenceOrders;     // store computed convergence orders
-  for(size_t i = 0; i < iEnd - iStart; i++) {
-    convergenceOrders.push_back(computeConvergenceOrder(statesIntermediate.at(i), statesIntermediate.at(i + 1), uIntermediate));
-    std::cout << "convergence order for h = " << pow(2.0, -static_cast<double>(i + iStart)) << " : " << convergenceOrders.back() << std::endl;
-  }
-
-  Number averageConvergenceOrder = computeAverage(convergenceOrders);
-  std::cout << "average convergence order: " << averageConvergenceOrder << std::endl;
-
-  return 0;
+   return 0;
 }
