@@ -14,5 +14,5 @@ if(PDFLATEX_COMPILER)
         exercise_01_4.ps
     )
     
-    ADD_LATEX_DOCUMENT(exercise_01.tex IMAGES ${exercise_01_4Images} DEFAULT_PDF DEPENDS exercise_01_4.ps)
+    ADD_LATEX_DOCUMENT(exercise_01.tex IMAGES ${exercise_01_4Images} DEFAULT_PDF DEPENDS exercise_01_4.ps MANGLE_TARGET_NAMES)
 endif(PDFLATEX_COMPILER)
