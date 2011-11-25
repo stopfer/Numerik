@@ -151,7 +151,7 @@
         \begin{equation*}
             u'(t) = \lambda * u(t), \quad \lambda \in{\mathbb{C}}
         \end{equation*}
-        gilt:
+        gilt (mit $z \in \mathbb{R}$):
         
         \subsection*{a)}
             \begin{align*}
@@ -184,29 +184,33 @@
        \begin{equation*}
            w(z) = \sum\limits_{r=0}^R \frac{z^r}{r!}
        \end{equation*}
-       Mit $\Re(z) = 0$ gilt:
+       Mit $\Re(z) = 0 \Rightarrow z = 0 + \imath b$ gilt:
        \subsection*{R = 1}
            \begin{align*}
                w(z) &= \sum\limits_{r=0}^1 \frac{z^r}{r!}
-               &= 1 + z\\
-               |w(z)| &= 1^2 + z^2 \leq 1 \qquad \Rightarrow  &z \stackrel{!}{=}
+               = 1 + z = 1 + \imath b\\
+               |w(z)| &= 1^2 + b^2 \leq 1 \qquad \Rightarrow  &b \stackrel{!}{=}
                0\\
                &\Rightarrow \imath\text{SI} = [0, 0]
            \end{align*}
       \subsection*{R = 2}
            \begin{align*}
                w(z) &= \sum\limits_{r=0}^2 \frac{z^r}{r!}
-               &= 1 + z + \frac{z^2}{2}\\
-              |w(z)| &= (1 - \frac{z^2}{2})^2 + z^2 = 1 + \frac{z^4}{4} \leq 1
-              \qquad \Rightarrow  &z \stackrel{!}{=} 0\\
+               = 1 + z + \frac{z^2}{2} = 1 + \imath b + \frac{(\imath b)^2}{2}
+               = 1 - \frac{b^2}{2} + \imath b\\
+               |w(z)| &= (1 - \frac{b^2}{2})^2 + b^2 = 1 + \frac{b^4}{4} \leq 1
+               \qquad \Rightarrow  &b \stackrel{!}{=} 0\\
                &\Rightarrow \imath\text{SI} = [0, 0]
            \end{align*}
       \subsection*{R = 3}
            \begin{align*}
                w(z) &= \sum\limits_{r=3}^2 \frac{z^r}{r!}
-               &= 1 + z + \frac{z^2}{2} + \frac{z^3}{6}\\
-              |w(z)| &= (1 - \frac{z^2}{2})^2 + (z - \frac{z^3}{6})^2 = 1 +
-              \frac{z^6}{36} - \frac{z^4}{12} \leq 1 \qquad \Rightarrow  &z^2
-              \leq 3\\ &\Rightarrow \imath\text{SI} = [-\sqrt{3}, \sqrt{3}]
+               = 1 + z + \frac{z^2}{2} + \frac{z^3}{6} = 1 + \imath b +
+               \frac{(\imath b)^2}{2} + \frac{(\imath b)^3}{6} = 1 -
+               \frac{b^2}{2} + \imath (b - \frac{b^3}{6})\\
+               |w(z)| &= (1 - \frac{b^2}{2})^2 + (b - \frac{b^3}{6})^2 = 1 +
+               \frac{b^6}{36} - \frac{b^4}{12} \leq 1 \qquad \Rightarrow  &b^2
+               \leq 3\\
+               &\Rightarrow \imath\text{SI} = [-\sqrt{3}, \sqrt{3}]
            \end{align*}
 \end{document}
