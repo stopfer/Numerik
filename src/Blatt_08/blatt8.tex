@@ -1,0 +1,41 @@
+\documentclass{article}
+\begin{document}
+Das Verfahren  ist dann nullstabil fuer die Nullstelle $\lambda$  des Polynom
+$ \rho(x)= x^3 + \alpha x^2 - \alpha x -1$ folgendes gilt:
+\[  | \lambda | \leq 1 \]
+Und wenn $\lambda$  eine einfache Nullstelle ist:
+\[  | \lambda | = 1 \]
+$\lambda_1=1$ also laesst sich  $ \rho(x)$ schreiben als:
+\[  \rho (x)= (x-1)(x^2+(\alpha +1)x+1) \]
+Also ist 
+\[   \lambda_{2,3}  = - \frac{\alpha+1}{2} \pm \frac{1}{2} 
+\sqrt{(\alpha +1)^2 -4}  \]
+Fuer $-3< \alpha < 1 $   ist $(\alpha +1)^2 -4 <0 $ und die Nullstellen komplex.
+Und $|\lambda_2|=|\lambda_3|=1$ . Da es einfache nullstellen sind ist das Verfahren fuer
+$-3< \alpha < 1 $  Nullstabil. 
+
+Allgemein gilt fuer ein LMV:
+\[
+\sum_{j=0}^m ,\alpha_j y_{k+j}=h \sum_{j=0}^m \beta_j f_{k+j}
+\]
+
+Fuer die Koeffizienten gilt also:
+\[ \alpha_0=1 , \alpha_1=\alpha , \alpha_2=-\alpha ,\alpha_3=-1 \]
+und
+\[ \beta_0=0 , \beta_1=1/2 (3+\alpha) , \beta_2=1/2 (3+\alpha),\beta_3=0 \]
+
+Darum gilt:
+
+\[  \alpha_0 + \alpha_1 + \alpha_2 + \alpha_3 = 0 \]
+
+\[ 0 \cdot \alpha_0 + 1 \cdot \alpha_1 + 2 \cdot \alpha_2 + 3 \cdot \alpha_3 + \beta_0 + \beta_1 + \beta_2 + \beta_3 = 0 \]
+
+\[ 0 \cdot \alpha_0 + 1 \cdot \alpha_1 + 2 \cdot \alpha_2 + 3^2 \cdot \alpha_3 + 2 \cdot (0 \cdot \beta_0 + 1 \cdot \beta_1 + 2 \cdot \beta_2 + 3 \cdot \beta_3 ) = 0 \]
+
+\[ 0 \cdot \alpha_0 + 1 \cdot \alpha_1 + 2^3 \cdot \alpha_2 + 3^3 \cdot \alpha_3 + 3 \cdot 0 \cdot \beta_0 + 1 \cdot \beta_1 + 2^2 \cdot \beta_2 + 3^2 \cdot \beta_3 =  \frac{\alpha-9}{2} \]
+
+Daraus folgt  fuer $\alpha=9$ ist die Konvergenzordnung mindestens 3. fuer $\alpha \not = 9$
+Ist die hoechste Konvergenzordnung 2.
+
+
+\end{document}
