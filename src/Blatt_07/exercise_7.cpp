@@ -123,7 +123,7 @@ private:
     hdnum::Vector<number_type> u;
     hdnum::Vector<number_type> f;
     hdnum::Vector<number_type> tmp, s, w, x, z, newValue;
-    hdnum::Array<unsigned int> p,q;
+    hdnum::Array<size_t> p,q;
     number_type maxerroror_;
 };
 

@@ -1,5 +1,151 @@
-\documentclass{article}
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[10pt,oneside,a4paper]{scrartcl}
+
+%Einstellungen der Seitenränder
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}
+
+%neue Rechtschreibung
+\usepackage{ngerman}
+
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%ermöglicht Text ein- / auszublenden
+\usepackage{comment}
+
+%\includecomment{Vortrag}
+\excludecomment{Vortrag}
+
+%to do
+\usepackage{todonotes}
+
+%Mathesachen
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Zeichnen
+\usepackage{tikz}
+
+%ermöglicht, Abbildung nicht zu benennen
+\usepackage{caption}
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+
+%keine Einrückung am Absatzanfang
+\parindent=0pt
+
+%for captionof{figure}{"caption"}
+\usepackage{caption}
+
+%%for c++ syntax highlights
+\usepackage{listings} 
+\usepackage{verbatim}
+
+%%for tikz
+\usepackage{tikz,times}
+\usetikzlibrary{mindmap,trees,backgrounds,arrows}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+
+%%some colors
+\definecolor{myblue}{RGB}{80,80,160}
+\definecolor{mygreen}{RGB}{80,160,80}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\definecolor{red}{rgb}{.98,0,0}
+\definecolor{shellbackgroundcolor}{rgb}{1,1,1}
+\definecolor{shellfontcolor}{rgb}{0,0,0}
+\definecolor{shadethmcolor}{rgb}{1,1,1}
+\definecolor{bg}{rgb}{0.975,0.98,1}
+\definecolor{shaderulecolor}{rgb}{0.40,0.45,0.40}%
+\definecolor{mywhite}{rgb}{1,1,1}
+\definecolor{myblack}{rgb}{0,0,0}
+
+%%c++ newenvironment
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{1} \ttfamily,
+  commentstyle=\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  %frame=trBL,
+  backgroundcolor=\color{white},
+  rulecolor=\color{shaderulecolor},
+  %frame=single ,
+  numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={Vector,VectorVector,EE,DglE1} }
+
+\lstnewenvironment{cppcode}[1][]%
+{
+%\begin{center}
+\minipage{\textwidth}
+\renewcommand\lstlistingname{C++ Code Snipped}%
+\renewcommand\lstlistlistingname{c++ Code Snippeds}%
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{9} \ttfamily,
+  commentstyle=\bfseries\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  caption=#1,
+  frame=tb,
+  backgroundcolor=\color{bg},
+  rulecolor=\color{black},
+  %frame=single ,
+  %numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={VectorVector,DglE1,EE,Model,Solver} }
+}
+{
+\endminipage
+%\end{center}
+}
+
+\newcommand{\parspace}{ $\;$\\  \\ }
+
+\newcommand{\code}[1]{\lstinline| #1 |}
+
 \begin{document}
+    \begin{center}
+        \huge % Schriftgröße einstellen
+        \bfseries % Fettdruck einschalten
+        \sffamily % Serifenlose Schrift
+        Numerik Blatt 8\\[1em]
+        \normalsize
+        Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
+    \end{center}
+    
+\section*{Aufgabe 2}
 Das Verfahren  ist dann nullstabil fuer die Nullstelle $\lambda$  des Polynom
 $ \rho(x)= x^3 + \alpha x^2 - \alpha x -1$ folgendes gilt:
 \[  | \lambda | \leq 1 \]
@@ -37,5 +183,61 @@ Darum gilt:
 Daraus folgt  fuer $\alpha=9$ ist die Konvergenzordnung mindestens 3 (hoechstens genau 4). fuer $\alpha \not = 9$
 Ist die hoechste Konvergenzordnung 2.
 
+\subsection*{Aufgabe 4}
+Implementierung der Methode step(): \\
+
+\begin{cppcode}
+  void step ()
+  {
+    // compute f1 to f4
+    model.f(t-3*dt, u1, f1);
+    f1 *= -9.0;
+    model.f(t-2*dt, u2, f2);
+    f2 *= 37.0;
+    model.f(t-1*dt, u3, f3);
+    f3 *= -59.0;
+    model.f(t, u4, f4);
+    f4 *= 55.0;
+    // compute f
+    f = f1 + f2 + f3 + f4;
+    f *= dt / 24.0;
+
+    // compute u
+    u = u4 + f;
+
+    // t and u1 to u4
+    t += dt;
+    u1 = u2;
+    u2 = u3;
+    u3 = u4;
+    u4 = u;
+  }
+\end{cppcode}
+
+    \subsection*{Berechnete Werte:}
+    
+    \begin{center}
+        \begin{tabular}[htbp]{c|c|c|c|c}
+        h & Fehler AB & Schritte AB & Fehler RK4 & Schritte RK4
+        \\
+        \hline
+        $2^{-2}$ & $0.888028$ & $21$ & $0.618925$ & $48$ \\
+        $2^{-3}$ & $0.680341$ & $33$ & $0.214384$ & $96$ \\
+        $2^{-4}$ & $0.25622$ & $57$ & $0.0278654$ & $192$ \\
+        $2^{-5}$ & $0.03072$ & $105$ & $0.0023063$ & $384$ \\
+        $2^{-6}$ & $0.00518769$ & $201$ & $0.000162899$ & $768$ \\
+        $2^{-7}$ & $0.000450965$ & $393$ & $1.07666 * 10^{-05}$ & $1536$ \\
+        $2^{-8}$ & $3.10711 * 10^{-05}$ & $777$ & $6.9108 * 10^{-07}$ & $3072$
+        \\
+        \end{tabular}
+    \end{center}
+    Das Runge-Kutta Verfahren 4. Ordnung liefert bei gleicher Schrittweite $h$
+    einen geringeren Fehler als die Adams-Bashfort Methode. Um mit der
+    Adams-Bashfort Methode einen Fehler in der selben Größenordnung wie mit dem
+    Runge-Kutta Verfahren 4. Ordnung zu erhalten muss man die Schrittweite
+    halbieren. Da allerdings die Anzahl der Funktionsauswertungen für das
+    Runge-Kutta Verfahren 4. Ordnung wesentlich schneller steigt als mit der 
+    Adams-Bashfort Methode, ist der Berechnungsaufwand, bei gleicher
+    Größenordnung des Fehlers, für die Adams-Bashfort Methode viel geringer.
 
 \end{document}
