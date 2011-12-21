@@ -1,0 +1,218 @@
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes
+\documentclass[10pt,oneside,a4paper]{scrartcl}
+
+%Einstellungen der Seitenränder
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=3cm,includeheadfoot]{geometry}
+
+%neue Rechtschreibung
+\usepackage{ngerman}
+
+%Umlaute ermöglichen
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+
+%ermöglicht Text ein- / auszublenden
+\usepackage{comment}
+
+%\includecomment{Vortrag}
+\excludecomment{Vortrag}
+
+%to do
+\usepackage{todonotes}
+
+%Mathesachen
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%Zeichnen
+\usepackage{tikz}
+
+%ermöglicht, Abbildung nicht zu benennen
+\usepackage{caption}
+
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+
+%keine Einrückung am Absatzanfang
+\parindent=0pt
+
+%for captionof{figure}{"caption"}
+\usepackage{caption}
+
+%%for c++ syntax highlights
+\usepackage{listings} 
+\usepackage{verbatim}
+
+%%for tikz
+\usepackage{tikz,times}
+\usetikzlibrary{mindmap,trees,backgrounds,arrows}
+\tikzstyle{every picture}+=[remember picture]
+\everymath{\displaystyle}
+
+%%some colors
+\definecolor{myblue}{RGB}{80,80,160}
+\definecolor{mygreen}{RGB}{80,160,80}
+\definecolor{darkblue}{rgb}{0,0,.6}
+\definecolor{darkred}{rgb}{.6,0,0}
+\definecolor{darkgreen}{rgb}{0,.5,0}
+\definecolor{red}{rgb}{.98,0,0}
+\definecolor{shellbackgroundcolor}{rgb}{1,1,1}
+\definecolor{shellfontcolor}{rgb}{0,0,0}
+\definecolor{shadethmcolor}{rgb}{1,1,1}
+\definecolor{bg}{rgb}{0.975,0.98,1}
+\definecolor{shaderulecolor}{rgb}{0.40,0.45,0.40}%
+\definecolor{mywhite}{rgb}{1,1,1}
+\definecolor{myblack}{rgb}{0,0,0}
+
+%%c++ newenvironment
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{1} \ttfamily,
+  commentstyle=\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  %frame=trBL,
+  backgroundcolor=\color{white},
+  rulecolor=\color{shaderulecolor},
+  %frame=single ,
+  numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={Vector,VectorVector,EE,DglE1} }
+
+\lstnewenvironment{cppcode}[1][]%
+{
+%\begin{center}
+\minipage{\textwidth}
+\renewcommand\lstlistingname{C++ Code Snipped}%
+\renewcommand\lstlistlistingname{c++ Code Snippeds}%
+\lstset{%
+  language=C++,
+  basicstyle= \fontsize{9}{9} \ttfamily,
+  commentstyle=\bfseries\itshape\color{darkgreen},
+  keywordstyle=\bfseries\color{darkblue},
+  stringstyle=\color{darkred},
+  showspaces=false,
+  showtabs=false,
+  columns=fixed,
+  %numbers=left,
+  tabsize=3,
+  caption=#1,
+  frame=tb,
+  backgroundcolor=\color{bg},
+  rulecolor=\color{black},
+  %frame=single ,
+  %numberstyle=\tiny,
+  breaklines=true,
+  showstringspaces=false,
+  xleftmargin=0cm,
+  nolol=true,
+  captionpos=b,
+  morekeywords={VectorVector,DglE1,EE,Model,Solver} }
+}
+{
+\endminipage
+%\end{center}
+}
+
+\newcommand{\parspace}{ $\;$\\  \\ }
+
+\newcommand{\code}[1]{\lstinline| #1 |}
+
+\begin{document}
+    \begin{center}
+        \huge % Schriftgröße einstellen
+        \bfseries % Fettdruck einschalten
+        \sffamily % Serifenlose Schrift
+        Numerik Blatt 9\\[1em]
+        \normalsize
+        Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
+    \end{center}
+
+    \section*{Aufgabe 1}
+    \subsection*{1.}
+    Es gilt:
+    \begin{align*}
+        \rho(\lambda) &= \lambda^2 - 1 \\
+        \sigma(\lambda) &= 2\lambda \\
+        \pi(\lambda; \overline{h}) &= \rho(\lambda) -
+        \overline{h}\sigma(\lambda) = \lambda^2 - 2\overline{h}\lambda - 1
+    \end{align*}
+    Für die Nullstellen von $\pi(\lambda; \overline{h})$ gilt:
+    \begin{align*}
+        \lambda_1 & = \overline{h} - \sqrt{\overline{h}^2 + 1} \\
+        \lambda_2 & = \overline{h} + \sqrt{\overline{h}^2 + 1}
+    \end{align*}
+    Und somit:
+        \begin{align*}
+        |\lambda_1| &\leq 1 \text{ für } \overline{h} \in [0, \infty) \\
+        |\lambda_2| &\leq 1 \text{ für } \overline{h} \in (-\infty, 0]
+    \end{align*}
+    Daher gilt für das Stabilitätsintervall:
+    \begin{equation*}
+        \text{SI} = [0, 0]
+    \end{equation*}
+        
+    \subsection*{2.}
+    Es gilt:
+    \begin{align*}
+        \rho(\lambda) &= \lambda^2 - 1 \\
+        \sigma(\lambda) &= \frac{1}{2}(\lambda + 3) \\
+        \pi(\lambda; \overline{h}) &= \rho(\lambda) -
+        \overline{h}\sigma(\lambda) = \lambda^2 - \frac{1}{2}\overline{h}\lambda
+        - \frac{3}{2}\overline{h} - 1
+    \end{align*}
+    Für die Nullstellen von $\pi(\lambda; \overline{h})$ gilt:
+    \begin{align*}
+        \lambda_1 & = \frac{\overline{h} - \sqrt{\overline{h}^2 +
+        24\overline{h} + 16}}{4} \\
+        \lambda_2 & = \frac{\overline{h} + \sqrt{\overline{h}^2 +
+        24\overline{h} + 16}}{4}
+    \end{align*}
+    Und somit:
+        \begin{align*}
+        |\lambda_1| &\leq 1 \text{ für } \overline{h} \in [4(-3 + 2 \sqrt{2}),
+        0]
+        \\
+        |\lambda_2| &\leq 1 \text{ für } \overline{h} \in [4(-3 + 2 \sqrt{2}),
+        0]
+    \end{align*}
+    Daher gilt für das Stabilitätsintervall:
+    \begin{equation*}
+        \text{SI} = [4(-3 + 2 \sqrt{2}), 0]
+    \end{equation*}
+    
+    \section*{Aufgabe 3}
+    Man erhält:
+    \begin{equation*}
+        u(t = 34500) = u(t = 35000) = u(t = 35500) =  
+        \begin{pmatrix}
+            2.14159\\
+            3.14159\\
+        \end{pmatrix}
+    \end{equation*}
+    \begin{equation*}
+        \Rightarrow
+        \lim\limits_{t \rightarrow \infty}{u(t)} = 
+        \begin{pmatrix}
+            2.14159\\
+            3.14159\\
+        \end{pmatrix}
+    \end{equation*}
+\end{document}
