@@ -34,14 +34,15 @@ public:
   //! set initial state including time value
   void initialize (T& t0, Vector<N>& x0) const
   {
-    t0 = t_0;
-    x0[0] = u_0;
+    t0 = t_0;//0;//t_0;
+    x0[0] = u_0;//100;//u_0;
   }
 
   //! model evaluation
   void f (const T& t, const Vector<N>& x, Vector<N>& result) const
   {
-    result[0] = - t * lambda * x[0] * x[0];
+        result[0] = - t * lambda * x[0] * x[0];
+    //    result[0] = - 0.1 * x[0] * x[0] + 5 * x[0] + 100;
     counter=counter+1;
   }
 
