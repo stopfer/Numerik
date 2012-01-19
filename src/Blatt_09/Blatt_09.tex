@@ -140,26 +140,61 @@
         \huge % Schriftgröße einstellen
         \bfseries % Fettdruck einschalten
         \sffamily % Serifenlose Schrift
-        Numerik Blatt 7\\[1em]
+        Numerik Blatt 9\\[1em]
         \normalsize
         Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
     \end{center}
 
-    \section*{Aufgabe 3}
-    Man erhält:
+    \section*{Aufgabe 1}
+    \subsection*{1.}
+    Es gilt:
+    \begin{align*}
+        \rho(\lambda) &= \lambda^2 - 1 \\
+        \sigma(\lambda) &= 2\lambda \\
+        \pi(\lambda; \overline{h}) &= \rho(\lambda) -
+        \overline{h}\sigma(\lambda) = \lambda^2 - 2\overline{h}\lambda - 1
+    \end{align*}
+    Für die Nullstellen von $\pi(\lambda; \overline{h})$ gilt:
+    \begin{align*}
+        \lambda_1 & = \overline{h} - \sqrt{\overline{h}^2 + 1} \\
+        \lambda_2 & = \overline{h} + \sqrt{\overline{h}^2 + 1}
+    \end{align*}
+    Und somit:
+        \begin{align*}
+        |\lambda_1| &\leq 1 \text{ für } \overline{h} \in [0, \infty) \\
+        |\lambda_2| &\leq 1 \text{ für } \overline{h} \in (-\infty, 0]
+    \end{align*}
+    Daher gilt für das Stabilitätsintervall:
     \begin{equation*}
-        u(t = 34500) = u(t = 35000) = u(t = 35500) =  
-        \begin{pmatrix}
-            2.14159\\
-            3.14159\\
-        \end{pmatrix}
+        \text{SI} = [0, 0]
     \end{equation*}
+        
+    \subsection*{2.}
+    Es gilt:
+    \begin{align*}
+        \rho(\lambda) &= \lambda^2 - 1 \\
+        \sigma(\lambda) &= \frac{1}{2}(\lambda + 3) \\
+        \pi(\lambda; \overline{h}) &= \rho(\lambda) -
+        \overline{h}\sigma(\lambda) = \lambda^2 - \frac{1}{2}\overline{h}\lambda
+        - \frac{3}{2}\overline{h} - 1
+    \end{align*}
+    Für die Nullstellen von $\pi(\lambda; \overline{h})$ gilt:
+    \begin{align*}
+        \lambda_1 & = \frac{\overline{h} - \sqrt{\overline{h}^2 +
+        24\overline{h} + 16}}{4} \\
+        \lambda_2 & = \frac{\overline{h} + \sqrt{\overline{h}^2 +
+        24\overline{h} + 16}}{4}
+    \end{align*}
+    Und somit:
+        \begin{align*}
+        |\lambda_1| &\leq 1 \text{ für } \overline{h} \in [4(-3 + 2 \sqrt{2}),
+        0]
+        \\
+        |\lambda_2| &\leq 1 \text{ für } \overline{h} \in [4(-3 + 2 \sqrt{2}),
+        0]
+    \end{align*}
+    Daher gilt für das Stabilitätsintervall:
     \begin{equation*}
-        \Rightarrow
-        \lim\limits_{t \rightarrow \infty}{u(t)} = 
-        \begin{pmatrix}
-            2.14159\\
-            3.14159\\
-        \end{pmatrix}
+        \text{SI} = [4(-3 + 2 \sqrt{2}), 0]
     \end{equation*}
 \end{document}

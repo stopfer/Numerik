@@ -140,26 +140,123 @@
         \huge % Schriftgröße einstellen
         \bfseries % Fettdruck einschalten
         \sffamily % Serifenlose Schrift
-        Numerik Blatt 7\\[1em]
+        Numerik Weihnachtsblatt\\[1em]
         \normalsize
         Kathrin Ronellenfitsch, Thorsten Beier, Christopher Pommrenke
     \end{center}
 
-    \section*{Aufgabe 3}
-    Man erhält:
-    \begin{equation*}
-        u(t = 34500) = u(t = 35000) = u(t = 35500) =  
-        \begin{pmatrix}
-            2.14159\\
-            3.14159\\
-        \end{pmatrix}
-    \end{equation*}
-    \begin{equation*}
-        \Rightarrow
-        \lim\limits_{t \rightarrow \infty}{u(t)} = 
-        \begin{pmatrix}
-            2.14159\\
-            3.14159\\
-        \end{pmatrix}
-    \end{equation*}
+    \section*{Aufgabe 1}
+    \subsection*{1.}
+        Für die Differentialgleichung der Rentierpopulation gilt:
+        \begin{equation*}
+            u'(t) = 0.015u(t) - 3 * 10^{-5}u(t)^2 + 0.3
+        \end{equation*}
+    \subsection*{2.}
+        Nach lösen mit RungeKutta4 erhält man zum Zeitpunkt $t = 358$ eine
+        Rentierpopulation von $513$ Rentieren
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics{reindeerpopulation}%
+            \caption{Verlauf der Rentierpopulation}%
+        \end{figure}
+        
+        \newpage
+        Implementierung des Rentiermodels:\\
+        \begin{cppcode}
+template<class T, class N=T>
+class ReindeerModel
+{
+public:
+  /** \brief export size_type */
+  typedef std::size_t size_type;
+
+  /** \brief export time_type */
+  typedef T time_type;
+
+  /** \brief export number_type */
+  typedef N number_type;
+
+  //! constructor stores parameter lambda
+  ReindeerModel (const N& u_0_, const N& t_0_)
+    : u_0(u_0_), t_0(t_0_)
+  {}
+
+  //! return number of componentes for the model
+  std::size_t size () const
+  {
+    return 1;
+  }
+
+  //! set initial state including time value
+  void initialize (T& t0, hdnum::Vector<N>& x0) const
+  {
+    t0 = t_0;//0;//t_0;
+    x0[0] = u_0;//100;//u_0;
+  }
+
+  //! model evaluation
+  void f (const T& t, const hdnum::Vector<N>& x, hdnum::Vector<N>& result) const
+  {
+    result[0] = 0.015 * x[0] - 0.00003 * x[0] * x[0] + 0.3;
+  }
+
+  //! jacobian evaluation needed for implicit solvers
+  void f_x (const T& t, const hdnum::Vector<N>& x, hdnum::DenseMatrix<N>& result) const
+  {
+    throw("Jacobian evaluation not implemented");
+  }
+
+private:
+  N u_0;
+  N t_0;
+};        
+        \end{cppcode}
+        
+        \newpage
+        Implementierung der main():\\
+        \begin{cppcode}
+int main () {
+  // define a number type
+  typedef double Number;
+  // define constants
+  const Number t0 = 0.0;
+  const Number tMax = 358.0;
+  const Number dt = 1.0;
+  const Number u0 = 100.0;
+
+  // model type
+  typedef ReindeerModel<Number> Model;
+  // instantiate model
+  Model model(u0, t0);
+
+  // storage for computed times and states
+  Vector<Number> times;
+  Vector<Vector<Number> > states;
+
+  // solver type
+  typedef RungeKutta4<Model> RKSolver;
+  // instantiate solver
+  RKSolver rksolver(model);
+  rksolver.set_dt(dt);
+
+  // set initial time and state
+  times.push_back(rksolver.get_time());
+  states.push_back(rksolver.get_state());
+
+  // compute times and states
+  Number t = t0;
+  while(t < tMax){
+    rksolver.step(); //make time step
+    times.push_back(rksolver.get_time());
+    states.push_back(rksolver.get_state());
+    t = rksolver.get_time();
+  }
+
+  // write computed results in file
+  gnuplot("reindeerpopulation.dat",times,states); // output model result
+  std::cout << "reindeer population at time t = " << times.back() << ": " << states.back() << std::endl;
+  return 0;
+}
+        
+        \end{cppcode}
 \end{document}
